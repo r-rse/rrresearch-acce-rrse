@@ -1,0 +1,122 @@
+---
+title: "Intro to R & Rstudio"
+---
+
+## R
+
+> R is an open source language and environment for statistical computing and graphics.
+
+### Features
+
+-   Powerful analytical tools, well suited to scientific analyses and data science.
+-   Analyses are performed using scripted commands, making them easy to record, edit, rerun.
+-   Source code is open, ie available to access, inspect, modify remix and publish derivatives.
+-   Large, active creative communities around development and training.
+-   Ecosystem constantly under development with continuous improvements.
+
+#### [Install R](https://cran.r-project.org/mirrors.html){.btn .btn-primary target="_blank"}
+
+### R Environment includes:
+
+-   an effective data handling and storage facility,
+-   a suite of operators for calculations on arrays,
+-   a large, coherent, integrated collection of intermediate tools for data analysis,
+-   graphical facilities for data analysis and display either on-screen or in print,
+-   a well-developed, simple and effective programming language which includes conditionals, loops, user-defined functions and input and output facilities.
+
+------------------------------------------------------------------------
+
+## Rstudio
+
+> integrated development environment (IDE) for R
+
+### Features
+
+-   console
+-   syntax-highlighting editor that supports direct code execution, as well as
+-   tools for:
+    -   plotting
+    -   debugging
+    -   workspace management
+
+## Rstudio Projects
+
+The most efficient way to work in RStudio is to work in RStudio Projects.
+
+We'll discuss Projects in more detail in later sections of the course.
+
+For now, let's create a new project to work in while we explore R basics.
+
+## Working with R in Posit Cloud
+
+We will be working online in **Posit Cloud** throughout the course so we can all work in the same computational environment. This will save a lot of time by avoiding having to debug individual installation problems.
+
+To start working in R and Rstudio in the Cloud, we need to **log in to Posit Cloud**:
+
+##### [Launch Posit Cloud](https://posit.cloud/){.btn .btn-primary target="_blank"}
+
+This will normally end up with logging you into your account workspace. To start working in R, we need to create a new project. Click on **New Project**
+
+![](assets/rsc_new_proj.png)
+
+This creates and deploys a new untitled Posit Cloud project in your Workspace.
+
+![](assets/rsc_new_proj_deploy.png)
+
+Edit the project names by clicking on **Untitled**. Name it something like **r_basics**
+
+![](assets/rsc_new_proj_name.png)
+
+We are now in Rstudio, running in the cloud and can start running R code!
+
+### Quick Tour of RStudio in the Cloud
+
+![](assets/rsc_rstudio.png)
+
+-   **Console**: Where you can type and execute R commands. At the top of the console, you can also see the working directory.
+-   **Environment**: Where you can see the objects you have created and their properties.
+-   **Files**: Where you can see the files in your project.
+-   **Plots**: Where you can see the plots you have created.
+-   **Packages**: Where you can see the packages you have installed.
+-   **Help**: Where you can see the help files for R functions.
+-   **Viewer**: Where you can see the output of R Markdown documents.
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About New Project Creation in RStudio
+
+### Initialise New Project Creation in RStudio
+
+To create a new project, click on **File \> New Project \> New Directory \> New Project**.
+
+### Specify Project Name and Location
+
+In the New Project Wizard, specify the name and location of the new project.
+
+![](assets/img/new-project-tab.png) Click on **Create Project** to create the new project.
+
+### New Project Launch
+
+This should open a new RStudio window with the new project loaded.
+
+![](assets/img/new-project-launch.png)
+
+### Quick Tour of RStudio
+
+![](assets/img/new-project-tour.png)
+
+-   **Console**: Where you can type and execute R commands. At the top of the console, you can also see the working directory.
+-   **Environment**: Where you can see the objects you have created and their properties.
+-   **Files**: Where you can see the files in your project.
+-   **Plots**: Where you can see the plots you have created.
+-   **Packages**: Where you can see the packages you have installed.
+-   **Help**: Where you can see the help files for R functions.
+-   **Viewer**: Where you can see the output of R Markdown documents.
+:::
+
+## Rstudio Cheatsheet
+
+```{r, echo = FALSE}
+knitr::include_url("assets/cheatsheets/rstudio-ide.pdf")
+```
+
+[**Find out more**](https://posit.co/products/open-source/rstudio/){target="_blank"}

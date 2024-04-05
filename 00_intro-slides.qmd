@@ -1,0 +1,90 @@
+---
+title: "Introduction to programming in R: Welcome!"
+author: "Dr Anna Krystallli"
+subtitle: "Introduction"
+institute: R-RSE
+materials_url: https://mba-r-intro.netlify.app/
+format:
+  revealjs: 
+    logo: assets/logo/r-rse-logo2.png
+    theme: [default, assets/css/styles.scss, assets/css/reveal.scss]
+    footer: "[{{< fa home >}}](index.qmd)"
+    template-partials:
+      - assets/layouts/title-slide.html
+editor: visual
+preload-iframes: true
+---
+
+## 👋 Hello
+
+### me: **Dr Anna Krystalli**
+
+::: nonincremental
+-   **Research Software Engineer**, [*`R-RSE`*](https://www.r-rse.eu/)
+
+    -   mastodon annakrystalli\@fosstodon.org
+    -   github @annakrystalli
+    -   email **r.rse.eu\[at\]gmail.com**
+
+-   Background in **Marine Macroecology**
+
+-   **Core Team:** [ReproHack](https://github.com/reprohack/reprohack-hq)
+:::
+
+# Welcome to the MBA Introduction to Programming in R Course
+
+## Course Aims
+
+1.  **Introduce** you to the R programming language
+2.  **Develop** your skills in programming and data manipulation in R
+3.  **Instill best practices** in coding and project management in R
+
+# Course Schedule
+
+## Day 1
+
+-   Introductions to R
+
+**Working locally in Rstudio**
+
+## Day 2
+
+### Data Manipulation in Practice
+
+-   Working with projects in R
+-   Working with unpublished semi-raw MBA data!
+-   Realistic Data Munging
+
+**Working in Posit Cloud**
+
+## Day 3
+
+### Data Visualisation
+
+-   Data Visualisation in R with `ggplot2`
+
+### Scientific Reporting with Quarto
+
+**Working in Posit Cloud**
+
+## House Keeping
+
+-   Break every hour
+-   Aim for lunch at 1pm each day
+
+## Course Approach
+
+-   **Hands-on** learning.
+-   Follow along live coding with some minor copy & pasting from materials.
+-   Please **interrupt** me if you have questions at any time.
+-   Please **add full name** to your zoom profile and prono![Close document tab](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAbElEQVR4Xs2RQQrAMAgEfZgf7W9LAguybljJpR3wEse5JOL3ZObDb4x1loDhHbBOFU6i2Ddnw2KNiXcdAXygJlwE8OFVBHDgKrLgSInN4WMe9iXiqIVsTMjH7z/GhNTEibOxQswcYIWYOR/zAjBJfiXh3jZ6AAAAAElFTkSuQmCC){alt="Close document tab"}uns if you wish.
+-   Try to **keep camera on** if possible.
+-   Use **status reaction emojis** to communicate how it's going.
+
+## A note about the materials
+
+-   Please **do not share the URL to the materials** outside of the course
+-   Please also **do not share the link to Course Shared space on Posit Cloud**.
+-   Posit Cloud projects **will be deleted after a week** of the course ending. Please download any work you want to keep.
+
+# Let's go!

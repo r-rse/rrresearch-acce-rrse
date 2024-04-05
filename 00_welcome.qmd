@@ -1,0 +1,349 @@
+---
+title: "Introduction & Welcome!" 
+author: "Dr Anna Krystallli" 
+subtitle: "Reproducible Research Data and Project Management in R" 
+institute: R-RSE 
+materials_url: https://acce-rrresearch.netlify.app/ 
+format:
+  revealjs: 
+    logo: assets/logo/r-rse-logo2.png
+    theme: [default, assets/css/styles.scss, assets/css/reveal.scss]
+    footer: "[{{< fa home >}}](index.qmd)"
+    from: markdown+emoji
+    template-partials:
+      - assets/layouts/title-slide.html
+editor: visual 
+preload-iframes: true
+lightbox: true
+---
+
+## :wave: Hello
+
+### me: **Dr Anna Krystalli**
+
+::: nonincremental
+-   **Research Software Engineer**, [*`R-RSE`*](https://www.r-rse.eu/)
+
+    -   mastodon annakrystalli\@fosstodon.org
+    -   github @annakrystalli
+    -   email **r.rse.eu\[at\]gmail.com**
+
+-   Background in **Marine Macroecology**
+
+-   **Core Team:** [ReproHack](https://github.com/reprohack/reprohack-hq)
+:::
+
+## Ice Breaker
+
+### Split into break out rooms
+
+### Introduce yourselves
+
+### Q: Why did you decide to join this course?
+
+# Why are we here?
+
+## The paper is the advertisement
+
+> “an article about computational result is advertising, not scholarship. The actual scholarship is the **full software environment, code and data, that produced the result.**”
+
+*John Claerbout paraphrased in [Buckheit and Donoho (1995)](https://statweb.stanford.edu/~wavelab/Wavelab_850/wavelab.pdf)*
+
+. . .
+
+### [The Scientific Paper Is Obsolete](https://www.theatlantic.com/science/archive/2018/04/the-scientific-paper-is-obsolete/556676/)
+
+Here's what's next
+
+<small>APR 5, 2018, The Atlantic</small>
+
+<img src="assets/SciencePaperFlames-New.gif" height="100px" width="350px"/>
+
+## Lessons from the Reproducibility/Replicability crisis
+
+-   Many issues statistical and a results of broken Academic incentive systems.
+
+-   Much can be tackled by transparency and better computational literacy.
+
+<img src="assets/woes.png" width="450px"/>
+
+## [Reproducible Research in Computational Science](http://science.sciencemag.org/content/334/6060/1226)
+
+ROGER D. PENG, SCIENCE 02 DEC 2011 : 1226-1227
+
+> Reproducibility has the potential to serve as a minimum standard for judging scientific claims when full independent replication of a study is not possible.
+
+![](assets/repro-spectrum.jpg){width="550"}
+
+## Reinventing discovery by open sourcing science
+
+*Nielsen, Michael. Reinventing Discovery: The New Era of Networked Science. Princeton University Press, 2012. JSTOR, www.jstor.org/stable/j.ctt7s4vx.*
+
+::: columns
+::: {.column width="50%"}
+-   Sharing resources
+
+-   Collective intelligence
+
+-   Mass collaboration
+:::
+
+::: {.column width="50%"}
+<img src="assets/reinventing-innovation.png" height="300px"/>
+:::
+:::
+
+## The internet was built for open science
+
+### Key to next generation networked science
+
+```{r, echo=FALSE, out.width="70%"}
+knitr:::include_graphics("assets/www.jpg")
+```
+
+## **The grand vision**
+
+### Hans Rosling on open data (and data science) back in 2006
+
+```{r}
+knitr::include_url("https://goo.gl/ry6AiG")
+```
+
+::: fragment
+> So how far have we come?
+:::
+
+## [gapminder.org](https://www.gapminder.org/): today
+
+#### Fighting global misconceptions with data
+
+[![](assets/gapminder-org.png)](https://www.gapminder.org/)
+
+## gapmider at our fingertips
+
+```{r, fig.show = "animate", message=FALSE, warning=FALSE}
+#| echo: true
+library(ggplot2)
+
+p <- ggplot(gapminder::gapminder, 
+            aes(gdpPercap, lifeExp, size = pop, 
+                color = continent, frame = year)) +
+  geom_point() + scale_x_log10() + theme_bw()
+```
+
+```{r, message=FALSE, warning=FALSE, fig.height=4}
+#| echo: true
+plotly::ggplotly(p)
+```
+
+# How do we get there?
+
+## **Research meta-responsibilities**
+
+We need better digital curation of the workhorses of modern science: **code** & **data**
+
+> **aim to create secure materials that are [FAIR](https://www.nature.com/articles/sdata201618)** *findable, accessible, interoperable, reusable*
+
+![](assets/FAIRPrinciples.jpg){fig-align="center" width="700"}
+
+## **Research meta-responsibilities**
+
+::: columns
+::: {.column width="50%"}
+-   Think about traceability and provenance.
+
+-   Follow community conventions.
+
+-   Prepare it to share it.
+:::
+
+::: {.column width="50%"}
+### We all need to do our bit!
+
+```{r, echo=FALSE}
+knitr::include_graphics("assets/CultureShift.jpg")
+```
+:::
+:::
+
+## **Drivers of better digital management**
+
+-   **Funders**: value for money, impact, reputation
+
+-   **Publishers**: many now require code and data.
+
+    -   Specialist journals have emerged for:
+        -   **software**: [Journal of Open Source Software](http://joss.theoj.org/), [MEE](https://besjournals.onlinelibrary.wiley.com/journal/2041210x)
+        -   **data**: [Scientific Data](https://www.nature.com/sdata/))
+
+-   **PIs, Supervisors and immediate research group**
+
+-   Your **wider scientific community**
+
+-   The **public**
+
+## **Yourselves!**
+
+**Be your own best friend:**
+
+![](https://media.giphy.com/media/9Q249Qsl5cfLi/giphy.gif)
+
+## **Ultimately it's about getting a handle on our research materials**
+
+> "Agree on a community convention...then follow it""
+
+![](assets/img/beer_messy_tidy.png)
+
+## The concept of a Research Compendium
+
+::: columns
+::: {.column width="50%"}
+> “ ...We introduce the **concept of a compendium** as both a **container** for the different **elements that make up the document and its computations** (i.e. text, code, data, ...), and as a **means for distributing, managing and updating the collection**."
+
+[*Gentleman and Temple Lang, 2004*](https://biostats.bepress.com/bioconductor/paper2/)
+:::
+
+::: {.column width="50%"}
+```{r, echo=FALSE}
+knitr::include_graphics("assets/ResearchCompendium.jpg")
+```
+:::
+:::
+
+## Why Research Compendia?
+
+[![Kartik Ram: rstudio::conf 2019 talk](assets/reproducible-data-analysis-02.png)](https://github.com/karthik/rstudio2019)
+
+## Research Compendium Principles
+
+[![Kartik Ram: rstudio::conf 2019 talk](assets/reproducible-data-analysis-04.png)](https://github.com/karthik/rstudio2019)
+
+## R + Rstudio
+
+### Next generation data science powerhouse
+
+::: fragment
+#### Backed by a diverse and active community of learners, users and developers
+
+![](assets/logo-big.png){width="150"} ![](https://software-carpentry.org/files/2017/12/satrday-logo.png){width="150"} ![](assets/rladies-logo.png){width="150"} ![](https://forwards.github.io/images/forwards.svg){width="150"} ![](assets/ro-logo.png){width="150"}
+:::
+
+## Back to "Why are we here?"
+
+-   To show you howto use R + Rstudio to perform reproducible data analyses.
+
+. . .
+
+-   To help you make the most of the real workhorses of your work, **YOUR CODE & DATA**!
+
+. . .
+
+-   To help you be empowered by modern tools & technologies rather than be overwhelmed by them.
+
+. . .
+
+-   To help you lead the culture change rather than be burdened by increased requirements.
+
+. . .
+
+-   Ultimately, to **change how science works for better for everyone**!
+
+-   We'll do this by introducing you to **useful data and software tools and best practices**.
+
+## Course Outline
+
+::: columns
+::: {.column width="30%"}
+### Day 1
+
+-   
+
+    #### Basics
+
+-   
+
+    #### Project Management
+
+-   
+
+    #### Data Munging
+:::
+
+::: {.column width="30%"}
+### Day 2
+
+-   
+
+    #### Metadata
+
+-   
+
+    #### Analysing & presenting data
+:::
+
+::: {.column width="30%"}
+### Day 3
+
+-   
+
+    #### Version Control
+
+-   
+
+    #### Packaging Code
+
+-   
+
+    #### Research Compendia
+:::
+:::
+
+**We'll take regular breaks and aim to break for lunch between 13:00 - 14:00 for an hour**
+
+# Before we dive in
+
+-   We'll exploring best practice in data and workflow management. I've tried to focus on concepts and tools that I wish I knew when I started.
+
+. . .
+
+-   We'll explore individual tools and concepts and show how they work nicely together.
+
+. . .
+
+-   We'll be coding together and working in Rstudio Cloud.
+
+. . .
+
+-   Feedback: After each day, let me know on the notepad:
+    -   :green_book: : somethind you liked
+    -   :red_circle: : somethind that could be improved
+
+. . .
+
+-   Please feel free to ask questions if I use jargon you don't understand or need some clarification. Questions are helpful for everyone! :sparkles:
+
+## Working on Zoom
+
+-   Have your mic on mute by default.
+
+. . .
+
+-   Please try to have your camera on as much as possible.
+
+. . .
+
+-   You can use the chat for questions but better to interrupt me.
+
+. . .
+
+-   Please try to help each other!
+
+. . .
+
+-   Use status reaction emojis to communicate how it's going.
+
+. . .
+
+# Let's go!
+
+### Get back [{{< fa home >}}](index.qmd)

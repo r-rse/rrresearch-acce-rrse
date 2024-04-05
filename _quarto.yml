@@ -1,0 +1,138 @@
+project:
+  type: website
+  render:
+    - index.qmd
+    - 00_welcome.qmd
+    - 01a_r-rstudio.qmd
+    - 01b_r-basics.qmd
+    - 01c_r-data-structures.qmd
+    - 01d_indexing.qmd
+    - 01g_tidyverse.qmd
+
+website:
+  title: "Reproducible Research Data and Project Management in R"
+  favicon: /assets/favicon/favicon.ico
+  page-footer:
+    background: black
+    center:
+      - text: "Copyright 2024, ACCE DTP | R-RSE S.M.P.C."
+  margin-header: |
+    [![](/assets/logo/acce-dtp.webp)](https://accedtp.ac.uk/)
+  page-navigation: true
+  site-url: https://acce-rrresearch.netlify.app/
+  back-to-top-navigation: true
+  navbar:
+    logo: assets/logo/r-rse-logo2.png
+    logo-href: https://www.r-rse.eu/
+    pinned: true
+    search: true
+    left:
+      - href: index.qmd
+        text: "{{< fa home >}} Home"
+      - text: "{{< fa circle-info >}} About"
+        href:  about.qmd
+      - text: "Setup"
+        href: setup.qmd
+        icon: gear
+      - text: "Credits"
+        icon: megaphone
+        href: credits.qmd
+
+  sidebar:
+    style: "docked"
+    search: true
+    border: true
+    contents:
+      - section: "INTRODUCTION"
+        contents:
+          - file: 00_welcome.qmd
+            text: "Welcome"
+      - section: "BASICS"
+        contents:
+          - 01a_r-rstudio.qmd
+          - 01b_r-basics.qmd
+          - 01c_r-data-structures.qmd
+          - 01d_indexing.qmd
+          - 01g_tidyverse.qmd
+      - section: "PROJECT MANAGEMENT"
+        contents:
+          - 02a_projects.qmd
+          - 02b_paths-proj-structure.qmd
+      - section: "DATA MUNGING"
+        contents:
+          - 03a_read-data.qmd
+          - 03b_functions.qmd
+          - file: 03c_dplyr_basics.qmd
+            text: "Mutating"
+          - file: 03d_dplyr_joins.qmd
+            text: "Pivoting and Joining"
+          - file: 03e_dplyr_groups.qmd
+            text: "Grouping and Summarising"
+      - section: "METADATA"
+        contents:
+          - 03a_read-data.qmd
+      - section: "PLOTTING with ggplot2"
+        contents:
+          - 04a_datavis-intro.qmd
+          - 04b_ggplot2-intro.qmd
+          - 04c_exploratory.qmd
+      - section: "REPORTING with Quarto"
+        contents:
+          - 05a_quarto-intro.qmd
+          - 05b_create-report.qmd
+          - 05c_code-chunks.qmd
+      - section: "VERSION CONTROL"
+        contents:
+          - 05a_quarto-intro.qmd
+      - section: "PACKAGING CODE"
+        contents:
+          - 05a_quarto-intro.qmd
+      - section: "RESEARCH COMPENDIA"
+        contents:
+          - 05a_quarto-intro.qmd
+      - section: "CLOSING"
+        contents:
+          - 06_closing-slides.qmd
+      - section: "APPENDICES"
+        contents:
+          - APPENDIX_clean_raw_data.qmd
+          - APPENDIX_functions.qmd
+          - APPENDIX_analysis.qmd
+          - APPENDIX_create_summary_tbls.qmd
+          - APPENDIX_report.qmd
+      - section: "LICENSE"
+        contents:
+          - text: "CC BY-SA"
+            icon: file-contract
+            href: https://creativecommons.org/licenses/by-sa/4.0/
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - assets/css/styles.scss
+    code-copy: true
+    toc: true
+    code-overflow: wrap
+    code-link: true
+    fig-responsive: true
+    highlight-style: "pygments"
+    linkcolor: "#388274ff"
+    primary: "#388274ff"
+    code-block-border-left: "#5bb3a7ff"
+    mainfont: "'Work Sans', sans-serif"
+    monobackgroundcolor: "#d2eaf0"
+    lightbox: true
+
+editor: visual
+
+execute:
+  freeze: auto
+
+plugins:
+  package: "@quarto/netlify-plugin-quarto"
+
+license: "CC BY-SA"
+
