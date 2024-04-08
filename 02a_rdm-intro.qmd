@@ -33,7 +33,7 @@ execute:
 
 ### **Take initiative & responsibility. Think long term.**
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
+<blockquote data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
 
@@ -45,10 +45,7 @@ Act as though every short term study will become a long term one <a href="https:
 
 </blockquote>
 
-```{=html}
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
+<blockquote data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
 
@@ -60,18 +57,14 @@ Act as though every short term study will become a long term one <a href="https:
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
 # Data management
 
-------------------------------------------------------------------------
 
 ## Spreadsheets
 
 ### extreme but in many ways defendable
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
+<blockquote data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
 
@@ -83,9 +76,6 @@ Act as though every short term study will become a long term one <a href="https:
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
 ## **excel: `read/entry only`**
 
 <blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" data-lang="en">
@@ -100,9 +90,7 @@ Act as though every short term study will become a long term one <a href="https:
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
+
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
@@ -115,14 +103,12 @@ Act as though every short term study will become a long term one <a href="https:
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
+
 ## **Databases: more robust**
 
 Stronger quality control features. Advisable for multiple contributors
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
+<blockquote data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
 
@@ -134,9 +120,6 @@ Stronger quality control features. Advisable for multiple contributors
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
@@ -149,31 +132,29 @@ Stronger quality control features. Advisable for multiple contributors
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
+
 ## **Databases: benefits**
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
+:::: {.columns}
+::: {.column width="50%"}
+
+<blockquote data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
 
-<a href="https://twitter.com/tomjwebb">@tomjwebb</a> Entering via a database management system (e.g., Access, Filemaker) can make entry easier & help prevent data entry errors <a href="https://twitter.com/tpoi">@tpoi</a>
+<a href="https://twitter.com/tomjwebb">\@tomjwebb</a> Entering via a database management system (e.g., Access, Filemaker) can make entry easier & help prevent data entry errors <a href="https://twitter.com/tpoi">\@tpoi</a>
 
 </p>
 
-— Ethan White (@ethanwhite) <a href="https://twitter.com/ethanwhite/status/556119480493813760">January 16, 2015</a>
+— Ethan White (\@ethanwhite) <a href="https://twitter.com/ethanwhite/status/556119480493813760">January 16, 2015</a>
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
 
-<a href="https://twitter.com/ethanwhite">@ethanwhite</a> +1 Enforcing data types, options from selection etc, just some useful things a DB gives you, if you turn them on <a href="https://twitter.com/tomjwebb">@tomjwebb</a> <a href="https://twitter.com/tpoi">@tpoi</a>
+<a href="https://twitter.com/ethanwhite">\@ethanwhite</a> +1 Enforcing data types, options from selection etc, just some useful things a DB gives you, if you turn them on <a href="https://twitter.com/tomjwebb">\@tomjwebb</a> <a href="https://twitter.com/tpoi">\@tpoi</a>
 
 </p>
 
@@ -181,10 +162,11 @@ Stronger quality control features. Advisable for multiple contributors
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
+
+:::
+::: {.column width="50%"}
+
+<blockquote data-conversation="none" data-lang="en">
 
 <p lang="en" dir="ltr">
 
@@ -196,14 +178,14 @@ Stronger quality control features. Advisable for multiple contributors
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
 Have a look at the Data Carpentry [**SQL for Ecology** lesson](http://www.datacarpentry.org/sql-ecology-lesson/)
+
+:::
+::::
 
 # Data formats
 
-------------------------------------------------------------------------
+
 
 ## **Data formats**
 
@@ -223,50 +205,41 @@ Have a look at the Data Carpentry [**SQL for Ecology** lesson](http://www.dataca
 
 </blockquote>
 
-```{=html}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-```
 #### **more unusual formats will need instructions on use.**
 
-------------------------------------------------------------------------
+
 
 ## **Ensure data is machine readable**
 
 ### bad
 
-![](assets/img/bad_xl1.png){width="600"}
+![](assets/img/bad_xl1.png){width="800"}
 
 ------------------------------------------------------------------------
 
 ### bad
 
-![](assets/img/bad_xl2.png){width="600"}
+![](assets/img/bad_xl2.png){width="800"}
 
 ------------------------------------------------------------------------
 
 ### good
 
-![](assets/img/good_xl.png){width="600"}
-
+![](assets/img/good_xl.png){width="800"}
 
 ------------------------------------------------------------------------
 
 ### ok
 
-![](assets/img/ok_xl.png){width="600"}
+![](assets/img/ok_xl.png){width="800"}
 
 -   could help data entry
 -   `.csv` or `.tsv` copy would need to be saved.
-
-------------------------------------------------------------------------
 
 
 
 # Basic quality control
 
-***
-
-------------------------------------------------------------------------
 
 ## **Use good null values**
 
@@ -317,23 +290,18 @@ read_csv(file, col_names = TRUE, col_types = NULL, locale = default_locale(),
 View(mtcars)
 ```
 
-![](assets/view_mtcars.png)
-
-
-- Check **empty cells**
-
+![](assets/view_mtcars.png){width="800"}
 
 ## Print
 
-Check your **software interprets your data correctly** 
-    - eg see top few rows with `head(df)` 
+Check your **software interprets your data correctly** - eg see top few rows with `head(df)`
 
 ```{r}
 head(mtcars)
 ```
 
-
 ## Structure
+
 see structure of any object with `str()`.
 
 ```{r}
@@ -342,13 +310,12 @@ str(mtcars)
 
 ## Summarise
 
-- Check the **range of values** (and value types) in each column matches expectation. 
-- Check **units of measurement are what you expect**
+-   Check the **range of values** (and value types) in each column matches expectation.
+-   Check **units of measurement are what you expect**
 
 ```{r}
 summary(mtcars)
 ```
-
 
 ## pkg [`skimr`](https://github.com/ropenscilabs/skimr)
 
@@ -359,7 +326,7 @@ summary(mtcars)
 install.packages("skimr")
 ```
 
-***
+------------------------------------------------------------------------
 
 ```{r}
 #| eval: true
@@ -368,16 +335,18 @@ install.packages("skimr")
 skimr::skim(trees)
 ```
 
-```{r, echo=FALSE}
+```{r}
 #| echo: false
+#| eval: false
 knitr::include_graphics("assets/skimr_output.png")
 ```
 
-
 ## Validate
 
-### pkg [`assertr`](https://github.com/ropensci/assertr)
+:::: {.columns}
+::: {.column width="50%"}
 
+### pkg [`assertr`](https://github.com/ropensci/assertr)
 
 The `assertr` package supplies a suite of functions designed to verify assumptions about data and can be used so detect data errors during analysis.
 
@@ -385,12 +354,22 @@ The `assertr` package supplies a suite of functions designed to verify assumptio
 install.packages("assertr")
 ```
 
-e.g confirm that `mtcars`
+e.g **confirm that `mtcars:`**
 
-- has the columns "mpg", "vs", and "am"
-- contains more than 10 observations
-- column for 'miles per gallon' (mpg) is a positive number
-before further analysis:
+-   has the columns "mpg", "vs", and "am"
+
+-   contains more than 10 observations
+
+-   column for 'miles per gallon' (mpg) is a positive number before further analysis
+
+:::
+::: {.column width="50%"}
+
+```{r}
+#| echo: false
+mtcars <- tibble::as_tibble(mtcars)
+```
+
 
 ```{r}
 library(assertr)
@@ -401,43 +380,65 @@ mtcars |>
     verify(mpg > 0)
 ```
 
-
+:::
+::::
 
 # Data security
 
-
-
 ## **Raw data are sacrosanct**
 
-:::: {.columns}
+::: columns
 ::: {.column width="50%"}
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/tomjwebb">@tomjwebb</a> don&#39;t, not even with a barge pole, not for one second, touch or otherwise edit the raw data files. Do any manipulations in script</p>&mdash; Gavin Simpson (@ucfagls) <a href="https://twitter.com/ucfagls/status/556107371634634755">January 16, 2015</a></blockquote>
+<p lang="en" dir="ltr">
+
+<a href="https://twitter.com/tomjwebb">@tomjwebb</a> don't, not even with a barge pole, not for one second, touch or otherwise edit the raw data files. Do any manipulations in script
+
+</p>
+
+— Gavin Simpson (@ucfagls) <a href="https://twitter.com/ucfagls/status/556107371634634755">January 16, 2015</a>
+
+</blockquote>
+
+```{=html}
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+```
 :::
-::: {.column width="50%"}
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/tomjwebb">@tomjwebb</a> <a href="https://twitter.com/srsupp">@srsupp</a> Keep one or a few good master data files (per data collection of interest), and code your formatting with good annotation.</p>&mdash; Desiree Narango (@DLNarango) <a href="https://twitter.com/DLNarango/status/556128407445323778">January 16, 2015</a></blockquote>
+::: {.column width="50%"}
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
+
+<p lang="en" dir="ltr">
+
+<a href="https://twitter.com/tomjwebb">@tomjwebb</a> <a href="https://twitter.com/srsupp">@srsupp</a> Keep one or a few good master data files (per data collection of interest), and code your formatting with good annotation.
+
+</p>
+
+— Desiree Narango (@DLNarango) <a href="https://twitter.com/DLNarango/status/556128407445323778">January 16, 2015</a>
+
+</blockquote>
+
+```{=html}
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+```
 :::
-::::
-
-## **Give yourself less rope** 
-
-:::: {.columns}
-::: {.column width="50%"}
-
-- It's a good idea to **[revoke your own write permission](https://kb.iu.edu/d/abdb) to the raw data file**.
-
-- Then you **can't accidentally edit it**.
-
-- It also makes it **harder to do manual edits** in a moment of weakness, when you know you should **just add a line to your data cleaning script**.
-
 :::
-::: {.column width="50%"}
 
+#### Aim for a clean, reproducible pipeline processing pipeline from raw to analytical data.
+
+## **Give yourself less rope**
+
+::: columns
+::: {.column width="50%"}
+-   It's a good idea to [**revoke your own write permission**](https://kb.iu.edu/d/abdb) **to the raw data file**.
+
+-   Then you **can't accidentally edit it**.
+
+-   It also makes it **harder to do manual edits** in a moment of weakness, when you know you should **just add a line to your data cleaning script**.
+:::
+
+::: {.column width="50%"}
 ![](assets/jon-moore-399469-unsplash.jpg)
 :::
-::::
+:::
