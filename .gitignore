@@ -6,3 +6,4 @@ comms/*
 
 /.quarto/
 *.html
+.DS_Store
