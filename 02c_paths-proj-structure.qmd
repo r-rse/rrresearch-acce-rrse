@@ -1,0 +1,349 @@
+---
+title: "Project Data, Structure & Paths"
+subtitle: "Project Management"
+---
+
+## Project Aims & Objectives
+
+::: {.callout-tip icon="false"}
+Before we begin, let's clarify the aims of the project and learning objectives rest of the workshop.
+
+### Project Aim
+
+We'll be working with a **subset of data from the NEON Woody plant vegetation survey**. The aim of the project is to **combine multiple files into a single analytical dataset** and **explore the data through visualisation and basic analysis**.
+
+### Project Objectives
+
+1.  The **nature of the data**, which is spread across multiple files and tables with a lot of extraneous information, provides us a **more realistic opportunity to practice what 50-80% of data analysis and modeling work actually is: data cleaning, combining and munging!** From our raw data, the aim is to **produce a clean analytical dataset** using a reproducible R script.
+
+2.  Once we've produced our analytical data, we'll move on to **explore our data through visualisation using `ggplot2`** and perform some very basic analysis.
+
+3.  We'll finally bring it all together, code, narrative, data and plots in **scientific report generation with Quarto**.
+:::
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(magrittr)
+```
+
+## Project Data
+
+We're in our new project so the first thing we need to do is **get the data we'll be working with**. This is a common start to any project where you start with a few data files. These might be generated through your own data collection, given to you by others or published data products and you **might need to clean, wrangle and combine them together to perform your analysis**.
+
+> Q: Where should I save my raw data files?
+
+### conventions: Data management
+
+1.  **Store raw data in `data-raw/`**: raw inputs to any pre-processing, read only.
+
+  -   Keep any processing scripts in the same folder
+  -   Whether and where you publish data depends on size and copyright considerations.
+
+2.  **Store analytical data in `data/`**: any clean, processed data that is used as the input to the analysis.
+
+  -   Should be published along side analysis.
+
+## Setting up a `data-raw/` directory
+
+We **start by creating a `data-raw` directory** in the root of our project. We can **use `usethis` function `usethis::use_data_raw()`**. This creates the `data-raw` directory and an `.R` script within where we can save code that turns raw data into analytical data in the `data/` folder.
+
+We can **supply a name for the analytical dataset** we'll be creating in our script which **automatically names the `.R` script for easy provenance tracking**. In this case, we'll be calling it `individual.csv` so let's use `"individual"` for our name.
+
+```{r, eval=FALSE}
+usethis::use_data_raw(name = "individual")
+```
+
+``` r
+✔ Setting active project to '/cloud/project'
+✔ Creating 'data-raw/'
+✔ Adding '^data-raw$' to '.Rbuildignore'
+✔ Writing 'data-raw/individual.R'
+• Modify 'data-raw/individual.R'
+• Finish the data preparation script in 'data-raw/individual.R'
+• Use `usethis::use_data()` to add prepared data to package
+```
+
+The **`data-raw/individual.R`** script created contains:
+
+``` r
+## code to prepare `individual` dataset goes here
+
+usethis::use_data(individual, overwrite = TRUE)
+```
+
+We will use this file to perform the necessary preprocessing on our raw data.
+
+```{r}
+#| echo: false
+#| eval: false
+fs::dir_delete(here::here("data-raw", "wood-survey-data-master")) 
+```
+
+However, in the mean time **we will also be experimenting with code and copying code over to our `individual.R` script when we are happy with it**. so let's create a new R script to work in.
+
+**File \> New File \> R script**
+
+Let's save this file in a **new folder called `attic/`** and save it as file **`development.R`**.
+
+![](assets/new-dir-attic.png)
+
+Let's work in `development.R` for now.
+
+
+### Download data
+
+Now that we've got our `data-raw` folder, let's **download our data into it using function `usethis::use_course()`** and supplying it with the url to the materials repository (**`bit.ly/wood-survey-data`**) and the **path to the directory we want the materials saved into** (`"data-raw"`).
+
+```{r, eval=FALSE}
+usethis::use_course("bit.ly/wood-survey-data",
+           destdir = "data-raw")
+```
+
+``` bash
+✔ Downloading from 'https://bit.ly/wood-survey-data'
+Downloaded: 7.61 MB  
+✔ Download stored in 'data-raw/wood-survey-data-master.zip'
+✔ Unpacking ZIP file into 'wood-survey-data-master/' (77 files extracted)
+Shall we delete the ZIP file ('wood-survey-data-master.zip')?
+
+1: Nope
+2: No way
+3: I agree
+
+Selection: 3
+✔ Deleting 'wood-survey-data-master.zip'
+```
+
+## NEON Data
+
+The downloaded folder contains a **subset of data from the NEON Woody plant vegetation survey**.
+
+**Citation:** *National Ecological Observatory Network. 2020. Data Products: DP1.10098.001. Provisional data downloaded from http://data.neonscience.org on 2020-01-15. Battelle, Boulder, CO, USA*
+
+This data product was downloaded from the [NEON data portal](http://data.neonscience.org/browse-data) and contains **quality-controlled data from in-situ measurements of live and standing dead woody individuals and shrub groups**, from all terrestrial NEON sites with qualifying woody vegetation.
+
+**Surveys of each site are completed once every 3 years.**
+
+Let's have a look at what we've downloaded:
+
+```         
+.
+├── R
+├── data-raw
+│   ├── individual.R
+│   └── wood-survey-data-master
+│       ├── NEON_vst_variables.csv
+│       ├── README.md
+│       ├── individual [67 entries exceeds filelimit, not opening dir]
+│       ├── methods
+│       │   ├── NEON.DOC.000914vB.pdf
+│       │   ├── NEON.DOC.000987vH.pdf
+│       │   └── NEON_vegStructure_userGuide_vA.pdf
+│       ├── vst_mappingandtagging.csv
+│       └── vst_perplotperyear.csv
+└── wood-survey.Rproj
+```
+
+The important files for the analysis we want to perform are
+
+```         
+├── individual [67 entries exceeds filelimit, not opening dir]
+├── vst_mappingandtagging.csv
+└── vst_perplotperyear.csv
+```
+
+::: panel-tabset
+## **`vst_perplotperyear`**
+
+#### **`vst_perplotperyear`**: Plot level metadata, including plot geolocation.
+
+-   one record per `plotID` per `eventID`, 
+-   describe the presence/absence of woody growth forms 
+-   sampling area utilized for each growth form. 
+
+```{r}
+#| echo: false
+raw_data_path <- here::here("data-raw", "wood-survey-data-master")
+readr::read_csv(here::here(raw_data_path, "vst_perplotperyear.csv"),
+                show_col_types = FALSE) |>
+  head() |> knitr::kable()
+```
+
+
+## **`vst_mappingandtagging`**
+
+#### **`vst_mappingandtagging`**: Mapping, identifying and tagging of individual stems for re-measurement.
+
+-   one record per `individualID`. 
+-   data invariant through time, including `tagID`, `taxonID` and mapped location. 
+-   Records can be linked to `vst_perplotperyear` via the `plotID` and `eventID` fields. 
+
+```{r}
+#| echo: false
+readr::read_csv(here::here(raw_data_path, "vst_mappingandtagging.csv"),
+                show_col_types = FALSE) |>
+  head() |> knitr::kable()
+```
+
+
+
+## **`vst_apparentindividual`**
+
+
+#### **`vst_apparentindividual`**: Biomass and productivity measurements of apparent individuals.
+
+
+-   includes biomass, productivity and other measurements. 
+-   may contain multiple records per individuals but only one record per `individualID` per `eventID`.
+-   includes growth form, structure
+-   currently in separate files contained in `individual/`
+-   may be linked to: 
+    -   `vst_mappingandtagging` records via `individualID`
+    -   `vst_perplotperyear` via the `plotID` and `eventID` fields.
+  
+  
+```{r}
+#| echo: false
+readr::read_csv(fs::dir_ls(fs::path(raw_data_path, "individual"))[1],
+                show_col_types = FALSE) |>
+  head() |> knitr::kable()
+```
+
+:::
+
+
+
+::: {.alert .alert-secondary}
+{{< fa tasks >}} As our first challenge, we are going to combined all the files in `individual/` into a single analytical data file!
+:::
+
+## Paths
+
+First let's investigate our data. We want to access the files so we need to give R paths in order to load the data. We can work with the file system programmatically through R.
+
+### Creating portable paths with `here`
+
+We'll use the `here` package and function `here()` to **create paths relative to the project root directory**.
+
+This is a good practice as it **makes our code portable and independent of the where code is evaluated** or saved.
+
+::: callout-warning
+What you **never want to do is hard code paths in your code**. This makes your code non-portable and can lead to errors when sharing code or moving code to a different machine or to a different location within a project.
+:::
+
+Let's start by **creating a path to the downloaded data directory using `here`**.
+
+To create relative paths to files or directories with `here()` we provide **character strings separated by commas that represent the path to the file or directory**.
+
+```{r}
+raw_data_path <- here::here("data-raw", "wood-survey-data-master")
+
+```
+
+```{r, eval=FALSE}
+raw_data_path
+```
+
+``` r
+[1] "/cloud/project/data-raw/wood-survey-data-master"
+```
+
+We can **use `raw_data_path` as our basis for specifying paths to files within it**. There's a number of ways we can do this in R but I wanted to introduce you to package `fs`. It has a nice interface and extensive functionality for working with your file system programmatically.
+
+```{r, eval=FALSE}
+fs::path(raw_data_path, "individual")
+```
+
+``` r
+/cloud/project/data-raw/wood-survey-data-master/individual
+```
+
+Let's now **use function `dir_ls` to get a character vector of paths to all the individual files in directory `individual`**.
+
+```{r}
+#| eval: false
+individual_paths <- fs::dir_ls(fs::path(raw_data_path, "individual"))
+head(individual_paths)
+```
+
+```{r}
+#| echo: false
+individual_paths <- fs::dir_ls(fs::path(raw_data_path, "individual"))
+load("data-raw/desktop_indiv_paths.RData")
+head(desktop_indiv_paths)
+```
+
+We can check how many files we've got:
+
+```{r}
+length(individual_paths)
+```
+
+We can now** use this vector of paths to read in files. Let's read the first file in and check it out.** We use **function `read_csv()` from `readr` package** which reads comma delimited files into tibbles.
+
+```{r}
+indiv_df <- readr::read_csv(individual_paths[1])
+indiv_df
+```
+
+Run `?read_delim` for more details on reading in tabular data.
+
+```{r}
+#| echo: false
+knitr::include_url("https://readr.tidyverse.org/reference/read_delim.html")
+```
+
+
+
+
+## Basic checks
+
+Let's **perform some of the basic checks** we learnt before we proceed.
+
+```{r}
+#| eval: false
+View(indiv_df)
+```
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/indiv_df.png", error = FALSE)
+```
+
+```{r}
+names(indiv_df)
+```
+
+```{r}
+str(indiv_df)
+```
+
+```{r}
+summary(indiv_df)
+```
+
+```{r}
+skimr::skim(indiv_df)
+```
+
+
+## Update `individual.R`
+
+Everything looks good. Before moving on, let's **update our `individual.R` script with the code we've just written and want to formally keep as part of out processing pipeline.**
+
+Add the following code and comments to the bottom of `individual.R`:
+
+```{r}
+#| eval: false
+## code to prepare `individual` dataset goes here
+## Setup ----
+library(dplyr)
+
+## Combine individual tables ----
+# Create paths to inputs
+raw_data_path <- here::here("data-raw", "wood-survey-data-master")
+individual_paths <- fs::dir_ls(fs::path(raw_data_path, "individual"))
+```
+
+
+So **let's now move onto the next step of reading in all the files and combining them together**. To do this, we'll examine the principles of **Iteration**.
