@@ -423,3 +423,5 @@ mtcars |>
 ![](assets/jon-moore-399469-unsplash.jpg)
 :::
 :::
+
+# Get back [{{< fa home >}}](index.qmd)
