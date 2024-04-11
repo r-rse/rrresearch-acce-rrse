@@ -253,4 +253,3 @@ This time, because we are using the `|` operator, the condition is met if either
 ```{r, echo=FALSE}
 knitr::include_url("assets/cheatsheets/r-cheat-sheet-3.pdf")
 ```
-
