@@ -1,0 +1,313 @@
+---
+title: "Introduction to Quarto"
+subtitle: "Next generation scientific publishing in R"
+---
+
+Quarto is a **modern, open-source, and flexible platform for creating documents, reports, presentations, and more, primarily focused on data science and technical writing**. 
+
+Quarto is built on top of R Markdown and Pandoc, and is designed to be easy to use, highly customizable, and to produce high-quality output.
+
+::: callout-important
+*Quarto is a standalone tool but does ship with later versions of Rstudio. Upgrades do need to be downloaded and installed manually however. See Quarto [Download](https://quarto.org/docs/download/) page for latest release.*
+:::
+
+Quarto has an **active community of users and contributors who provide support, share tips and tricks, and contribute to the development of the platform**. This community aspect fosters learning and collaboration among users.
+
+Quarto is **closely related to literate programming in its philosophy and functionality. **
+
+## Literate programming
+
+Literate programming is a programming paradigm first introduced by **Donald E. Knuth**.
+
+> **Treat program as literature meant to be understandable to human beings**
+>
+> -   move away from writing programs in the manner and order imposed by the computer
+> -   **focus instead on the logic and flow of human thought and understanding**
+> -   single document to integrate data analysis (executable code) with textual documentation, **linking data, code, and text**
+
+### Why is this important in science:
+
+#### **Enables reproducibility**
+
+Enables reproducibility through packaging code, text and output into a single executable document.
+
+#### **Enables open science**
+
+Literate programming allows us to record and publish information and discussions about code and analyses in more readable formats.
+
+## **Literate programming in R**
+
+### Quarto (`qmd`) Overview
+
+**Quarto integrates:**
+
+– a **documentation** language (`.md`)
+
+– a number of **programming** languages (including `R`)
+
+Allows us to combine **tools, processes** and **outputs** into interactive, reproducible **evidence streams** that are easily shareable, particularly through the web.
+
+#### A researchers perspective on Quarto
+
+A reproducible workflow in action:
+
+```{r}
+#| echo: false
+knitr::include_app("https://www.youtube.com/embed/s3JldKoA0zw")
+```
+
+## Elements of Quarto
+
+### **markdown {`.md`}**
+
+Simplified version of the **`html`** markup language. User can focus on communicating & disseminating
+
+-   intended to be as **easy-to-read** and **easy-to-write** as possible.
+
+-   most powerful as a **format for writing to the web.**
+
+-   **syntax is very small**, corresponding only to a very small subset of HTML tags.
+
+-   clean and legible **across platforms (even mobile) and outputs.**
+
+-   **formatting handled automatically**
+
+-   html **markup language also handled**.
+
+### **code {r,** python, SQL, ... **}**
+
+-   **Code chunks defined through special notation. Executed in sequence**. Exceution of individual chunks controllable
+
+-   **Analysis self-contained and reproducible**
+
+    -   Run in a fresh R session every time document is knit.
+
+-   A number of [Language Engines](https://rmarkdown.rstudio.com/authoring_knitr_engines.html) are supported by `knitr`
+
+    -   **R** (default)
+    -   Python
+    -   SQL
+    -   Bash
+    -   Julia
+    -   Observable
+
+## Quarto **Outputs**
+
+Quarto can output to a variety of formats, including:
+
+-   HTML
+-   PDF
+-   Word
+
+Which can be combined into a variety of more complex formats, including:
+
+-   Slides
+-   Books
+-   Dashboards
+-   Websites
+-   Manuscripts
+
+```{r, out.width="60%", echo=FALSE}
+knitr::include_graphics("assets/RMarkdownOutputFormats.png")
+```
+
+**Superpower: Simple interface to powerful modern web technologies and libraries**
+
+## Quarto extensions
+
+Quarto has a [number of extensions](https://quarto.org/docs/extensions/), many community contributed, that make it even more powerful:
+
+Examples of Quarto extensions include:
+
+\- **fontawesome**: Use Font Awesome icons in HTML and PDF documents.
+
+\- **academicons**: Use Academicons in HTML documents.
+
+\- **line-highlight**: Filter to enable source code and output line highlighting for HTML documents.
+
+And much more!
+
+All this makes it incredibly versatile.
+
+## Publish to the web for free!
+
+### **Quarto Pub**:
+
+[Quarto Pub](https://quartopub.com/) is a free publishing service for content created with Quarto. Quarto Pub is ideal for blogs, course or project websites, books, presentations, and personal hobby sites.
+
+[![](assets/quarto_pub.png)](https://quartopub.com/)
+
+Quarto Pub allows you to publish rendered quarto documents and websites to the web for free with a simple command.
+
+```{bash}
+#| eval: false
+#| filename: "Terminal"
+quarto publish quarto-pub
+```
+
+Learn more: <https://quarto.org/docs/publishing/quarto-pub.html>
+
+## Applications of Quarto in research
+
+`qmd` documents can be useful for a number of research related materials
+
+-   [**Vignettes**](http://r-pkgs.had.co.nz/vignettes.html): long form documentation.
+    -   Analyses
+    -   Documentation (code & data)
+    -   Supplementary materials
+-   Reports
+-   Papers
+-   Personal research websites and blogs
+-   Theses!
+
+## Quarto Features for Scientific Publishing
+
+::: panel-tabset
+### Citations & Footnotes
+
+![](assets/citations-quarto.png)
+
+[See more](https://quarto.org/docs/authoring/footnotes-and-citations.html)
+
+Quarto can generate citations and a bibliography in a number of styles. You will need:
+
+-   A bibliographic data source, (.bib) or (.bibtex) file.
+
+-   Optionally, a CSL file which specifies the formatting to use when generating the citations and bibliography.
+
+### Front matter
+
+::: grid
+::: g-col-8
+``` yaml
+---
+title: "Toward a Unified Theory of High-Energy Metaphysics: Silly String Theory"
+date: 2008-02-29
+author:
+  - name: Josiah Carberry
+    id: jc
+    orcid: 0000-0002-1825-0097
+    email: josiah@psychoceramics.org
+    affiliation: 
+      - name: Brown University
+        city: Providence
+        state: RI
+        url: www.brown.edu
+abstract: > 
+  The characteristic theme of the works of Stone is 
+  the bridge between culture and society. ...
+keywords:
+  - Metaphysics
+  - String Theory
+license: "CC BY"
+copyright: 
+  holder: Josiah Carberry
+  year: 2008
+citation: 
+  container-title: Journal of Psychoceramics
+  volume: 1
+  issue: 1
+  doi: 10.5555/12345678
+funding: "The author received no specific funding for this work."
+---
+```
+
+[See more](https://quarto.org/docs/authoring/front-matter.html)
+:::
+
+::: g-col-4
+![](assets/frontmatter-quarto.png)
+:::
+:::
+
+Scholarly articles require much more detail in their front matter & Quarto provides a rich set of YAML metadata keys to describe these details:
+
+-   authors and their affiliations,
+-   abstracts and keywords.
+-   information on copyright, licensing and funding.
+
+### Cross-references
+
+::: grid
+::: g-col-6
+Adding a reference to an image:
+
+``` md
+![Elephant](elephant.png){#fig-elephant}
+```
+
+Referencing the image:
+
+``` md
+See @fig-elephant for an illustration.
+```
+
+[See more](https://quarto.org/docs/authoring/cross-references.html)
+:::
+
+::: g-col-6
+![](assets/crossref-quarto.png)
+:::
+:::
+
+Cross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to various entities like figures and tables
+
+### more...
+
+-   [Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations)
+-   [Diagrams](https://quarto.org/docs/authoring/markdown-basics.html#diagrams)
+-   [Tables](https://quarto.org/docs/authoring/tables.html)
+-   [Figures](https://quarto.org/docs/authoring/figures.html)
+:::
+
+## Resources
+
+### Quarto cheatsheet
+
+```{r}
+#| echo: false
+knitr::include_url("assets/cheatsheets/quarto.pdf")
+```
+
+### Quarto Guide
+
+Comprehensive guide to using Quarto.
+
+```{r}
+#| echo: false
+knitr::include_url("https://quarto.org/docs/guide/")
+```
+
+### Quarto Reference
+
+Options reference for formats, code cells, and projects.
+
+```{r}
+#| echo: false
+knitr::include_url("https://quarto.org/docs/reference/")
+```
+
+### Quarto Tutorials
+
+Tutorial to get started with Quarto.
+
+```{r}
+#| echo: false
+knitr::include_url("https://quarto.org/docs/get-started/")
+```
+
+### Quarto Gallery
+
+Check out the [Quarto gallery](https://rmarkdown.rstudio.com/gallery.html) for ideas.
+
+```{r}
+#| echo: false
+knitr::include_url("https://quarto.org/docs/gallery/")
+```
+
+### Quarto Extensions
+
+```{r}
+#| echo: false
+knitr::include_url("https://quarto.org/docs/extensions/")
+```
