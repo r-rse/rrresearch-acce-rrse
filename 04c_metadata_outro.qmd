@@ -1,0 +1,89 @@
+---
+title: "Metadata Outro" 
+author: "Dr Anna Krystallli" 
+subtitle: "Reproducible Research Data and Project Management in R" 
+institute: R-RSE 
+materials_url: https://acce-rrresearch.netlify.app/ 
+format:
+  revealjs: 
+    logo: assets/logo/r-rse-logo2.png
+    theme: [default, assets/css/styles.scss, assets/css/reveal.scss]
+    footer: "[{{< fa home >}}](index.qmd)"
+    from: markdown+emoji
+    template-partials:
+      - assets/layouts/title-slide.html
+editor: visual 
+preload-iframes: true
+lightbox: true
+execute:
+  echo: true
+  message: false
+---
+
+
+
+## Additional metadata tips
+
+- ### The approach we went for is very general / minimal
+
+. . . 
+
+- #### You can **make your datasets more discoverable** by developing **richer/more domain specific metadata** files. 
+
+. . . 
+
+- eg. create [Ecological Metadata Language (EML)](https://knb.ecoinformatics.org/#external//emlparser/docs/index.html) metadata using r pkg [`EML`](https://github.com/ropensci/EML). 
+
+. . . 
+
+- reposit your data at [KNB](https://knb.ecoinformatics.org/#data)
+
+. . . 
+
+- allows richer [search and presentation of metadata](https://knb.ecoinformatics.org/#view/IC.13.1)
+    
+
+## Example portal: KNB data portal
+
+### Powerful search
+
+
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics("assets/knb.png")
+```
+
+
+## KNB data portal
+
+### Rich interactive metadata
+
+
+
+```{r, echo=FALSE, out.width="60%"}
+knitr::include_graphics("assets/knb_attributes.png")
+```
+
+
+## Parting words
+
+. . . 
+
+- #### Any metadata documentation is better than none :+1:
+
+. . . 
+
+- #### Start small and build up to more complex standards :100:
+
+. . . 
+
+- #### But make sure to cover bare minimum :warning:
+
+. . . 
+
+- #### Reach out for help from your local librarians or try the [rOpenSci discussion board](https://discuss.ropensci.org/) :raising_hand_woman:
+
+
+
+
+# Get back [{{< fa home >}}](index.qmd)
