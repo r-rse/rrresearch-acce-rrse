@@ -1,0 +1,150 @@
+---
+title: "Data visualisation basics"
+---
+
+## Statistical Analyses and data
+
+> **Statistical analysis** is the science of **collecting, exploring and presenting** large amounts of data to discover underlying patterns and trends
+
+::: callout-warning
+**The theory of Statistical Analysis is NOT part of this course**
+
+Rather, it is to introduce you with the computational building blocks and example workflows you can build on to develop your own analysis.
+
+The actual plots you create and statistical analyses you use will **depend on the properties of the data and the questions you are trying to answer**. For this, I recommend referring to [many great books available on Statistics in R](https://community.rstudio.com/t/book-recommendations-statistics-in-r/10859).
+
+A great place to start is [***The Elements of Statistical Learning: Data Mining, Inference, and Prediction.*** **by Hastie, Tibshirani & Friedman**](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
+
+while there are also many more on specialist topics like:
+
+-   [Generalized Additive Models](https://books.google.co.uk/books?id=hr17lZC-3jQC&hl=en)
+-   [Mixed Effects Models and Extensions in Ecology with R](https://www.springer.com/gp/book/9780387874579)
+-   [Statistical Rethinking: A Bayesian Course with Examples in R and Stan](https://xcelab.net/rm/statistical-rethinking/)
+
+For a more practical introduction to statistical analysis in R, I recommend the [Tidyverse for Beginners](https://www.tidyverse.org/learn/) and [Tidy Modeling with R](https://www.tidymodels.org/)
+
+```{r}
+knitr::include_url("https://www.tidymodels.org/")
+```
+:::
+
+The foundation of any statistical analysis is **DATA**, most commonly, tabular data.
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/img/data.png")
+```
+
+::: {.callout-note appearance="minimal" icon="false"}
+We cannot easily establish comparative size and relationships between multiple data points from tabular data.
+
+We need a better representation to visually extract meaning.
+:::
+
+### Data Visualisation: the visual encoding of data
+
+> Data Visualisation is the *visual encoding* and *presentation* of *data* to *facilitate understanding*.
+
+#### Data properties guide visual encoding
+
+> The visual encoding we use is determined by the data and the relationships and statistical properties we want to convey.
+
+You'll find a handy guide at [datavizcatalogue.com](https://datavizcatalogue.com/)
+
+```{r, echo=FALSE}
+knitr::include_url("https://datavizcatalogue.com/")
+```
+
+Once we've chosen the appropriate plots, we need tools to construct them.
+
+## The grammar of graphics
+
+> An abstraction which makes **thinking, reasoning and communicating graphics easier**.
+
+Developed by Leland Wilkinson, particularly in [“The Grammar of Graphics” 1999/2005](https://onlinelibrary.wiley.com/doi/abs/10.1002/wics.118),
+
+Describes a consistent syntax for the construction of a wide range of complex graphics by a concise description of their components.
+
+![Image created by [Thomas de Beus](https://medium.com/tdebeus/think-about-the-grammar-of-graphics-when-improving-your-graphs-18e3744d8d18)](https://cdn-images-1.medium.com/max/800/1*MMZuYgeC_YjXNC1r4D4sog.png)
+
+## Building a plot from its components
+
+::: {.content-visible unless-format="pdf"}
+![Image created by [Thomas de Beus](https://medium.com/tdebeus/think-about-the-grammar-of-graphics-when-improving-your-graphs-18e3744d8d18)](https://cdn-images-1.medium.com/max/800/1*w1RnmuE7VRK9aCAbtW9KAQ.gif)
+:::
+
+### Start with some tabular data: `mtcars`
+
+```{r}
+#| echo: false
+mtcars
+```
+
+### Encoding variables on axes
+
+The first way we can visualise a single variable is to plot it on a single axis.
+
+For example, here's variable `mpg` (miles per gallon) plotted along a single axis:
+
+```{r, fig.height=1, echo=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+mtcars_fct <- mtcars |>
+    mutate(cyl = factor(cyl))
+
+mtcars_fct |>
+ggplot(aes(x = mpg, y = 0)) +
+    geom_point(shape = 21) +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(),
+          axis.text.y.left = element_blank())
+```
+
+We could use the same way to visualise a second variable, `hp` (horsepower)
+
+```{r, fig.height=1, echo=FALSE, message=FALSE}
+mtcars_fct |>
+ggplot(aes(x = hp, y = 0)) +
+    geom_point(shape = 21) +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(),
+          axis.text.y.left = element_blank())
+```
+
+We can combine these two axes to visualise both the values of the data on each axis as well as the relationship of the two variables:
+
+```{r, fig.height=7, echo=FALSE, message=FALSE}
+mtcars_fct |>
+ggplot(aes(x = mpg, y = hp)) +
+    geom_point(shape = 21) +
+    theme_minimal() 
+```
+
+### Encoding a third variable using colour
+
+Now that we've used our two axes, we might want to consider another attribute to encode a third variable with.
+
+We can use colour to encode `cyl` (number of cylinders).
+
+```{r, fig.height=7, echo=FALSE, message=FALSE}
+mtcars_fct |>
+ggplot(aes(x = mpg, y = hp, fill = cyl)) +
+    geom_point(shape = 21) +
+    theme_minimal() 
+```
+
+## Principles of good data encoding
+
+> Good visualization can bring out important aspects of data, but visualization can also be used to conceal or mislead.
+
+-   **Consistency:** The properties of the image (visual variables) should match the properties of the data.
+-   **Importance Ordering:** Encode the most important information in the most effective way.
+-   **Expressiveness:** Tell the truth and nothing but the truth (don’t lie, and don’t lie by omission)
+-   **Effectiveness:** Use encodings that people decode better (where better = faster and/or more accurate)
+
+::: callout-tip
+#### Check out [Calling Bullshit: Data Reasoning in a Digital World](https://callingbullshit.org/)
+
+-   [Misleading axes](https://callingbullshit.org/tools/tools_misleading_axes.html)
+-   [Proportional Ink](https://callingbullshit.org/tools/tools_proportional_ink.html)
+:::

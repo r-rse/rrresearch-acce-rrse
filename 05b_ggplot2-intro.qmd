@@ -1,0 +1,208 @@
+---
+title: "Introduction to `ggplot2`"
+---
+
+
+## Graphics in R
+
+The R language has extensive graphical capabilities.
+
+Graphics in R may be created by many different methods including base graphics and more advanced plotting packages such as lattice and ggplot2.
+
+
+You'll find a rich selection of graphs in R at [The R Graph Gallery](https://www.r-graph-gallery.com/)
+
+```{r, echo=FALSE}
+knitr::include_url("https://www.r-graph-gallery.com/")
+```
+
+
+
+### `ggplot2`
+
+The ggplot2 package was created by Hadley Wickham and provides an intuitive plotting system to rapidly generate publication quality graphics.
+
+**`ggplot2` builds on the "Grammar of Graphics"** 
+
+#### Resources
+
+[**Paper on the grammar of graphics as the foundation for `ggplot2`**](https://vita.had.co.nz/papers/layered-grammar.html)
+
+
+**Online working draft of 3rd Edition of** [***`ggplot2`: Elegant Graphics for Data Analysis***](https://ggplot2-book.org/)
+
+```{r, echo=FALSE}
+knitr::include_url("https://ggplot2-book.org/")
+```
+
+[**`ggplot2` documentation**](https://ggplot2.tidyverse.org/index.html)
+
+```{r, echo=FALSE}
+knitr::include_url("https://ggplot2.tidyverse.org/index.html")
+```
+
+
+**`ggplot2` cheatsheet**
+
+```{r, echo=FALSE}
+knitr::include_url("assets/cheatsheets/data-visualization-2.1.pdf")
+```
+
+
+
+### `ggplot2` in practice. Plotting `mtcars`
+
+To demonstrate the use of `ggplot2` to plot data according to the grammar of graphics, let's recreate the `mtcars` plot I just showed you.
+
+Let's work in our `attic/development.R` script for now.
+
+#### Initialising a plot
+
+The first thing we need to do is initialise a new plot.
+
+<div class="alert alert-info">
+
+Function `ggplot()` is used to construct the initial plot object, and is [**almost always followed by `+`**](https://ggplot2.tidyverse.org/reference/gg-add.html) to add component to the plot. 
+
+```{r, echo=FALSE}
+knitr::include_url("https://ggplot2.tidyverse.org/reference/ggplot.html")
+```
+
+
+</div>
+
+Let's load the library and create an empty plot:
+
+```{r}
+library(ggplot2)
+
+ggplot()
+```
+
+
+#### Specifying the data
+
+Next thing we need to do is specify the data.
+
+The first argument to `ggplot()` is the data we want to use for plotting, usually a data.frame or tibble. We can pipe that in to `ggplot()`.
+
+```{r}
+mtcars |>
+  ggplot()
+```
+
+#### Mapping to Aesthetics with `aes()`
+
+Now that we've specified our data, we can start encoding our variables to visual properties of our plot.
+
+Lets start by mapping `mpg` and `hp` to our two axes. We do that in the second argument `mapping` through function `aes()`. 
+
+Function `aes()` is used to specify the **set of aesthetic mappings between variables in the data and visual properties** in our plot. 
+
+```{r, echo=FALSE}
+knitr::include_url("https://ggplot2.tidyverse.org/reference/aes.html")
+```
+
+
+Any aesthetics defined in `ggplot(aes())` will apply to all subsequent layers unless they are overriden within the individual layers.
+
+
+##### Mapping variables to axes `x` and `y`.
+
+In our case, we want to map variable `mpg` to aesthetic `x` (the x axis) and variable `hp` to aesthetic `y` (the y axis).
+
+```{r, fig.height=7, message=FALSE}
+mtcars |>
+  ggplot(mapping = aes(x = mpg, y = hp))
+```
+
+#### Adding geometries with `geom_*()`
+
+Currently, we only have our axes, initialised with reasonably infered scales from the data.
+
+Following the specification of data and aesthetics, we next need to specify which geometries (or `geoms`s in ggplot) to use to present the data. The `geom` is a critical component that describes the type of plot used.
+
+Several geoms are available in ggplot2 as separate functions:
+
+* `geom_point()` - Scatter plots
+* `geom_line()` - Line plots
+* `geom_smooth()` - Fitted line plots
+* `geom_bar()` - Bar plots
+* `geom_boxplot()` - Boxplots
+* `geom_jitter()` - Jitter to plots
+* `geom_histogram()` - Histogram plots
+* `geom_density()` - Density plots
+* `geom_text()` - Text to plots
+* `geom_errorbar()` - Errorbars to plots
+* `geom_violin()` - Violin plots
+
+
+```{r, echo=FALSE}
+knitr::include_url("https://ggplot2.tidyverse.org/reference/index.html#section-layer-geoms")
+```
+
+##### Plotting a scatterplot
+
+To visualise the relationship between the data points in our two variables, and given both are numeric, we can plot them as points on a scatterplot using `geom_point()`.
+
+```{r, fig.height=7, message=FALSE}
+mtcars |>
+  ggplot(aes(x = mpg, y = hp)) +
+  geom_point()
+```
+
+```{r, echo=FALSE}
+knitr::include_url("https://ggplot2.tidyverse.org/reference/geom_point.html")
+```
+
+
+
+#### Mapping a third variable
+
+Now that we exhausted our first two options for visual encoding, we can use other aesthetics in our plot to map additional variables to. Example aesthetics available for `geom_point()` are
+
+- `color` or `colour`: colour mapping.
+- `shape`: mapping to symbols used for points.
+- `fill`: colour mapping to shapes that have a `fill` attribute.
+- `size`: mapping to the size of points.
+
+Let's now map the number of cylinders `cyl` to the `colour` of points.
+
+```{r, fig.height=7, message=FALSE}
+mtcars |>
+  ggplot(aes(x = mpg, y = hp, colour = cyl)) +
+  geom_point()
+```
+
+Now each point is coloured according to the value of `cyl`. 
+
+Because `cyl` is numeric, the default behaviour of R is to present it on a continuous scale, hence the colour gradient legend. 
+
+If we want to present `cyl` as a categorical variable, we can override that behaviour by turning it into a factor using `factor()`
+
+```{r, fig.height=7, message=FALSE}
+mtcars |>
+  ggplot(aes(x = mpg, y = hp, colour = factor(cyl))) +
+  geom_point()
+```
+
+
+#### Adding a plot theme
+
+Finally, any design elements can be specified in the theme layer. Theme elements can be customised using function [`theme()`](https://ggplot2.tidyverse.org/reference/theme.html) 
+
+
+```{r, echo=FALSE}
+knitr::include_url("https://ggplot2.tidyverse.org/reference/theme.html")
+```
+
+
+`ggplot2` also has a number of in built themes. Let's just use one of those.
+
+```{r, fig.height=7, message=FALSE}
+mtcars |>
+  ggplot(aes(x = mpg, y = hp, fill = factor(cyl))) +
+  geom_point() +
+  theme_minimal()
+```
+
