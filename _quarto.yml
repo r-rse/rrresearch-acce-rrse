@@ -7,7 +7,34 @@ project:
     - 01b_r-basics.qmd
     - 01c_r-data-structures.qmd
     - 01d_indexing.qmd
+    - 01e_flow-control.qmd
     - 01g_tidyverse.qmd
+    - 02a_rdm-intro.qmd
+    - 02b_rstudio-projects.qmd
+    - 02c_paths-proj-structure.qmd
+    - 02d_filenaming.qmd
+    - 03a_data-munging_iteration.qmd
+    - 03b_dplyr_joins.qmd
+    - 03c_functions.qmd
+    - 04a_metadata_intro.qmd
+    - 04b_dataspice.qmd
+    - 04c_metadata_outro.qmd
+    - 05a_datavis-intro.qmd
+    - 05b_ggplot2-intro.qmd
+    - 05c_exploratory.qmd
+    - 06a_quarto-intro.qmd
+    - 06b_create-report.qmd
+    - 06c_code-chunks.qmd
+    - 07b_evolottery.qmd
+    - 08a_pkg_functions.qmd
+    - 10_closing-slides.qmd
+    - about.qmd
+    - setup.qmd
+    - APPENDIX_individual.qmd
+    - APPENDIX_geolocate.qmd
+    - APPENDIX_analysis.qmd
+    - APPENDIX_report.qmd
+    - APPENDIX_mypackage.qmd
 
 website:
   title: "Reproducible Research Data and Project Management in R"
@@ -53,60 +80,59 @@ website:
           - 01b_r-basics.qmd
           - 01c_r-data-structures.qmd
           - 01d_indexing.qmd
+          - 01e_flow-control.qmd
           - 01g_tidyverse.qmd
       - section: "PROJECT MANAGEMENT"
         contents:
-          - 02a_projects.qmd
-          - 02b_paths-proj-structure.qmd
+          - 02a_rdm-intro.qmd
+          - 02b_rstudio-projects.qmd
+          - 02c_paths-proj-structure.qmd
+          - 02d_filenaming.qmd
       - section: "DATA MUNGING"
         contents:
-          - 03a_read-data.qmd
-          - 03b_functions.qmd
-          - file: 03c_dplyr_basics.qmd
-            text: "Mutating"
-          - file: 03d_dplyr_joins.qmd
-            text: "Pivoting and Joining"
-          - file: 03e_dplyr_groups.qmd
-            text: "Grouping and Summarising"
+          - 03a_data-munging_iteration.qmd
+          - 03b_dplyr_joins.qmd
+          - 03c_functions.qmd
       - section: "METADATA"
         contents:
-          - 03a_read-data.qmd
+          - 04a_metadata_intro.qmd
+          - 04b_dataspice.qmd
+          - 04c_metadata_outro.qmd
       - section: "PLOTTING with ggplot2"
         contents:
-          - 04a_datavis-intro.qmd
-          - 04b_ggplot2-intro.qmd
-          - 04c_exploratory.qmd
+          - 05a_datavis-intro.qmd
+          - 05b_ggplot2-intro.qmd
+          - 05c_exploratory.qmd
       - section: "REPORTING with Quarto"
         contents:
-          - 05a_quarto-intro.qmd
-          - 05b_create-report.qmd
-          - 05c_code-chunks.qmd
+          - 06a_quarto-intro.qmd
+          - 06b_create-report.qmd
+          - 06c_code-chunks.qmd
       - section: "VERSION CONTROL"
         contents:
-          - 05a_quarto-intro.qmd
+          - 07b_evolottery.qmd
       - section: "PACKAGING CODE"
         contents:
-          - 05a_quarto-intro.qmd
+          - 08a_pkg_functions.qmd
       - section: "RESEARCH COMPENDIA"
         contents:
-          - 05a_quarto-intro.qmd
       - section: "CLOSING"
         contents:
-          - 06_closing-slides.qmd
+          - 10_closing-slides.qmd
       - section: "APPENDICES"
         contents:
-          - APPENDIX_clean_raw_data.qmd
-          - APPENDIX_functions.qmd
+          - APPENDIX_individual.qmd
+          - APPENDIX_geolocate.qmd
           - APPENDIX_analysis.qmd
-          - APPENDIX_create_summary_tbls.qmd
           - APPENDIX_report.qmd
+          - APPENDIX_mypackage.qmd
       - section: "LICENSE"
         contents:
           - text: "CC BY-SA"
             icon: file-contract
             href: https://creativecommons.org/licenses/by-sa/4.0/
 
-bibliography: references.bib
+bibliography: appendices/data-raw/wood-survey-data-master/references.bib
 
 format:
   html:
@@ -122,9 +148,9 @@ format:
     linkcolor: "#388274ff"
     primary: "#388274ff"
     code-block-border-left: "#5bb3a7ff"
-    mainfont: "'Work Sans', sans-serif"
     monobackgroundcolor: "#d2eaf0"
     lightbox: true
+    from: markdown+emoji
 
 editor: visual
 
