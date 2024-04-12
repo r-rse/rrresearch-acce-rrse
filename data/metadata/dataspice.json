@@ -8,8 +8,8 @@
       "id": "0000-0002-2378-4915",
       "givenName": "Anna",
       "familyName": "Krystalli",
-      "email": "a.krystalli@sheffield.ac.uk",
-      "affiliation": "University of Sheffield"
+      "email": "r.rse.eu@gmail.com",
+      "affiliation": "R-RSE"
     }
   ],
   "description": "This data product, sourced from the NEON data portal for the purposes of the ACCE DTP tutorial, contains processed individual level data from measurements of woody individuals and shrub groups. ",
@@ -31,7 +31,7 @@
       "type": "PropertyValue",
       "unitText": null,
       "name": "uid",
-      "description": "Unique ID within NEON database; an identifier for the record"
+      "description": "Unique ID within NEON database; an identifier for the record in apparentindividual.csv"
     },
     {
       "type": "PropertyValue",
@@ -103,7 +103,7 @@
       "type": "PropertyValue",
       "unitText": null,
       "name": "uid_map",
-      "description": null
+      "description": "Unique ID within NEON database; an identifier for the record in mappingandtagging.csv"
     },
     {
       "type": "PropertyValue",
@@ -145,7 +145,7 @@
       "type": "PropertyValue",
       "unitText": null,
       "name": "uid_ppl",
-      "description": null
+      "description": "Unique ID within NEON database; an identifier for the record in perplotperyear.csv"
     },
     {
       "type": "PropertyValue",
@@ -225,7 +225,7 @@
       "type": "DataDownload",
       "name": "individual",
       "contentUrl": null,
-      "fileFormat": "csv"
+      "encodingFormat": "csv"
     }
   ]
 }
