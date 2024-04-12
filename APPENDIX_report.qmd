@@ -1,0 +1,20 @@
+---
+title: "`report.qmd`"
+---
+
+The `report.qmd` Quarto document contains the project report.
+
+Your file report should look a bit like:
+
+```{r echo=FALSE, message=TRUE, comment=""}
+#| filename: "report.qmd"
+message(readr::read_file(here::here("appendices","report.qmd")))
+
+```
+
+and render to something that looks like this:
+
+```{r}
+#| echo: false
+knitr::include_url("https://annakrystalli-personal.quarto.pub/analysis-of-neon-woody-plant-vegetation-structure-data/")
+```

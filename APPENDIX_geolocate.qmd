@@ -1,0 +1,12 @@
+---
+title: "`R/geolocate.R`"
+---
+
+The `R/geolocate.R` script contains the code for the `get_stem_location` function we've created.
+
+Your script should contain:
+
+```{r, eval=FALSE, code=readLines("R/geolocate.R")}
+#| filename: "R/geolocate.R"
+
+```

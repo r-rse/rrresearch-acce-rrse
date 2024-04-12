@@ -1,0 +1,79 @@
+---
+title: "`mypackage` files"
+---
+
+These files contain all the code we created to populate the `mypackage` package.
+
+Your Files should contain:
+
+## `hello.R`
+
+```{r, eval=FALSE, code=readLines("appendices/mypackage/hello.R")}
+#| filename: "R/hello.R"
+
+```
+
+## `test-hello.R`
+
+```{r, eval=FALSE, code=readLines("appendices/mypackage/test-hello.R")}
+#| filename: "tests/testthat/test-hello.R"
+
+```
+
+## `README.Rmd`
+
+```{r echo=FALSE, message=TRUE, comment=""}
+#| filename: "README.Rmd"
+message(readr::read_file(here::here("appendices","mypackage", "README.Rmd")))
+```
+
+## `DESCRIPTION`
+
+```{r, eval=FALSE, code=readLines("appendices/mypackage/DESCRIPTION")}
+#| filename: "DESCRIPTION"
+
+```
+
+### Final Package structure
+
+Including all auto-generated files
+
+```         
+.
+├── DESCRIPTION
+├── LICENSE
+├── LICENSE.md
+├── NAMESPACE
+├── R
+│   └── hello.R
+├── README.Rmd
+├── README.md
+├── _pkgdown.yml
+├── docs
+│   ├── 404.html
+│   ├── LICENSE-text.html
+│   ├── LICENSE.html
+│   ├── authors.html
+│   ├── deps
+│   │   ├── bootstrap-5.3.1
+│   │   ├── data-deps.txt
+│   │   └── jquery-3.6.0
+│   ├── index.html
+│   ├── link.svg
+│   ├── pkgdown.js
+│   ├── pkgdown.yml
+│   ├── reference
+│   │   ├── Rplot001.png
+│   │   ├── hello.html
+│   │   └── index.html
+│   ├── search.json
+│   └── sitemap.xml
+├── man
+│   └── hello.Rd
+├── project.Rproj
+└── tests
+    ├── testthat
+    │   ├── _snaps
+    │   └── test-hello.R
+    └── testthat.R
+```

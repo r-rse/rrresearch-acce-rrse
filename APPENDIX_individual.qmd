@@ -1,0 +1,12 @@
+---
+title: "`data-raw/individual.R`"
+---
+
+The `data-raw/individual.R` script contains the code required to prepare the raw data for analysis.
+
+Your script should contain:
+
+```{r, eval=FALSE, code=readLines("data-raw/individual.R")}
+#| filename: "data-raw/individual.R"
+
+```

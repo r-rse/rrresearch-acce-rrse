@@ -1,0 +1,12 @@
+---
+title: "`analysis.R`"
+---
+
+The `analysis.R` script contains the code for plotting and analysing our `data/individual.csv` dataset.
+
+Your script should contain:
+
+```{r, eval=FALSE, code=readLines("appendices/analysis.R")}
+#| filename: "analysis.R"
+
+```
