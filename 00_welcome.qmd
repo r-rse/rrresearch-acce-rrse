@@ -310,7 +310,7 @@ knitr::include_graphics("assets/ResearchCompendium.jpg")
 
 . . .
 
--   We'll be coding together and working in Rstudio Cloud.
+-   We'll be coding together and working in Posit Cloud.
 
 . . .
 
@@ -340,9 +340,19 @@ knitr::include_graphics("assets/ResearchCompendium.jpg")
 
 . . .
 
+-  If you get lost, the materials and appendices are your friend!
+
+. . . 
+
 -   Use status reaction emojis to communicate how it's going.
 
 . . .
+
+
+## A note about Posit Cloud Projects
+
+-   Please also **do not share the link to Course Shared space on Posit Cloud**.
+-   Posit Cloud projects **will be deleted after a week** of the course ending. Please [**download any work you want to keep.**]
 
 # Let's go!
 
