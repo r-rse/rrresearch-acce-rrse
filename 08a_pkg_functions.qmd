@@ -258,7 +258,7 @@ Otherwise, you can **use function `usethis::create_package("mypackage")`** to cr
 :::
 
 
-## Copy **mypackage** Project
+## Copy **`mypackage`** Project
 
 To make things easier, I've gone ahead and **set up the basic contents of a new package in project `mypackage`.**
 
@@ -273,7 +273,7 @@ Your new project should have the following structure.
 ├── DESCRIPTION
 ├── NAMESPACE
 ├── R
-└── mypackage.Rproj
+└── project.Rproj
 ```
 
 
@@ -282,7 +282,7 @@ Your new project should have the following structure.
 
 ## Initialise git and commit files.
 
-Let's **also initialise our project as a git repository and commit our initial files**. We'll need to configure git again as this is a new Posit Cloud project.
+Let's **also configure git again, initialise our project as a git repository and commit our initial files**. We'll need to configure git again as this is a new Posit Cloud project.
 
 
 
@@ -393,11 +393,12 @@ You can now load it like any other package...
 library("mypackage")
 ```
 
-## Try using fuunction
+## Try using function
 
 Let's try using our function
 
-```{r, eval=FALSE}
+```{r}
+#| error: true
 hello()
 ```
 
@@ -536,7 +537,7 @@ Now clicking {{< fa hammer >}} **Install** in the Build panel will also build yo
 
 :::
 
-Now that the documentation has been build, the help file for our `hello()` function is now available!
+Now that the documentation has been built, the help file for our `hello()` function is now available!
 
 ![](assets/roxygen-done.png)
 
@@ -650,7 +651,7 @@ Click on the **Check** button (:clipboard: :white_check_mark:)
 
 ```         
    
-── R CMD check results ──────────────────────────────────── mypackage 0.1.0 ────
+── R CMD check results ────────────────────────────── mypackage 0.0.0.9000  ────
 Duration: 8.4s
 
 ❯ checking DESCRIPTION meta-information ... WARNING
@@ -710,7 +711,7 @@ Duration: 8s
 R CMD check succeeded
 ```
 
-#### {{< fa square-check >}} #### {{< fa square-check >}} Let's commit our current files and changes.
+#### {{< fa square-check >}} Let's commit our current files and changes.
 
 ------------------------------------------------------------------------
 
@@ -1088,13 +1089,17 @@ usethis::use_github_action("check-standard")
 
 This workflow installs the latest release of R on macOS and runs R CMD check via the `rcmdcheck` package.
 
-```{r, eval=FALSE, code=readLines("https://raw.githubusercontent.com/r-lib/actions/master/examples/check-release.yaml"), results="asis"}
+```{yaml, eval=FALSE, code=readLines("https://raw.githubusercontent.com/r-lib/actions/master/examples/check-release.yaml"), results="asis"}
 
 ```
 
 -   Re-knit `README.Rmd` to include GitHub Actions badge.
 -   Commit the whole `.github` folder as well as `README.Rmd` & `README.md`
 -   Push to GitHub
+
+#### {{< fa square-check >}} Let's commit our current files and changes and push to GitHub.
+_You'll need your GitHub PAT again_
+
 
 This will activate the `R-CMD-CHECK` GitHub Actions workflow and begin running it.
 
@@ -1166,7 +1171,7 @@ This creates html documentation for our package in the `docs/` folder and presen
 _Note the Preview might be blocked in Posit Cloud and when you click to allow a pop might still look a bit wonky!_
 :::
 
-Now, you could push this `docs/` folder to GitHub and serve through GitHub Pages, but you would need to rebuild, commit and push these docs any time there was a change in the package documentation.
+Now, you could push this `docs/` folder to GitHub and serve through GitHub Pages, but **you would need to rebuild, commit and push these docs any time there was a change in the package documentation**.
 
 Instead what we could do is **get our CI system (GitHub Actions) to build our docs for us automatically every time there is a push or pull request to our repository!!** So let's try this approach!
 
@@ -1191,9 +1196,13 @@ This creates another file in `.github/workflows/` called `pkgdown.yaml`. The wor
 
 Commit the file and push it up to GitHub to activate. Once the workflow completes successfully, you will find the html for your documentation for you site in a new `gh-pages` branch!
 
+#### {{< fa square-check >}} Let's commit our current files and changes.
+
 ## Enable `gh-pages`
 
-To serve our new site, we need to enable GitHub Pages and set the source directory to the root of the `gh-pages` branch. 
+To **serve our new site**, we need to **enable GitHub Pages and set the source directory to the root of the `gh-pages` branch.**
+
+We can use function `usethis::use_github_pages()` to do so.
 
 ```{r}
 #| eval: false
