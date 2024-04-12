@@ -1,4 +1,73 @@
 ---
-title: "Setup"
+title: "Software Setup"
 editor: visual
 ---
+
+## Software Requirements
+
+This workshop assumes you have the **R**, **RStudio** and **Git** and **Bash Shell** software installed on your computer and a personal **GitHub** account. You will also need some geospatial system libraries installed.
+
+### R
+
+R can be downloaded [here](https://cran.r-project.org/mirrors.html).
+
+### RStudio
+
+RStudio is an environment for developing using R.
+
+It can be downloaded [here](https://www.rstudio.com/products/rstudio/download/). You will need the Desktop version (\> 1.0) for your computer.
+
+### Geospatial Libraries
+
+Some of the workflows require geospatial packages like `sf` and have additional system requirements. Follow the [installation instructions in `sf` package documentation](https://github.com/r-spatial/sf/#installing) according to your operating system.
+
+### Git & GitHub
+
+Required for the Version Control part of the the course
+
+#### Install Git
+
+Git is a version control system that lets you track who made changes to what when and has options for easily updating a shared or public version of your code on <a href="https://github.com/">github.com</a>.
+
+To install Git, follow [these instructions](https://github.com/git-guides/install-git).
+
+#### Create GitHub Account
+
+You will need a supported web browser (current versions of Chrome, Firefox or Safari, or Internet Explorer version 9 or above).
+
+You will also need an account at [github.com](https://github.com/). Basic GitHub accounts are free.
+
+### Research Compendium Exercise
+
+For the final practical sessions, we will need to use LaTeX. If you don't have LaTeX installed, consider installing `TinyTeX`, a custom LaTeX distribution based on TeX Live that is small in size but functions well in most cases, especially for R users.
+
+```{r, eval=FALSE}
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
+
+Check [docs](https://yihui.name/tinytex/) before before installing.
+
+#### `devtools` requirements
+
+You might also need a set of **development tools** to install and run `devtools`. On **Windows**, download and install [**Rtools**](https://cran.r-project.org/bin/windows/Rtools/), and `devtools` takes care of the rest. On **Mac**, install the [**Xcode**](https://developer.apple.com/xcode/) command line tools. On **Linux**, install the **R development package**, usually called **`r-devel`** or **`r-base-dev`**.
+
+### Install R dependecies
+
+To be able to run materials locally, you will also need to install all the required R packages. Run the following code:
+
+```{r, eval=FALSE, code=readLines("setup/install.R")}
+
+```
+
+#### Package Development section
+
+```{r, eval=FALSE, code=readLines("setup/install_package-dev.R")}
+
+```
+
+#### Research Compendium with `rrtools` section
+
+```{r, eval=FALSE, code=readLines("setup/install_rrtools.R")}
+
+```
