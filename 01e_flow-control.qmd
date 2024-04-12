@@ -1,0 +1,205 @@
+---
+title: "Controlling flow"
+---
+
+## Control flow using logical statements
+
+Often when we're coding **we want to control the flow of our actions.** This can be done by setting **actions to occur only if a condition or a set of conditions are met**.
+
+There are several ways you can control flow in R.
+
+**For conditional statements**, the most commonly used approaches is to use `if()` and `else` statements:
+
+```{r, eval=FALSE}
+# if
+if (condition is true) {
+  perform action
+}
+
+# if ... else
+if (condition is true) {
+  perform action
+} else {  # that is, if the condition is false,
+  perform alternative action
+}
+```
+
+Say, for example, that we want R to print a different message depending on the value of variable `x`.
+
+We could encode that with the following `if()` statement:
+
+```{r}
+x <- 8 
+
+if (x >= 10) { # <1>
+  print("x is greater than or equal to 10") # <2>
+} else {
+  print("x is less than 10") # <3>
+}
+```
+
+1.  The condition to be met is that `x` is greater than or equal to 10.
+2.  If the condition is met, the message "x is greater than or equal to 10" is printed.\
+3.  If the condition is not met, the message "x is less than 10" is printed.
+
+::: callout-caution
+**Important:** when R evaluates the condition inside `if()` statements, it is looking for a single logical value, i.e., `TRUE` or `FALSE`.
+
+This can cause some headaches for beginners. For example:
+
+```{r}
+#| error: TRUE
+x <- 8:10 
+
+if (x >= 10) { 
+  print("x is greater than or equal to 10") 
+} else {
+  print("x is less than 10") 
+}
+```
+
+This produces an error because `x >= 10` is a vector of logical values, not a single logical value.
+:::
+
+## Combine multiple conditions
+
+### Use `&&` and `||`
+
+If we want to combine multiple conditions in our `if` statements, we can use the `&&` and `||` operators.
+
+For example, let's say we want to **print a message if `x` is greater than 10 and less than 20** and another if the condition is not met
+
+```{r}
+x <- 11
+
+if (x > 10 && x < 20) {
+  print("x is greater than 10 and less than 20.")
+} else {
+  print("x is not greater than 10 and less than 20.")
+}
+```
+
+The `&&` operator combines the two conditions:
+
+```{r}
+x > 10 && x < 20
+```
+
+and returns `TRUE` because both conditions are met, printing the appropriate message.
+
+If we change the value of `x` to 7, the message will change:
+
+```{r}
+x <- 7
+
+if (x > 10 && x < 20) {
+  print("x is greater than 10 and less than 20.")
+} else {
+  print("x is not greater than 10 and less than 20.")
+}
+```
+
+::: callout-tip
+`&` and `|` are **vectorised**. This means that they can be used to compare vectors of logical values, and will return a vector of logical values.
+
+`&&` and `||` are scalar versions, and will only compare vectors of length 1. Because `if()` statements require a single logical value, you should use `&&` and `||` in `if()` statements.
+:::
+
+### Aggregate logical tests with `any()` and `all()`
+
+Sometimes we might want to get an overall sense of whether a condition is met across a vector of values.
+
+We can use the `any()` and `all()` functions to do this.
+
+-   The `any()` function will return **`TRUE` if at least one `TRUE` value** is found within a vector, otherwise it will return `FALSE`.
+
+-   The function `all()`, as the name suggests, will only return `TRUE` if all values in the vector are `TRUE`.
+
+```{r}
+x <- c("apple", "banana")
+
+any(x == "banana")
+all(x == "banana")
+```
+
+## Switch between multiple alternatives
+
+Let's say we want to be able to calculate either the mean, median, or max of a vector `x` depending on the value of a variable called `type`.
+
+We can use the `switch()` function to do this.
+
+The `switch()` function is **used to select one of several alternatives based on the value of a single expression**. It is similar to a series of if-else statements but provides a more concise and readable way to handle multiple conditions.
+
+``` r
+switch(EXPR, CASE1 = RESULT1, CASE2 = RESULT2, ..., DEFAULT)
+```
+
+The most straight forward way to use the function is to provide a **single character string to the `EXPR` (the first) argument**, and then a **series of named arguments**, each of which is a possible value or expression to be executed.
+
+`switch()` then **matches the value of `EXPR` to name of an option and executes the code.**
+
+A **default value can be provided as the last unnamed argument**, which is executed if no match is found.
+
+Let's have a look at it in action:
+
+```{r}
+x <- rnorm(100, mean = 10, sd = 2) # <1>
+
+type <- "mean" # <2>
+  switch(type, # <3>
+         mean = mean(x),
+         median = median(x),
+         max = max(x),
+         NA)
+
+type <- "max" # <4>
+  switch(type,
+         mean = mean(x),
+         median = median(x),
+         max = max(x),
+         NA)
+
+type <- "random" # <5>
+  switch(type,
+         mean = mean(x),
+         median = median(x),
+         max = max(x),
+         NA)
+```
+
+1.  We create a vector `x` of 100 random numbers with a mean of 10 and a standard deviation of 2.
+2.  We create a variable `type` and set it to `"mean"`.
+3.  We use `switch()` to calculate the mean, median, or max of `x` depending on the value of `type`. The first time we run it the mean is calculated.
+4.  We change the value of `type` to `"max"` and use `switch()` again. This time the max is calculated.
+5.  We change the value of `type` to `"random"` and use `switch()` again. This time the default `NA` is returned as there are no matches of the value of `type` to the named options.
+
+## Vectorised `if` statements
+
+As we just saw, **`if`** statements are **designed to respond to a single logical condition**.
+
+To be able to perform `if` `else` statements on vectors, we can use the built in `ifelse()` function.
+
+`ifelse()` function accepts both singular and vector inputs and is structured as follows:
+
+```{r, eval=FALSE}
+# ifelse function
+ifelse(condition is true, perform action, perform alternative action)
+
+```
+
+where:
+
+-    the first argument is the condition or a set of conditions to be met
+
+-    the second argument is the statement that is evaluated when the condition is `TRUE`, and
+
+-   the third statement is the statement that is evaluated when the condition is `FALSE`.
+
+```{r}
+y <- -3
+ifelse(y < 0, "y is a negative number", "y is either positive or zero")
+
+
+y <- c(-3, 0, 3)
+ifelse(y < 0, "y is a negative number", "y is either positive or zero")
+```
