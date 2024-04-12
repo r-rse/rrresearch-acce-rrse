@@ -1,0 +1,31 @@
+---
+title: "Untitled"
+---
+
+```{r}
+#| echo: false
+#| message: false
+# Load packages
+library(ggplot2)
+library(dplyr)
+
+# Ready data
+taxon <- readr::read_csv(here::here("data", "taxon.csv"))
+
+# Subset by order counts
+order_counts <- taxon |>
+  group_by(order) |>
+  count() |>
+  filter(n >= 10) |>
+  arrange(desc(n))
+
+taxon <- taxon |>
+  filter(order %in% order_counts$order)
+
+```
+
+```{r}
+lm_overall <- lm(log10(ind_mean_weight_g) ~ log10(abundance_per_km), data = taxon)
+lm_overall |> broom::glance()
+lm_overall |> broom::tidy()
+```
