@@ -30,6 +30,7 @@ project:
     - 10_closing-slides.qmd
     - about.qmd
     - setup.qmd
+    - credits.qmd
     - APPENDIX_individual.qmd
     - APPENDIX_geolocate.qmd
     - APPENDIX_analysis.qmd
