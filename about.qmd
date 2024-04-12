@@ -2,8 +2,12 @@
 title: "About"
 ---
 
-About this site
+This course is funded by NERC through the [ACCE Doctoral Partnership](https://accedtp.ac.uk/) program
 
-```{r}
-1 + 1
-```
+It started in 2015 by [Dr. Tom Webb](https://www.sheffield.ac.uk/aps/staff-and-students/acadstaff/webb) & [Dr. Anna Krystalli](https://www.r-rse.eu/) of R-RSE and has been continued since 2016 by Dr Anna Krystalli.
+
+Since then it has gone from a one day course on Data management to a four day course, encompassing project management, version control and scientific reporting, packaging code and creating reasearch compendia in R!
+
+It is aimed at preparing first year PhD students for managing their research code and data successfully, in line with shifting expectations on reproducibility, interoperability, accessibility and archiving of research materials.
+
+![](https://accedtp.ac.uk/wp-content/uploads/2023/02/acce-and-nerc-logo.png)
