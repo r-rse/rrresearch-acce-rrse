@@ -8,3 +8,4 @@ comms/*
 *.html
 *.DS_Store
 data-raw/*
+greeting.txt
