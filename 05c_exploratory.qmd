@@ -146,13 +146,21 @@ individual %>%
   geom_bar()
 ```
 
-We can see that there are **very few entries for `liana` and also a whole bunch of `NA`s in `growth_form`.** So let's **remove any such rows** from our data by using `dplyr::filter()`. 
+We can see that there are **very few entries for `"liana"`**. 
+
+There are **also a whole bunch of `NA`s in `growth_form`.** Indeed for our analysis, we'll need values for all three columns, what we call **complete cases**. 
+
+So let's filter our data to:
+- **remove any rows where growth form is `"liana"`**.
+- **retain only complete cases, i.e. rows where no `NA`s exist in any columns.
+
+To do this, we'll use `dplyr::filter()` and introduce a new function, `complete.cases()` which takes a data.frame, (which is why we pass the entire data object with `.`) and returns a logical vector with `TRUE` for rows with complete cases and `FALSE` for rows with incomplete cases. 
 
 Let's **assign this new data to a new `analysis_df`** and work with that from now on.
 
 ```{r}
 analysis_df <- individual %>%
-  filter(!is.na(growth_form), growth_form != "liana")
+  filter(complete.cases(.), growth_form != "liana")
 ```
 
 ##### **:floppy_disk: Let's move those data preparation steps to `analysis.R`**

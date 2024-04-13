@@ -52,7 +52,7 @@ individual <- readr::read_csv(
 
 ## Subset analysis data ----
 analysis_df <- individual %>%
-  filter(!is.na(growth_form), growth_form != "liana")
+  filter(complete.cases(.), growth_form != "liana")
 
 ## Order growth form levels
 gf_levels <- table(analysis_df$growth_form) %>%
