@@ -3,145 +3,127 @@ title: "Version Control with Git & GitHub"
 subtitle: "Version Control"
 ---
 
-
->  Hands up - _who has heard of version control software?_  
->  _What do you think it does?_
+> Hands up - *who has heard of version control software?*\
+> *What do you think it does?*
 
 <br>
 
-## What is Version control? :thinking:
+# What is Version control? :thinking:
 
 The **management of changes** to documents, computer programs, large web sites, and other collections of information.
 
 **Examples:**
 
-- Numbering of book editions
-- Wikipedia's Page history
+-   Numbering of book editions
+-   Wikipedia's Page history
 
 <br>
 
-### Where did it come from?
+## Where did it come from?
 
- The need for a logical way to organize and control revisions has existed for almost as long as writing has existed,  but **revision control became much more important, and complicated when the era of computing began**
+The need for a logical way to organize and control revisions has existed for almost as long as writing has existed, but **revision control became much more important, and complicated when the era of computing began**
 
-### Elements of a Version Control system
+## Elements of a Version Control system
 
-- Changes are usually identified by a number or letter code, termed the "revision number"
+-   Changes are usually identified by a number or letter code, termed the "revision number"
 
-- Each revision is associated with a timestamp and the person making the change. 
+-   Each revision is associated with a timestamp and the person making the change.
 
-- Only changes to a file are recorded rather than saving a whole new copy.
+-   Only changes to a file are recorded rather than saving a whole new copy.
 
-- Revisions can be compared, restored, and with some types of files, merged.
+-   Revisions can be compared, restored, and with some types of files, merged.
 
 <br>
 
-
-
-## What is git? :thinking:
+# What is git? :thinking:
 
 Open source (free to use) Version control software. Usually accessed via the command line, or a client program.
-
 
 ```{r, out.width="40%", echo=FALSE}
 knitr::include_graphics("https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png")
 ```
 
-
-
-### Where did it come from?
+## Where did it come from?
 
 Git development began in 2006 after many developers of the Linux kernel gave up access to [BitKeeper](http://www.bitkeeper.org/) (at the time the best but proprietary)
 
-Linus Torvalds on the name **`git`**: 
+## Why use it in research?
 
-> "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'
-
-<small>More on the name in the source code original [readme](https://github.com/git/git/tree/e83c5163316f89bfbde7d9ab23ca2e25604af290) file</small>
-
-
-
-### Why use it in research? 
-
+::: grid
+::: {.g-col-md-6}
 #### Exhibit A
 
+[![Image: xkcd CC BY-NC 2.5](assets/vc-xkcd.jpg)](https://xkcd.com/)
+:::
+
+::: {.g-col-md-6}
+#### Exhibit B
+
+![Image: "Piled Higher and Deeper" by Jorge Cham [www.phdcomics.com](www.phdcomics.com)](http://www.phdcomics.com/comics/archive/phd101212s.gif){height="400"}
+:::
+:::
 
 
-```{r, echo=FALSE, fig.cap="Image: xkcd CC BY-NC 2.5"}
-knitr::include_graphics("http://smutch.github.io/VersionControlTutorial/_images/vc-xkcd.jpg")
-```
+# What is GitHub :thinking:
 
-
-## What is GitHub :thinking:
-
-
-```{r, out.width="50%", echo=FALSE}
-knitr::include_graphics("assets/github_logo.jpg")
-```
-
-
+![](assets/github_logo.jpg){width="50%"}
 
 A **website** that allows you to **store your Git repositories online** and makes it easy to collaborate with others. They also provide other services like issue (bug) tracking and wikis. Similar services are [GitLab](https://gitlab.com) and [BitBucket](https://bitbucket.org/).
 
-### Why use it in research:
+## Why use it in research:
 
 To enable collaboration and track contributions
 
-<img src="assets/workflows.png" width="50%"><img src="assets/collab.png" width="50%">
+<img src="assets/workflows.png" width="50%"/><img src="assets/collab.png" width="50%"/>
 
-_images: Mozilla Science Lab_ CC-BY 4.0
-
-<br>
-
-- Acts as a remote back-up
-- Facilitates transparency
-- Facilitates project management
-- Facilitates sharing and collaboration
-- Super-charges innovation by Open Sourcing Science
-  + [Mozilla & Working Open](https://www.youtube.com/watch?v=quKdaqlR_9w)
-  + [Open Source Basics](https://www.youtube.com/watch?v=Tyd0FO0tko8)
-  + [Reinventing Discovery](https://www.amazon.co.uk/Reinventing-Discovery-New-Networked-Science/dp/0691160198/ref=sr_1_1?ie=UTF8&qid=1544031907&sr=8-1&keywords=reinventing+discovery)
-  + [Macroecological and macroevolutionary patterns emerge in the universe of GNU/Linux operating systems](https://onlinelibrary.wiley.com/doi/10.1111/ecog.03424)
-
-
-### Anatomy of GitHub Repo
-
-- **Readme files**. Create a `README.md` file to explain what your project is, and how to install and use it. `README.md` is the file that is automatically displayed when you open a GitHub repo.
-
-- **License**. Without some sort of licence, the contents of the repository are technically closed. Some allow users of the code to do anything they like with their code - these are known as permissive licences. Examples are the [MIT Licence](https://tldrlegal.com/license/mit-license) or [Apache](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)).
-    + [https://choosealicense.com/](https://choosealicense.com/) - does what it says on the tin and helps you choose a licence. Here are some resources to help you choose:
-    + [https://tldrlegal.com/](https://tldrlegal.com/) - plain english explanations of licences in bullet form.
-    
-- **Contributing guide** - make a file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
-
-- **Code of Conduct** - good projects have codes of conduct to make sure that people are treated well. Github has an [Code of Conduct wizard](https://help.github.com/articles/adding-a-code-of-conduct-to-your-project/) to make it easy to add one.
-
-- **Issues** - use GitHub issues to record and discuss tasks.
+*images: Mozilla Science Lab* CC-BY 4.0
 
 <br>
 
-## Git, Github & Rstudio
+-   Acts as a remote back-up
+-   Facilitates transparency
+-   Facilitates project management
+-   Facilitates sharing and collaboration
+-   Super-charges innovation by Open Sourcing Science
+    -   [Mozilla & Working Open](https://www.youtube.com/watch?v=quKdaqlR_9w)
+    -   [Open Source Basics](https://www.youtube.com/watch?v=Tyd0FO0tko8)
+    -   [Reinventing Discovery](https://www.amazon.co.uk/Reinventing-Discovery-New-Networked-Science/dp/0691160198/ref=sr_1_1?ie=UTF8&qid=1544031907&sr=8-1&keywords=reinventing+discovery)
+    -   [Macroecological and macroevolutionary patterns emerge in the universe of GNU/Linux operating systems](https://onlinelibrary.wiley.com/doi/10.1111/ecog.03424)
+
+# Anatomy of GitHub Repo
+
+-   **Readme files**. Create a `README.md` file to explain what your project is, and how to install and use it. `README.md` is the file that is automatically displayed when you open a GitHub repo.
+
+-   **License**. Without some sort of licence, the contents of the repository are technically closed. Some allow users of the code to do anything they like with their code - these are known as permissive licences. Examples are the [MIT Licence](https://tldrlegal.com/license/mit-license) or [Apache](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)).
+
+    -   <https://choosealicense.com/> - does what it says on the tin and helps you choose a licence. Here are some resources to help you choose:
+    -   <https://tldrlegal.com/> - plain english explanations of licences in bullet form.
+
+-   **Contributing guide** - make a file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
+
+-   **Code of Conduct** - good projects have codes of conduct to make sure that people are treated well. Github has an [Code of Conduct wizard](https://help.github.com/articles/adding-a-code-of-conduct-to-your-project/) to make it easy to add one.
+
+-   **Issues** - use GitHub issues to record and discuss tasks.
+
+<br>
+
+# Git, Github & Rstudio
 
 ### Before: git only through the terminal
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/git_status.png")
-```
 
+![](assets/git_status.png)
 
 ### Rstudio & `usethis` to the rescue!
 
-#### Rstudio + `usethis` :package: == heavenly `Git` & `GitHub`
 
-- Initialise **Rstudio project** with Git by **just checking a box!**
-    - Forgot to? use `usethis::use_git()`
+-   Initialise **Rstudio project** with Git by **just checking a box!**
 
-- visual panel to easily see the status of all your files
+    -   Forgot to? use `usethis::use_git()`
 
-- interactive navigation through file version history
+-   visual panel to easily see the status of all your files
 
-
-
+-   interactive navigation through file version history
 
 # Version Control Demo
 
@@ -151,69 +133,49 @@ When a local directory becomes ***initialised with git***, a **hidden `.git` fol
 
 > it's now called a **repository**
 
+-   New copies of files you tell git to track will be **added** to that `.git` folder.
 
-- New copies of files you tell git to track will be **added** to that `.git` folder.
-
-
-- After adding, git will track any modifications to those files
-
-
-
-
-
+-   After adding, git will track any modifications to those files
 
 ### first commit - whole file added
 
 Any file unknown to git will have a **yellow ?** box next to it.
 
 
-```{r, out.width="60%", echo=FALSE}
-knitr::include_graphics("assets/git-unadded.png")
-```
-
+![](assets/git-unadded.png)
 
 The first time you commit a file you are **adding** it to `.git`, effectively telling it to start tracking the file
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/commit1.png")
-```
-
-
-
+![](assets/commit1.png)
 
 ### second commit - only difference highlighted
 
 The first time you commit a file, only the changes are shown and any file that has uncommited modifications is shown with a **blue M**
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/commit2.png")
-```
 
-
+![](assets/commit2.png)
 When all changes have been committed, the git panel is clear.
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/commit2-file.png")
-```
-
+![](assets/commit2-file.png)
 
 Enough theory, how about in practice!
-
-
 
 # Configure git & GitHub
 
 ## Configure git
 
+
+
 First, `git` needs to know who you are so your commits can be attributed to you. **`usethis`** to the rescue again!
 
 **Check your configuration**
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 usethis::git_sitrep()
 ```
 
-```
+```         
 ── Git global (user) 
 • Name: <unset>
 • Email: <unset>
@@ -238,27 +200,24 @@ usethis::git_sitrep()
 ℹ Active project is not a Git repo
 ```
 
-
 **Set your configuration**
 
 Use your github username and and the email you used to sign-up on GitHub
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 usethis::use_git_config(
     user.name = "Jane",
     user.email = "jane@example.org")
 ```
 
+## Create a GITHUB PAT
 
-##  Create a GITHUB PAT
-
-To authenticate with GitHub, you'll also need a Personal Authorisation Token (PAT). Password-based authentication for Git is deprecated, i.e. you really should _not_ be sending your username and password every time you push or pull.
-Here, I'm referring to the username and password you would use to login to GitHub in the browser.
+To authenticate with GitHub, you'll also need a Personal Authorisation Token (PAT). Password-based authentication for Git is deprecated, i.e. you really should *not* be sending your username and password every time you push or pull. Here, I'm referring to the username and password you would use to login to GitHub in the browser.
 
 What should you do instead?
 
-Get a **personal access token** (PAT) and use that as your credential for HTTPS operations.
-(The PAT will actually be sent as the password and the username is somewhat artificial, consulted only for credential lookup.)
+Get a **personal access token** (PAT) and use that as your credential for HTTPS operations. (The PAT will actually be sent as the password and the username is somewhat artificial, consulted only for credential lookup.)
 
 #### How to get a PAT?
 
@@ -266,38 +225,42 @@ GitHub offers instructions for [creating a personal access token](https://docs.g
 
 The usethis package has a helper function that takes you to the web form to create a PAT, with the added benefit that it pre-selects the recommended scopes:
 
-```{r, eval=F}
+```{r}
+#| eval: false
 usethis::create_github_token()
 ```
 
-```
+```         
 ● Call `credentials::set_github_pat()` to register this token in the local Git credential store
   It is also a great idea to store this token in any password-management software that you use
 ✔ Opening URL 'https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=DESCRIBE THE TOKEN\'S USE CASE'
 ```
-will open up the GitHub panel to generate your PAT. 
 
+Will open up the GitHub panel to generate your PAT. 
 
-<img src="assets/browse_github.png" height="300px">
+Give your PAT a descriptive name. I'm calling mine `POSIT_CLOUD` as that's the only place I'm going to use it and, for security reasons, I'm setting an expiration date of 7 days, just long enough to complete the course.
 
+![](assets/github_pat_create.png)
 
-Once you are happy with the selected scopes, click "Generate token".
+Once you are happy with the selected scopes, scroll to the bottom and click "Generate token". 
+
+You will be taken to a page that shows your token. **Make sure you copy it to your clipboard!**.
+
+![](assets/github_pat_copy.png)
+
 As the page says, you must **store this token somewhere**, because you'll never be able to see it again, once you leave that page or close the window.
 
-Do not ever hard-wire your PAT into your code!
-A PAT should always be retrieved implicitly, for example, from the Git credential store or from an environment variable.
+::: callout-warning
+
+Do not ever hard-wire your PAT into your code! A PAT should always be retrieved implicitly, for example, from the Git credential store or from an environment variable.
+
+:::
 
 ## Store your credential
 
-Below, we will add your PAT to our Git credential store as a semi-persistent convenience, sort of like “remember me” on a website. But, just like logging into websites, it is entirely possible that your PAT will somehow be forgotten from the credential store and you will need to re-enter it.
+Below, we will add your PAT to our the Posit Cloud Git cached credential store as a semi-persistent convenience, sort of like “remember me” on a website.  
 
-If you goof this up, i.e. generate a PAT but fail to capture it on your system, you’ll have to generate another one. 
-
-This is not the end of the world, but you should delete the “lost” PAT on GitHub. If you aren’t disciplined about labelling PATs and deleting lost PATs, you will find yourself in an unsettling situation where you can’t be sure which PAT(s) are in use. When logged into your GitHub account, you can manage your PATs here:
-
-
-**ALSO STORE A COPY SOMEWHERE LOCALLY ON YOUR COMPUTER FOR NOW, WE WILL NEED IT IN FUTURE SESSIONS**
-
+**YOU MUST ALSO STORE A SECURE COPY SOMEWHERE, Either a password manager or locally on your computer for now, WE WILL NEED IT IN FUTURE SESSIONS**
 
 Add to the file and save.
 
@@ -305,14 +268,14 @@ Add to the file and save.
 
 As of March 2024, the recommended R package for accessing the Git credential store is:
 
-  * [credentials](https://docs.ropensci.org/credentials/)
-    
+-   [credentials](https://docs.ropensci.org/credentials/)
 
 If you don't have credentials installed, install via `install.packages("credentials")`.
 
 Then call `credentials::set_github_pat()`:
 
-```{r eval = FALSE}
+```{r}
+#| eval: false
 credentials::set_github_pat()
 ```
 
@@ -322,20 +285,36 @@ Respond to the prompt with your personal access token (PAT).
 
 You can check that you've stored a credential with `credentials::set_github_pat()`:
 
-```{r eval = FALSE}
+```{r}
+#| eval: false
 credentials::set_github_pat()
 ```
 
-```
+```         
 If prompted for GitHub credentials, enter your PAT in the password field
 Using GITHUB_PAT from Anna Krystalli (credential helper: cache)
 ```
 
-##### TODO store your PAT with a password manager
+### TODO store your PAT with a password manager
 
 **Treat this PAT like a password!** Currently, we've only store a copyable form of the PAT in the Posit CLoud credentials store cache. This cache will be cleared regularly so if we **don't store it somewhere else securely too, it will be lost!!**
 
-If you use a password management app, such as 1Password or LastPass (which you should), it is highly recommended to add this PAT to your entry for GitHub. This way, you can easily retrieve it when needed but also manage it securely.
+If you use a password management app, such as 1Password or LastPass (which you should), it is highly recommended to store this PAT in it as a password. This way, you can easily retrieve it when needed but also manage it securely.
+
+If for some reason you ever generate a PAT but fail to capture it on your system, you’ll have to generate another one.
+
+This is not the end of the world, but you should delete the “lost” PAT on GitHub. If you aren’t disciplined about labelling PATs and deleting lost PATs, you will find yourself in an unsettling situation where you can’t be sure which PAT(s) are in use.
+
+::: callout-caution
+For security reasons, Posit Cloud only caches the following configurations temporarily. While more secure, it does mean we'll need to perfom these steps in new projects and every 12 hours in older projects.
+
+**On your local system however, you will only need to do this once.**
+
+To allow your local Rstudio application to communicate seamlessly with GitHub when pusshing and pulling through the GUI, I also recommend you go a step further and setup an ssh key. This will allow you to authenticate with GitHub without having to enter your username and password every time. 
+
+See [Set up keys for SSH](https://happygitwithr.com/ssh-keys#ssh-keys) in Happy Git with R as well the [`credentials` package vignette](https://docs.ropensci.org/credentials/articles/intro.html) for more information.
+:::
+
 
 ## Version Controlling projects
 
@@ -343,17 +322,19 @@ If you use a password management app, such as 1Password or LastPass (which you s
 
 If you didn't initialise git at the beginning of your project, you can do so now with `usethis::use_git()`:
 
-<div class="alert alert-warning">
+::: {.callout-warning}
+This will try to **commit everything in the repo so far in one go!**
 
-This will try to **commit everything in the repo so far in one go!** Override that behaviour by selecting a negative response when asked.
 
-</div>
+**Override that behaviour by SELECTING A NEGATIVE RESPONSE WHEN ASKED.**
+:::
 
-```{r, eval = F}
+```{r}
+#| eval: false
 usethis::use_git()
 ```
 
-```r
+``` r
 ✔ Initialising Git repo
 ✔ Adding '.Rhistory', '.RData' to '.gitignore'
 There are 9 uncommitted files:
@@ -375,9 +356,9 @@ Is it ok to commit them?
 Selection: 
 ```
 
-Next allow Rstudio to restart when asked:
+Next **allow Rstudio to restart when asked:**
 
-```r
+``` r
 ● A restart of RStudio is required to activate the Git pane
 Restart now?
 
@@ -386,237 +367,266 @@ Restart now?
 3: Negative
 ```
 
+The **git panel should now be visible** in the top right of your Rstudio window.
+
 Let's now check our git setup again:
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 usethis::git_sitrep()
 ```
 
+```
+── Git global (user) 
+• Name: 'Anna Krystalli'
+• Email: 'annakrystalli@googlemail.com'
+• Global (user-level) gitignore file: <unset>
+• Vaccinated: FALSE
+ℹ See `?git_vaccinate` to learn more
+ℹ Defaulting to 'https' Git protocol
+• Default Git protocol: 'https'
+• Default initial branch name: <unset>
 
-# Committing files
+── GitHub user 
+• Default GitHub host: 'https://github.com'
+• Personal access token for 'https://github.com': <unset>
+• To create a personal access token, call `create_github_token()`
+• To store a token for current and future use, call `gitcreds::gitcreds_set()`
+ℹ Read more in the 'Managing Git(Hub) Credentials' article:
+  https://usethis.r-lib.org/articles/articles/git-credentials.html
 
-In our project, let's have a look at the Rstudio **Git** tab. It shows all the files currently in the folder. The **yellow ?** indicates none of the files have been added to git yet.
+── Active usethis project: '/cloud/project' ──
 
-```{r, out.width="80%", echo=FALSE}
-knitr::include_graphics("assets/git-view.png")
+── Git local (project) 
+• Name: 'Anna Krystalli'
+• Email: 'annakrystalli@googlemail.com'
+✖ Default branch cannot be determined.
+• Current local branch -> remote tracking branch:
+  '<unset>' -> '<unset>'
+
+── GitHub project 
+ℹ Project does not use GitHub
 ```
 
+# Review git status
+
+In our project, let's have a look at the Rstudio **Git** tab. It shows all the files currently in the root of our project that git is aware of. The **yellow ?** indicates none of the files have been added to git yet, i.e. git is aware of them but none are being formally tracked for changes.
+
+![](assets/git-view.png)
+
+# Ignoring files through `.gitignore`
+
+There may be files that we don't want to commit to git, e.g.
+
+-   data files that are too large
+
+-   documents with sensitive information (eg authorisation tokens etc)
+
+-   intermediate files that we don't need to save copies of.
+
+**We can tell git to ignore them by adding them to the `.gitignore` file. By doing this upfront, we minimise the danger of committing them to our project's history by accident.**
+
+## Open `.gitignore`
+
+When we open `.gitgnore` we see **there are a number of standard files already added**. 
+
+```         
+.Rproj.user
+.Rhistory
+.Rdata
+.httr-oauth
+.DS_Store
+.quarto
+```
+These are standard files it's best practice to never commit to version control, especially if we are going to share our repository online.
+
+Let's go ahead and add the rest of the files we want to ignore.
+
+
+## Add files and folders to `.gitignore`
+
+### `.gitignore` regex
+
+You can use `regex` (regular expressions) in `.gitignore` files to **ignore files according to a pattern.**
+
+-   `directoryname/*` will ignore all files in a directory.
+
+-   `*.html` will ignore any file ending in `.html`
+
+-   prefix "!" which negates the pattern
+
+So let's use regex to:
+- ignore **all files in `attic/`**
+- ignore **all files in `data-raw/wood-survey-data-master/` apart from the NEON logo (`neon-logo.png`) and `references.bib` which are required to successfully render our report!**
+
+To do so, add the following to the bottom of `.gitignore`
+
+```         
+attic/*
+data-raw/wood-survey-data-master/*
+!data-raw/wood-survey-data-master/neon-logo.png
+!data-raw/wood-survey-data-master/references.bib
+```
+
+You should notice that once the .gitgnore file is saved, the files and directories we've added to it are **no longer visible in the git panel as options to add to a commit.**
+
+# Commit project files
 
 ## Add files
 
-To commit changes in a file just select it in the git pane. When changes to a file are commited for the first time, the whole file is indicated as Added (green A).
+The first step of a commit is to  **add the files we want to be part of the commit to the staging area.**. 
 
-Let's focus on the files and analytical data we created so far. For now ignore the `data-raw` folder and all the other files we didn't create:
+To do so, just **tick the box next to any files and/or directories in the git pane**. 
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/git-add.png")
-```
+Given we want to commit everything, as git is ignoring files we are not interested in, it is safe to add all files to the staging area!
 
+![](assets/initial-commit-add.png)
 
+::: callout-tip
+
+Note how when the `data-raw` folder is selected, only 3 files are added. That's `.gitignore` in action!
+
+:::
 
 ## Commit changes
 
-Click on commit and write an appropriate commit message:
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/add-first.png")
-```
+Write an appropriate commit message (e.g. "Initial commit") and click the **commit** button:
 
+![](assets/initial-commit-msg.png)
+
+Once the commit os complete, the git panel should be clear:
+
+![](assets/initial-commit-complete.png)
 
 # Create a README
 
-Our repository also needs a `README`. We only need a simple plain markdown (`.md`) file for our README. 
+Our repository also needs a `README`. We only need a simple plain markdown (`.md`) file for our README.
 
 We can create a template using `usethis::use_readme_md()`
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 usethis::use_readme_md()
 ```
-
 
 ## Edit README
 
 Adapt the template, adding a short description about your project.
 
-Add and commit your new README
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/use-readme-complete.png")
+I've added the following:
+
+``` md
+# wood-survey
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of wood-survey is to analyse the relationship between stem diameter and height in NEON vegetation survey data.
+
+A report of our analysis can be found [here](report.html)
+
 ```
 
+Add and commit your new README
 
-#  Create repository on GitHub
+![](assets/use-readme-commit.png)
 
-Now that we have set up a `GITHUP_PAT`, we can use function `usethis::use_github()` to create a GitHub repository for our project:
+![](assets/use-readme-complete.png)
 
-```{r, eval=FALSE}
+# Create repository on GitHub
+
+So far we've only been working with a local version (i.e. only available to us in Posit Cloud) of our project. **Now we want to share it with the world through GitHub!**
+
+Because have set up a `GITHUP_PAT`, we can use function `usethis::use_github()` to create a GitHub repository for our project:
+
+```{r}
+#| eval: false
 usethis::use_github(protocol = "https")
 ```
 
-```r
-✔ Checking that current branch is 'master'
-● Check title and description
-  Name:        wood-survey
-  Description: 
-Are title and description ok?
-
-1: No
-2: Yes
-3: Nope
-```
-Answer affirmatively for the process to continue. Once the repo is created and any commmited files pushed, the repo is launched in the browser:
-
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/use-github.png")
+``` r
+✔ Creating GitHub repository 'annakrystalli/project'
+✔ Setting remote 'origin' to 'https://github.com/annakrystalli/project.git'
+✔ Pushing 'master' branch to GitHub and setting 'origin/master' as upstream branch
+✔ Opening URL 'https://github.com/annakrystalli/project'
 ```
 
+Once the repo is created and any commmited files pushed, the repo is launched in the browser:
 
+
+![](assets/use-github.png)
 
 # Host html content on GitHub
 
-
 Let's head to the repo and have a look at what we've shared. To host our html content on GitHub, we need to **enable `gh-pages`** in our repository.
 
-### Go to repo **Settings**
+## Enable `gh-pages`
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/gh-settings.png")
-```
-
-
-### Enable `gh-pages`
 Go to repo **Settings** and navigate to the **Pages** panel on the left hand side and change your settings to the following configuration:
+- **Source:** Deploy from a branch.
+- **Branch:** `master`
+- **{{< fa folder >}} Folder:** `/ (root)`
+- Ensure the *Enforce HTTPS* option is selected.
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/gh-setup.png")
-```
+and **Save**{.btn .btn-primary}
 
-Ensure the _Enforce HTTPS_ option is selected.
+
+
+![](assets/gh-pages-enable.png)
+
+## Check Deployed Site
+
+Once the site has been successfully deployed, you will see a message like this (you might need to refresh the page):
+
+!{[](assets/gh-pages-deployed.png)
+
 
 Click on the link displayed and go check out your work!
 
-Copy the link. In the main repo page, edit the page details at the right by clicking the gear button and paste copied the url in the **website** field.
+::: callout-note
+Note that my URL looks a bit different to yours. That's because I'm redirecting all my GitHub pages to my personal domain. Yours will be something like `https://<username>.github.io/<repo-name>`
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/add-url-gh.png")
-```
+:::
 
+### Landing page
 
-Once added it provides easy access to the rendered content:
+The landing page of your site will be the `README.md` file (although you could override this if the root of your project contained a `index.md` or `index.html` file).
 
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/added-url-gh.png")
-```
+![](assets/gh-pages-landing-page.png)
+From there you can click through to the rendered report page (or you can add `/report.html` to the end of the URL to go directly to the report).
 
-##  Tracking changes 
+### Report
 
-###  Making a change to our  `report.Rmd`
+![](assets/gh-pages-report-page.png)
 
-Let's add the link to the rendered content to our place holder in `report.Rmd`
+Scroll through and check out the interactive features like the table of contents, code folding and table, figure and citation previews when hovering over their mentions!
 
-Let's add and commit our changes
+## Add URL to repo About panel
 
-### Pushing changes to GitHub
+A useful feature of GitHub is the ability to include a link to any hosted content in the **About** panel of your repository. This is a great way to direct visitors to the rendered content of your project.
 
-Click on the :up_arrow: button on the Git tab to push our changes up to the repository
+To add the URL to the **About** panel, click on the {{< fa cog>}} button next to **About** and check the **Use your GitHub Pages website** box:
 
-Let's go have a look at the history :clock3:
+![](assets/gh-pages-add-repo-link.png)
+Once added, visitors can easily navigate to the hosted content from the repo landing page:
 
-> You might need to reconfigure your GITHUB_PAT credentials after a break
-> Use `credentials::set_github_pat()` to set them again.
-
+![](assets/gh-pages-complete-repo.png)
 
 
 
-### Deleting files
-
-- Create a new file, any type of file.
-
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/deleted-file-add.png")
-```
-
-- Add and Commit it.
-
-- Delete it
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/deleted-file-delete.png")
-```
-
-- Commit the deletion
-
-- Look back through the history
-
-```{r, out.width="90%", echo=FALSE}
-knitr::include_graphics("assets/deleted-file-history.png")
-```
-
-
-
-# Ignoring files through `.gitignore`
-
-There may be files that you don't want to commit to git, e.g. 
-
-- data files that are too large
-
-- documents with sensitive information (eg authorisation tokens etc)
-
-- intermediate files that you don't need to save copies of.
-
-> Tell git to ingnore them by adding them to the `.gitignore` file.
-
-When we open `.gitgnore` we see there are a number of files already added. Let's the rest of the files we want to ignore.
-
-```
-.Rproj.user
-.Rhistory
-.RData
-.Rbuildignore
-.DS_Store
-
-```
-
-
-## `gitignore` regex
-
-You can use `regex` (regular expressions) in `.gitignore` files to ignore files according to a pattern.
-
-- `directoryname/*` will ignore all files in a directory.
-
-- `*.html` will ignore any file ending in  `.html` 
-
-- prefix "!" which negates the pattern
-
-
-So let's use regex to ignore all files in `attic/` and all files in `data-raw/` apart from `individual.R`. Add the following to the bottom of `.gitignore`
-
-```
-attic/*
-data-raw/*
-!data-raw/individual.R
-```
-
-
-## Commit `.gitignore`
-
-Now that we've determined which files we want to ignore, let's commit `.gitignore` so we can have a record of it and track any changes.
 
 # `Git` tips
 
-- commit early, commit often
-- commit logical bits of work together
-- write meaninful messages
-
-
-
+-   commit early, commit often
+-   commit logical bits of work together
+-   write meaninful messages
 
 ## Further Resources
 
-- [Git-it](http://jlord.us/git-it/)
-- [Happy with Git](http://happygitwithr.com/)
-- [Oh Shit Git](http://ohshitgit.com/)
-
-
-
+-   [Git-it](http://jlord.us/git-it/)
+-   [Happy with Git](http://happygitwithr.com/)
+-   [Oh Shit Git](http://ohshitgit.com/)
 
 ### Never forget
 
-![](https://optimalbi.com/wp-content/uploads/2018/02/gitsave-300x210.png)
+![](assets/in_case_of_fire.png)
