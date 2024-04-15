@@ -9,3 +9,4 @@ comms/*
 *.DS_Store
 data-raw/*
 greeting.txt
+_site/*
