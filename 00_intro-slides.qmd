@@ -77,7 +77,7 @@ preload-iframes: true
 -   **Hands-on** learning.
 -   Follow along live coding with some minor copy & pasting from materials.
 -   Please **interrupt** me if you have questions at any time.
--   Please **add full name** to your zoom profile and prono![Close document tab](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAbElEQVR4Xs2RQQrAMAgEfZgf7W9LAguybljJpR3wEse5JOL3ZObDb4x1loDhHbBOFU6i2Ddnw2KNiXcdAXygJlwE8OFVBHDgKrLgSInN4WMe9iXiqIVsTMjH7z/GhNTEibOxQswcYIWYOR/zAjBJfiXh3jZ6AAAAAElFTkSuQmCC){alt="Close document tab"}uns if you wish.
+-   Please **add full name** to your zoom profile and pronouns if you wish.
 -   Try to **keep camera on** if possible.
 -   Use **status reaction emojis** to communicate how it's going.
 
@@ -85,6 +85,6 @@ preload-iframes: true
 
 -   Please **do not share the URL to the materials** outside of the course
 -   Please also **do not share the link to Course Shared space on Posit Cloud**.
--   Posit Cloud projects **will be deleted after a week** of the course ending. Please download any work you want to keep.
+-   Posit Cloud projects **will be deleted after a week** of the course ending. Please \[**download any work you want to keep.**\]
 
 # Let's go!
