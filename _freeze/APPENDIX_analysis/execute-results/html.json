@@ -1,0 +1,15 @@
+{
+  "hash": "8d59ecaf09d1b809822fdb2fe12d4411",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"`analysis.R`\"\n---\n\n\nThe `analysis.R` script contains the code for plotting and analysing our `data/individual.csv` dataset.\n\nYour script should contain:\n\n\n::: {.cell filename='analysis.R'}\n\n```{.r .cell-code}\n## Setup ----\n# Load libraries\nlibrary(dplyr)\nlibrary(ggplot2)\n# Load data\nindividual <- readr::read_csv(\n  here::here(\"data\", \"individual.csv\")\n) %>%\n  select(stem_diameter, height, growth_form)\n\n## Subset analysis data ----\nanalysis_df <- individual %>%\n  filter(!is.na(growth_form), growth_form != \"liana\")\n\n## Order growth form levels\ngf_levels <- table(analysis_df$growth_form) %>%\n  sort() %>%\n  names()\nanalysis_df <- analysis_df %>%\n  mutate(growth_form = factor(growth_form,\n    levels = gf_levels\n  ))\n## Plots ----\n## Figure 1: Bar plot of growth forms\nanalysis_df %>%\n  ggplot(aes(\n    y = growth_form, colour = growth_form,\n    fill = growth_form\n  )) +\n  geom_bar(alpha = 0.5, show.legend = FALSE)\n\n## Figure 2: Violin plots of stem diameter and height across growth forms\nanalysis_df %>%\n  tidyr::pivot_longer(\n    cols = c(stem_diameter, height),\n    names_to = \"var\",\n    values_to = \"value\"\n  ) %>%\n  ggplot(aes(\n    x = log(value), y = growth_form,\n    colour = growth_form, fill = growth_form\n  )) +\n  geom_violin(alpha = 0.5, trim = TRUE, show.legend = FALSE) +\n  geom_boxplot(alpha = 0.7, show.legend = FALSE) +\n  facet_grid(~var) +\n  theme_linedraw()\n\n## Fit overall linear model ----\nlm_overall <- lm(\n  log(stem_diameter) ~ log(height),\n  analysis_df\n)\nlm_overall %>%\n  broom::glance()\nlm_overall %>%\n  broom::tidy()\n\n## Plot overall linear model\nanalysis_df %>%\n  ggplot(aes(x = log(height), y = log(stem_diameter))) +\n  geom_point(alpha = 0.2) +\n  geom_smooth(method = \"lm\") +\n  xlab(\"Log of height (m)\") +\n  ylab(\"Log of stem diameter (cm)\") +\n  theme_linedraw()\n\n## Fit linear model with growth form interaction ----\nlm_growth <- lm(\n  log(stem_diameter) ~ log(height) * growth_form,\n  analysis_df\n)\nlm_growth %>%\n  broom::glance()\nlm_growth %>%\n  broom::tidy()\n\n## Plot linear model with growth form interaction\nanalysis_df %>%\n  ggplot(aes(x = log(height), y = log(stem_diameter), colour = growth_form)) +\n  geom_point(alpha = 0.1) +\n  geom_smooth(method = \"lm\") +\n  labs(\n    x = \"Log of height (m)\",\n    y = \"Log of stem diameter (cm)\",\n    colour = \"Growth forms\"\n  ) +\n  theme_linedraw()\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

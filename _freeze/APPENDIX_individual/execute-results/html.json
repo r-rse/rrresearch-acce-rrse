@@ -1,0 +1,15 @@
+{
+  "hash": "90345a69c88e754d9da6bd20ddf9b888",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"`data-raw/individual.R`\"\n---\n\n\nThe `data-raw/individual.R` script contains the code required to prepare the raw data for analysis.\n\nYour script should contain:\n\n\n::: {.cell filename='data-raw/individual.R'}\n\n```{.r .cell-code}\n## code to prepare `individual` dataset goes here\n## Setup\nlibrary(dplyr)\nsource(here::here(\"R\", \"geolocate.R\"))\n\n## Combine individual tables ----\n# Create paths to inputs\nraw_data_path <- here::here(\"data-raw\", \"wood-survey-data-master\")\nindividual_paths <- fs::dir_ls(fs::path(raw_data_path, \"individual\"))\n\n# read in all individual tables into one\nindividual <- purrr::map(\n  individual_paths,\n  ~ readr::read_csv(\n    file = .x,\n    col_types = readr::cols(.default = \"c\"),\n    show_col_types = FALSE\n  )\n) %>%\n  purrr::list_rbind() %>%\n  readr::type_convert()\n\nindividual %>%\n  readr::write_csv(file = fs::path(raw_data_path, \"vst_individuals.csv\"))\n\n# Combine NEON data tables ----\n# read in additional table\nmaptag <- readr::read_csv(\n  fs::path(\n    raw_data_path,\n    \"vst_mappingandtagging.csv\"\n  ),\n  show_col_types = FALSE\n) %>%\n  select(-eventID)\n\nperplot <- readr::read_csv(\n  fs::path(\n    raw_data_path,\n    \"vst_perplotperyear.csv\"\n  ),\n  show_col_types = FALSE\n) %>%\n  select(-eventID)\n\n# Left join tables to individual\nindividual %<>%\n  left_join(maptag,\n    by = \"individualID\",\n    suffix = c(\"\", \"_map\")\n  ) %>%\n  left_join(perplot,\n    by = \"plotID\",\n    suffix = c(\"\", \"_ppl\")\n  ) %>%\n  assertr::assert(\n    assertr::not_na, stemDistance, stemAzimuth, pointID,\n    decimalLongitude, decimalLatitude, plotID\n  )\n\n# ---- Geolocate individuals_functions ----\nindividual <- individual %>%\n  dplyr::mutate(\n    stemLat = get_stem_location(\n      decimalLongitude = decimalLongitude,\n      decimalLatitude = decimalLatitude,\n      stemAzimuth = stemAzimuth,\n      stemDistance = stemDistance\n    )$lat,\n    stemLon = get_stem_location(\n      decimalLongitude = decimalLongitude,\n      decimalLatitude = decimalLatitude,\n      stemAzimuth = stemAzimuth,\n      stemDistance = stemDistance\n    )$lon\n  ) %>%\n  janitor::clean_names()\n\n# create data directory\nfs::dir_create(here::here(\"data\"))\n\n# write out analytic file\nreadr::write_csv(individual, here::here(\"data\", \"individual.csv\"))\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
