@@ -50,19 +50,18 @@ Git development began in 2006 after many developers of the Linux kernel gave up 
 ## Why use it in research?
 
 ::: grid
-::: {.g-col-md-6}
+::: g-col-md-6
 #### Exhibit A
 
 [![Image: xkcd CC BY-NC 2.5](assets/vc-xkcd.jpg)](https://xkcd.com/)
 :::
 
-::: {.g-col-md-6}
+::: g-col-md-6
 #### Exhibit B
 
 ![Image: "Piled Higher and Deeper" by Jorge Cham [www.phdcomics.com](www.phdcomics.com)](http://www.phdcomics.com/comics/archive/phd101212s.gif){height="400"}
 :::
 :::
-
 
 # What is GitHub :thinking:
 
@@ -111,11 +110,9 @@ To enable collaboration and track contributions
 
 ### Before: git only through the terminal
 
-
 ![](assets/git_status.png)
 
 ### Rstudio & `usethis` to the rescue!
-
 
 -   Initialise **Rstudio project** with Git by **just checking a box!**
 
@@ -141,7 +138,6 @@ When a local directory becomes ***initialised with git***, a **hidden `.git` fol
 
 Any file unknown to git will have a **yellow ?** box next to it.
 
-
 ![](assets/git-unadded.png)
 
 The first time you commit a file you are **adding** it to `.git`, effectively telling it to start tracking the file
@@ -152,9 +148,7 @@ The first time you commit a file you are **adding** it to `.git`, effectively te
 
 The first time you commit a file, only the changes are shown and any file that has uncommited modifications is shown with a **blue M**
 
-
-![](assets/commit2.png)
-When all changes have been committed, the git panel is clear.
+![](assets/commit2.png) When all changes have been committed, the git panel is clear.
 
 ![](assets/commit2-file.png)
 
@@ -163,8 +157,6 @@ Enough theory, how about in practice!
 # Configure git & GitHub
 
 ## Configure git
-
-
 
 First, `git` needs to know who you are so your commits can be attributed to you. **`usethis`** to the rescue again!
 
@@ -236,13 +228,13 @@ usethis::create_github_token()
 ✔ Opening URL 'https://github.com/settings/tokens/new?scopes=repo,user,gist,workflow&description=DESCRIBE THE TOKEN\'S USE CASE'
 ```
 
-Will open up the GitHub panel to generate your PAT. 
+Will open up the GitHub panel to generate your PAT.
 
 Give your PAT a descriptive name. I'm calling mine `POSIT_CLOUD` as that's the only place I'm going to use it and, for security reasons, I'm setting an expiration date of 7 days, just long enough to complete the course.
 
 ![](assets/github_pat_create.png)
 
-Once you are happy with the selected scopes, scroll to the bottom and click "Generate token". 
+Once you are happy with the selected scopes, scroll to the bottom and click "Generate token".
 
 You will be taken to a page that shows your token. **Make sure you copy it to your clipboard!**.
 
@@ -251,14 +243,12 @@ You will be taken to a page that shows your token. **Make sure you copy it to yo
 As the page says, you must **store this token somewhere**, because you'll never be able to see it again, once you leave that page or close the window.
 
 ::: callout-warning
-
 Do not ever hard-wire your PAT into your code! A PAT should always be retrieved implicitly, for example, from the Git credential store or from an environment variable.
-
 :::
 
 ## Store your credential
 
-Below, we will add your PAT to our the Posit Cloud Git cached credential store as a semi-persistent convenience, sort of like “remember me” on a website.  
+Below, we will add your PAT to our the Posit Cloud Git cached credential store as a semi-persistent convenience, sort of like “remember me” on a website.
 
 **YOU MUST ALSO STORE A SECURE COPY SOMEWHERE, Either a password manager or locally on your computer for now, WE WILL NEED IT IN FUTURE SESSIONS**
 
@@ -310,11 +300,10 @@ For security reasons, Posit Cloud only caches the following configurations tempo
 
 **On your local system however, you will only need to do this once.**
 
-To allow your local Rstudio application to communicate seamlessly with GitHub when pusshing and pulling through the GUI, I also recommend you go a step further and setup an ssh key. This will allow you to authenticate with GitHub without having to enter your username and password every time. 
+To allow your local Rstudio application to communicate seamlessly with GitHub when pusshing and pulling through the GUI, I also recommend you go a step further and setup an ssh key. This will allow you to authenticate with GitHub without having to enter your username and password every time.
 
 See [Set up keys for SSH](https://happygitwithr.com/ssh-keys#ssh-keys) in Happy Git with R as well the [`credentials` package vignette](https://docs.ropensci.org/credentials/articles/intro.html) for more information.
 :::
-
 
 ## Version Controlling projects
 
@@ -322,9 +311,8 @@ See [Set up keys for SSH](https://happygitwithr.com/ssh-keys#ssh-keys) in Happy 
 
 If you didn't initialise git at the beginning of your project, you can do so now with `usethis::use_git()`:
 
-::: {.callout-warning}
+::: callout-warning
 This will try to **commit everything in the repo so far in one go!**
-
 
 **Override that behaviour by SELECTING A NEGATIVE RESPONSE WHEN ASKED.**
 :::
@@ -376,7 +364,7 @@ Let's now check our git setup again:
 usethis::git_sitrep()
 ```
 
-```
+```         
 ── Git global (user) 
 • Name: 'Anna Krystalli'
 • Email: 'annakrystalli@googlemail.com'
@@ -428,7 +416,7 @@ There may be files that we don't want to commit to git, e.g.
 
 ## Open `.gitignore`
 
-When we open `.gitgnore` we see **there are a number of standard files already added**. 
+When we open `.gitgnore` we see **there are a number of standard files already added**.
 
 ```         
 .Rproj.user
@@ -438,10 +426,10 @@ When we open `.gitgnore` we see **there are a number of standard files already a
 .DS_Store
 .quarto
 ```
+
 These are standard files it's best practice to never commit to version control, especially if we are going to share our repository online.
 
 Let's go ahead and add the rest of the files we want to ignore.
-
 
 ## Add files and folders to `.gitignore`
 
@@ -455,9 +443,7 @@ You can use `regex` (regular expressions) in `.gitignore` files to **ignore file
 
 -   prefix "!" which negates the pattern
 
-So let's use regex to:
-- ignore **all files in `attic/`**
-- ignore **all files in `data-raw/wood-survey-data-master/` apart from the NEON logo (`neon-logo.png`) and `references.bib` which are required to successfully render our report!**
+So let's use regex to: - ignore **all files in `attic/`** - ignore **all files in `data-raw/wood-survey-data-master/` apart from the NEON logo (`neon-logo.png`) and `references.bib` which are required to successfully render our report!**
 
 To do so, add the following to the bottom of `.gitignore`
 
@@ -474,18 +460,16 @@ You should notice that once the .gitgnore file is saved, the files and directori
 
 ## Add files
 
-The first step of a commit is to  **add the files we want to be part of the commit to the staging area.**. 
+The first step of a commit is to **add the files we want to be part of the commit to the staging area.**.
 
-To do so, just **tick the box next to any files and/or directories in the git pane**. 
+To do so, just **tick the box next to any files and/or directories in the git pane**.
 
 Given we want to commit everything, as git is ignoring files we are not interested in, it is safe to add all files to the staging area!
 
 ![](assets/initial-commit-add.png)
 
 ::: callout-tip
-
 Note how when the `data-raw` folder is selected, only 3 files are added. That's `.gitignore` in action!
-
 :::
 
 ## Commit changes
@@ -519,12 +503,12 @@ I've added the following:
 # wood-survey
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 The goal of wood-survey is to analyse the relationship between stem diameter and height in NEON vegetation survey data.
 
 A report of our analysis can be found [here](report.html)
-
 ```
 
 Add and commit your new README
@@ -553,7 +537,6 @@ usethis::use_github(protocol = "https")
 
 Once the repo is created and any commmited files pushed, the repo is launched in the browser:
 
-
 ![](assets/use-github.png)
 
 # Host html content on GitHub
@@ -562,15 +545,9 @@ Let's head to the repo and have a look at what we've shared. To host our html co
 
 ## Enable `gh-pages`
 
-Go to repo **Settings** and navigate to the **Pages** panel on the left hand side and change your settings to the following configuration:
-- **Source:** Deploy from a branch.
-- **Branch:** `master`
-- **{{< fa folder >}} Folder:** `/ (root)`
-- Ensure the *Enforce HTTPS* option is selected.
+Go to repo **Settings** and navigate to the **Pages** panel on the left hand side and change your settings to the following configuration: - **Source:** Deploy from a branch. - **Branch:** `master` - {{< fa folder >}} **Folder:** `/ (root)` - Ensure the *Enforce HTTPS* option is selected.
 
 and **Save**{.btn .btn-primary}
-
-
 
 ![](assets/gh-pages-enable.png)
 
@@ -578,22 +555,19 @@ and **Save**{.btn .btn-primary}
 
 Once the site has been successfully deployed, you will see a message like this (you might need to refresh the page):
 
-!{[](assets/gh-pages-deployed.png)
-
+!{[ ](assets/gh-pages-deployed.png)
 
 Click on the link displayed and go check out your work!
 
 ::: callout-note
 Note that my URL looks a bit different to yours. That's because I'm redirecting all my GitHub pages to my personal domain. Yours will be something like `https://<username>.github.io/<repo-name>`
-
 :::
 
 ### Landing page
 
 The landing page of your site will be the `README.md` file (although you could override this if the root of your project contained a `index.md` or `index.html` file).
 
-![](assets/gh-pages-landing-page.png)
-From there you can click through to the rendered report page (or you can add `/report.html` to the end of the URL to go directly to the report).
+![](assets/gh-pages-landing-page.png) From there you can click through to the rendered report page (or you can add `/report.html` to the end of the URL to go directly to the report).
 
 ### Report
 
@@ -607,13 +581,9 @@ A useful feature of GitHub is the ability to include a link to any hosted conten
 
 To add the URL to the **About** panel, click on the {{< fa cog>}} button next to **About** and check the **Use your GitHub Pages website** box:
 
-![](assets/gh-pages-add-repo-link.png)
-Once added, visitors can easily navigate to the hosted content from the repo landing page:
+![](assets/gh-pages-add-repo-link.png) Once added, visitors can easily navigate to the hosted content from the repo landing page:
 
 ![](assets/gh-pages-complete-repo.png)
-
-
-
 
 # `Git` tips
 
