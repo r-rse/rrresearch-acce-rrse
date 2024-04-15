@@ -26,8 +26,10 @@ project:
     - 06b_create-report.qmd
     - 06c_code-chunks.qmd
     - 07a_git.qmd
-    - 07b_evolottery.qmd
-    - 08a_pkg_functions.qmd
+    - 07b_github.qmd
+    - 07c_evolottery.qmd
+    - 08a_managing-dependencies.qmd
+    - 08b_pkg_functions.qmd
     - 10_closing-slides.qmd
     - about.qmd
     - setup.qmd
@@ -113,10 +115,12 @@ website:
       - section: "VERSION CONTROL"
         contents:
           - 07a_git.qmd
-          - 07b_evolottery.qmd
+          - 07b_github.qmd
+          - 07c_evolottery.qmd
       - section: "PACKAGING CODE"
         contents:
-          - 08a_pkg_functions.qmd
+          - 08a_managing-dependencies.qmd
+          - 08b_pkg_functions.qmd
       - section: "RESEARCH COMPENDIA"
         contents:
       - section: "CLOSING"
