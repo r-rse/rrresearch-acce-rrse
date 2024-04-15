@@ -1,0 +1,19 @@
+{
+  "hash": "11f5774debf05f80206e9ed06e2f9ccd",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Closing Remarks\"\nauthor: \"Dr Anna Krystallli\"\nsubtitle: \"Parting words and next steps\"\ninstitute: R-RSE\nmaterials_url: https://mba-r-intro.netlify.app/\nformat:\n  revealjs: \n    logo: assets/logo/r-rse-logo2.png\n    theme: [default, assets/css/styles.scss, assets/css/reveal.scss]\n    footer: \"[{{< fa home >}}](index.qmd)\"\n    template-partials:\n      - assets/layouts/title-slide.html\neditor: visual\npreload-iframes: true\n---\n\n\n## Course take aways\n\n-   R and Rstudio provide **powerful tools for manipulating, analysing and plotting data**. It does take some patience when starting out but stick with it!\n\n-   **Good project structure** makes it easier to **revisit** and **share your work**. **Follow community conventions.**\n\n-   Keep a [**clean pipeline**](https://dynamicecology.wordpress.com/2016/08/22/ten-commandments-for-good-data-management/) **of data processing from raw to analytical.**\n\n-   Use **Quarto** and the principles of literate programming to **provide context around your work.**\n\n# Next Steps\n\n## Dependency Management\n\n### Important step towards reproducibility:\n\nManage package version using package `renv`:\n\n\n::: {.cell}\n<iframe src=\"https://rstudio.github.io/renv/articles/renv.html\" width=\"960\" height=\"400px\" data-external=\"1\"></iframe>\n:::\n\n\n## Version Control\n\nVersion control involves the **management of changes** to our projects in a systematic way.\n\nUpcoming course!\n\n### Managing Your Scientific Code using Git & GitHub\n\n#### 8-9 May 2024\n\n<https://mymba.mba.ac.uk/ems-event-booking-page/git-github.html>\n\n## Sources of help\n\n-   [Stackoverflow](https://stackoverflow.com/)\n-   [Posit Community Forum](https://community.rstudio.com/)\n-   [R 4 Data Science Learning Community](https://rfordatasci.com/)\n-   Google! Stuck? google error codes\n\n# Thanks for joining!\n\n![](assets/mba-branding/mba-wave-element.png)\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
