@@ -7,66 +7,51 @@ subtitle: "EvoLottery"
 
 ### **Welcome to the evolutionary lottery of skull and beak morphology**
 
+------------------------------------------------------------------------
 
-
-*** 
 <br>
 
-> ##### **Beak and skull shapes in birds of prey (“raptors”) are strongly coupled and largely controlled by size.** 
+> ##### **Beak and skull shapes in birds of prey (“raptors”) are strongly coupled and largely controlled by size.**
 
-- In this exercise, each participant will **fork a GitHub repo**, and **contribute a file** required to simulate the *evolutionary trajectory of an imaginary species' body size*.
+-   In this exercise, each participant will **fork a GitHub repo**, and **contribute a file** required to simulate the *evolutionary trajectory of an imaginary species' body size*.
 
-- We'll use **GitHub to collate all species files** and **plot** them all up together at the end! We'll also **discover the skull and beak shapes** associated with each simulated species size.
+-   We'll use **GitHub to collate all species files** and **plot** them all up together at the end! We'll also **discover the skull and beak shapes** associated with each simulated species size.
 
-
-#####  Start!
-
-
+##### Start!
 
 # Clone Github repo
 
-##  Start with GitHub repo
+## Start with GitHub repo
 
 <https://github.com/r-rse/evolottery>
 
-
 ![](assets/repo.png)
 
-## **Fork  it** 
+## **Fork it**
 
 make your **own copy of the repository** on GitHub. Fork are linked and traceable
 
-
 ![](assets/fork-1.png)
 
-
 GitHub asks you to confirm some details:
-
-
 
 ![](assets/fork-1b.png)
 
 And makes a copy in your account:
 
-![](assets/fork-2a-gk.png)
-You now have a copy in your account!
+![](assets/fork-2a-gk.png) You now have a copy in your account!
 
 ![](assets/fork-2b-gk.png)
 
-
-
 <br>
 
-
-## **Copy repo URL** 
+## **Copy repo URL**
 
 **copy repo link** to create a new Rstudio project from the repository.
-    
- 
-![](assets/copy-repo-url.png) 
+
+![](assets/copy-repo-url.png)
 
 ## **Create new project in Posit Cloud from GitHub**
-
 
 ::: {.callout-tip collapse="true"}
 ## Cloning a repository locally in Rstudio
@@ -74,50 +59,39 @@ You now have a copy in your account!
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("assets/newproj-1.png")
 ```
- 
 
 Checkout from **version control repository**
-
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("assets/newproj-2.png")
 ```
- 
 
 Clone project from a **git** repository
-
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("assets/newproj-3.png")
 ```
- 
 
-Paste **repo link copied from GitHub** into **Repository URL** field. Click **`Create Project`**. 
+Paste **repo link copied from GitHub** into **Repository URL** field. Click **`Create Project`**.
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("assets/newproj-4.png")
 ```
- 
-
 
 Rstudio project now **contains all files from the GitHub repo.**
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("assets/newproj-5.png")
 ```
- 
 :::
 
-
-In your own personal workspace, create a new project from a GitHub repository. 
+In your own personal workspace, create a new project from a GitHub repository.
 
 ![](assets/pc-proj-from-repo-1.png)
 
+Paste **repo link copied from GitHub** into **Repository URL** field. Click **`Create Project`**.
 
-Paste **repo link copied from GitHub** into **Repository URL** field. Click **`Create Project`**. 
-
-![](assets/pc-proj-from-repo-2.png)
-You now have a copy of the materials in you Posit Cloud account, ready to work with!
+![](assets/pc-proj-from-repo-2.png) You now have a copy of the materials in you Posit Cloud account, ready to work with!
 
 ![](assets/cloned-repo.png)
 
@@ -125,64 +99,61 @@ You now have a copy of the materials in you Posit Cloud account, ready to work w
 
 ## Make a copy of `params_tmpl.R`
 
-<div class="alert alert-warning">Please ***DO NOT OVERWRITE*** **`params/params_tmpl.R`**.</div>
+::: {.alert .alert-warning}
+Please ***DO NOT OVERWRITE*** **`params/params_tmpl.R`**.
+:::
 
-Click on the **`params/`** folder to open it, select **`params_tmpl.R`** and click on {{< fa cog >}} and  **`Copy`**.
+Click on the **`params/`** folder to open it, select **`params_tmpl.R`** and click on {{< fa cog >}} and **`Copy`**.
 
-
-![](assets/params-copy-1.png)
-Use species name of your choice to name new file. 
+![](assets/params-copy-1.png) Use species name of your choice to name new file.
 
 ![](assets/params-copy-2.png)
-
 
 # Edit **new params file**
 
 ## Open params file
 
-![](assets/params-open.png)
-## Edit params file
+![](assets/params-open.png) \## Edit params file
 
 Edit file with parameters of your choice and save.
 
-<div class="alert alert-warning">Please ***DO NOT OVERWRITE*** **`params/params_tmpl.R`**.</div>
- 
-![](assets/params-edit-1.png)
+::: {.alert .alert-warning}
+Please ***DO NOT OVERWRITE*** **`params/params_tmpl.R`**.
+:::
 
+![](assets/params-edit-1.png)
 
 #### The parameters each participants need to supply are:
 
-- **`sig2`:** A numeric value greater than 0 but smaller than 5
+-   **`sig2`:** A numeric value greater than 0 but smaller than 5
 
-- **`species.name`:** a character string e.g. `"anas_krystallinus"`. Try to create a species name out of your name!
+-   **`species.name`:** a character string e.g. `"anas_krystallinus"`. Try to create a species name out of your name!
 
-- **`color`:**  a character string e.g. `"red"`, `"#FFFFFF"` (Check out list of [**colours in R**](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf))
-
+-   **`color`:** a character string e.g. `"red"`, `"#FFFFFF"` (Check out list of [**colours in R**](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf))
 
 **NB: remember to save the changes to your file**
-
 
 # Commit changes locally to git
 
 In the *git* tab, select the **new file** you created and click **`Commit`**.
 
-<div class="alert alert-warning">Please **ONLY COMMIT YOUR NEW FILE**</div>
+::: {.alert .alert-warning}
+Please **ONLY COMMIT YOUR NEW FILE**
+:::
 
- 
 ![](assets/commit-1.png)
 
-Write an informative commit message and click **`Commit`**  
+Write an informative commit message and click **`Commit`**
 
 ![](assets/commit-2.png)
 
-your new file has now been commited  
+your new file has now been commited
 
 ![](assets/commit-3.png)
 
-
 # Push changes to GitHub
 
-on the *git* tab click ⇧  to **push changes to GitHub**
+on the *git* tab click ⇧ to **push changes to GitHub**
 
 ```{r, echo=FALSE, out.width="90%"}
 knitr::include_graphics("assets/push-1.png")
@@ -200,27 +171,19 @@ knitr::include_graphics("assets/push-2.png")
 
 ![](assets/push-3.png)
 
-#  Create pull request
+# Create pull request
 
-In your repository, create **`new pull request`** 
-to merge fork to master repo (ie the original repo you forked)
-
-
+In your repository, create **`new pull request`** to merge fork to master repo (ie the original repo you forked)
 
 ![](assets/pr-1.png)
 
-
-GitHub checks whether your requested merge creates any coflicts. 
-If all is good, click on **`Create pull request`**
-
+GitHub checks whether your requested merge creates any coflicts. If all is good, click on **`Create pull request`**
 
 ![](assets/pr-2.png)
-
 
 Write an informative message explaining your changes to the master repo administrators. Click on **`Create pull request`**
 
 ![](assets/pr-3.png)
-
 
 The repository owner will then review your PR and either merge it in or respond with some guidance if they spot a problem.
 
@@ -230,13 +193,11 @@ Check original repo to see **your merged changes**
 
 ![](assets/pr-merged-2.png)
 
-
-
-We'll merge all contributions and [plot them together at the end!](https://r-rse.github.io/evolottery/plot_trait_evolution.html) 
+We'll merge all contributions and [plot them together at the end!](https://r-rse.github.io/evolottery/plot_trait_evolution.html)
 
 Now that everyone has contributed to the [**r-rse** repository](https://github.com/r-rse/evolottery) (the **upstream** repository), the `params/` folder contains a number of files, one for each successful pull request.
 
-However your local copy of the repository only contains the template and your own file. 
+However your local copy of the repository only contains the template and your own file.
 
 > Q: How can I merge changes from the **upstream** repository to my **local** repository?
 
@@ -249,19 +210,21 @@ We can check the urls of remotes currently linked to our local repo using `useth
 ``` r
 usethis::git_remotes()
 ```
-```
+
+```         
 $origin
 [1] "https://github.com/annakrystalli/evolottery.git"
 ```
-We see that only my form is currently listed as a remote under the name `origin`. 
+
+We see that only my form is currently listed as a remote under the name `origin`.
 
 ### Add the r-rse repo as upstream
 
-To add a new remote we need the https url of the upstream repo (the equivalent of the one we used to create our project from our fork through version control) which in this case is `https://github.com/r-rse/evolottery`. 
+To add a new remote we need the https url of the upstream repo (the equivalent of the one we used to create our project from our fork through version control) which in this case is `https://github.com/r-rse/evolottery`.
 
 We can then use `usethis::use_git_remote()` to set the upstream repository:
 
-```r
+``` r
 usethis::use_git_remote(
     name = "upstream", 
     url = "https://github.com/r-rse/evolottery.git")
@@ -272,7 +235,8 @@ We can check that everything was set correctly with `usethis::git_remotes()`
 ``` r
 usethis::git_remotes()
 ```
-```
+
+```         
 $origin
 [1] "https://github.com/annakrystalli/evolottery.git"
 
@@ -284,10 +248,11 @@ $upstream
 
 Finally, to synch with the upstream repository we can now use function `usethis::pr_merge_main()`. This fetches the master branch from the upstream repository and merges it into our own local master branch.
 
-```r
+``` r
 usethis::pr_merge_main()
 ```
-```
+
+```         
 ✔ Pulling changes from 'upstream/main'.
 ```
 
