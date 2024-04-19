@@ -30,6 +30,7 @@ project:
     - 07c_evolottery.qmd
     - 08a_managing-dependencies.qmd
     - 08b_pkg_functions.qmd
+    - 09_rrcompendium.qmd
     - 10_closing-slides.qmd
     - about.qmd
     - setup.qmd
@@ -39,6 +40,7 @@ project:
     - APPENDIX_analysis.qmd
     - APPENDIX_report.qmd
     - APPENDIX_mypackage.qmd
+    - APPENDIX_rrcompendium.qmd
 
 website:
   title: "Reproducible Research Data and Project Management in R"
@@ -123,6 +125,7 @@ website:
           - 08b_pkg_functions.qmd
       - section: "RESEARCH COMPENDIA"
         contents:
+          - 09_rrcompendium.qmd
       - section: "CLOSING"
         contents:
           - 10_closing-slides.qmd
@@ -133,6 +136,7 @@ website:
           - APPENDIX_analysis.qmd
           - APPENDIX_report.qmd
           - APPENDIX_mypackage.qmd
+          - APPENDIX_rrcompendium.qmd
       - section: "LICENSE"
         contents:
           - text: "CC BY-SA"
@@ -162,7 +166,7 @@ format:
 editor: visual
 
 execute:
-  freeze: auto
+  freeze: false
 
 plugins:
   package: "@quarto/netlify-plugin-quarto"

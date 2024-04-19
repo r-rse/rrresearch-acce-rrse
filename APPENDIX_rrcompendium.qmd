@@ -1,0 +1,137 @@
+---
+title: "`rrcompendium` files"
+---
+
+These files contain all the code we created to populate the `rrcompendium` Reserach Compendium project.
+
+Your Files should contain:
+
+
+## `DESCRIPTION`
+
+```{r, eval=FALSE, code=readLines("appendices/rrcompendium/DESCRIPTION")}
+#| filename: "DESCRIPTION"
+
+```
+
+## `README.Rmd`
+
+```{r echo=FALSE, message=TRUE, comment=""}
+#| filename: "README.Rmd"
+message(readr::read_file(here::here("appendices","rrcompendium", "README.Rmd")))
+```
+
+## `paper.qmd`
+
+```{r, echo=FALSE, message=TRUE, comment=""}
+#| filename: "analysis/paper/paper.qmd"
+message(readr::read_file(here::here("appendices","rrcompendium", "paper.qmd")))
+```
+
+which should be rendered to `paper.pdf`.
+
+```{r}
+#| filename: "analysis/paper/paper.pdf"
+#| echo: false
+knitr::include_graphics(here::here("appendices","rrcompendium", "paper.pdf"))
+```
+
+
+
+Your final project should contain the following files:
+```
+.
+├── CONDUCT.md
+├── CONTRIBUTING.md
+├── DESCRIPTION
+├── LICENSE
+├── LICENSE.md
+├── NAMESPACE
+├── README.Rmd
+├── README.md
+├── analysis
+│   ├── data
+│   │   ├── DO-NOT-EDIT-ANY-FILES-IN-HERE-BY-HAND
+│   │   ├── derived_data
+│   │   ├── gillespie.csv
+│   │   └── raw_data
+│   ├── figures
+│   ├── paper
+│   │   ├── _extensions
+│   │   │   └── quarto-journals
+│   │   │       └── elsevier
+│   │   │           ├── _extension.yml
+│   │   │           ├── bib
+│   │   │           │   ├── elsarticle-harv.bst
+│   │   │           │   ├── elsarticle-num-names.bst
+│   │   │           │   ├── elsarticle-num.bst
+│   │   │           │   └── elsevier-harvard.csl
+│   │   │           ├── elsarticle.cls
+│   │   │           ├── elsevier.lua
+│   │   │           ├── partials
+│   │   │           │   ├── _two-column-longtable.tex
+│   │   │           │   ├── before-body.tex
+│   │   │           │   └── title.tex
+│   │   │           └── styles
+│   │   │               └── elsevier.scss
+│   │   ├── bibliography.bib
+│   │   ├── elsarticle-harv.bst
+│   │   ├── elsarticle-num.bst
+│   │   ├── elsarticle.cls
+│   │   ├── paper.pdf
+│   │   ├── paper.qmd
+│   │   ├── paper.spl
+│   │   ├── paper.tex
+│   │   ├── paper_files
+│   │   │   └── figure-pdf
+│   │   │       ├── fig-meaningless-1.pdf
+│   │   │       ├── fig-site-simulation-1.pdf
+│   │   │       └── unnamed-chunk-3-1.pdf
+│   │   ├── placeholder.png
+│   │   ├── refs.bib
+│   │   └── style-guide
+│   │       ├── 1pseperateaug.pdf
+│   │       ├── 1psingleauthorgroup.pdf
+│   │       ├── elsdoc.pdf
+│   │       ├── elsdoc.tex
+│   │       ├── elstest-1p.pdf
+│   │       ├── elstest-1pdoubleblind.pdf
+│   │       ├── elstest-3p.pdf
+│   │       ├── elstest-3pd.pdf
+│   │       ├── elstest-5p.pdf
+│   │       ├── jfigs.pdf
+│   │       ├── makefile
+│   │       ├── pdfwidgets.sty
+│   │       └── rvdtx.sty
+│   ├── supplementary-materials
+│   └── templates
+│       ├── author-info-blocks.lua
+│       ├── journal-of-archaeological-science.csl
+│       ├── pagebreak.lua
+│       ├── scholarly-metadata.lua
+│       ├── template.Rmd
+│       └── template.docx
+├── attic
+│   ├── dev.R
+│   └── rrtools-wkshp-materials-master
+│       ├── README.md
+│       ├── analysis.R
+│       ├── gillespie.csv
+│       ├── paper.pdf
+│       ├── paper.txt
+│       └── refs.bib
+├── project.Rproj
+├── renv
+│   ├── activate.R
+│   └── settings.json
+└── renv.lock
+```
+
+
+You can browse a demo of my final compendium [here](https://github.com/annakrystalli/rrcompendium-demo)
+
+```{r}
+#| echo: false
+knitr::include_url("https://github.com/annakrystalli/rrcompendium-demo")
+```
+
