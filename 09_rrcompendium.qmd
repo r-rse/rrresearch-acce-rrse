@@ -1378,10 +1378,5 @@ usethis::use_github_links()
 
 # Final Compendium
 
-You can browse a copy of the final compendium [here](https://github.com/annakrystalli/rrcompendium-demo)
-
-```{r}
-#| echo: false
-knitr::include_url("https://github.com/annakrystalli/rrcompendium-demo")
-```
+You can browse a demo of the final compendium [here](https://github.com/annakrystalli/rrcompendium-demo)
 

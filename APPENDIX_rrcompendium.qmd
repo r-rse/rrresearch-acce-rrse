@@ -33,7 +33,7 @@ which should be rendered to `paper.pdf`.
 ```{r}
 #| filename: "analysis/paper/paper.pdf"
 #| echo: false
-knitr::include_graphics(here::here("appendices","rrcompendium", "paper.pdf"))
+knitr::include_url(here::here("appendices","rrcompendium", "paper.pdf"))
 ```
 
 
@@ -129,9 +129,3 @@ Your final project should contain the following files:
 
 
 You can browse a demo of my final compendium [here](https://github.com/annakrystalli/rrcompendium-demo)
-
-```{r}
-#| echo: false
-knitr::include_url("https://github.com/annakrystalli/rrcompendium-demo")
-```
-
