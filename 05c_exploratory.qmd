@@ -19,10 +19,9 @@ So lets use data visualisation to explore the properties and relationships betwe
 
 Let's add some setup code to our `analysis.R` script.
 
-Start by **loading the `ggplot2` as well as package `dplyr`** so we have access to the pipe and other data munging functionality. 
+Start by **loading the `ggplot2` as well as package `dplyr`** so we have access to the pipe and other data munging functionality.
 
 Let's **read in the data and also narrow it down to our variables of interest** using the `select()` function.
-
 
 ```{r}
 #| message: false
@@ -70,7 +69,7 @@ individual %>%
 
 The **distribution across all our data looks quite skewed towards lower values** and a long tail of larger values and even shows a small dip in a certain range of `stem_diameter`.
 
-**Many statistical tests assume normality** of the data and a **common transformation** to such skewed continuous data might be to **log them**. 
+**Many statistical tests assume normality** of the data and a **common transformation** to such skewed continuous data might be to **log them**.
 
 **`ggplot` allows us to perform such transformations during plotting** and prints it as part of the variable axes label.
 
@@ -130,7 +129,7 @@ individual %>%
 
 In contrast to `stem_diameter` and `height`, **`growth_form` is a categorical variable.**
 
-As such, we **use `geom_bar()` to plot a bar plot of the counts of values of each `growth_form` in our data**. 
+As such, we **use `geom_bar()` to plot a bar plot of the counts of values of each `growth_form` in our data**.
 
 A bar plot **plots categorical data across one axes** and **numeric data** (in this case **counts**) on the other axis.
 
@@ -146,15 +145,13 @@ individual %>%
   geom_bar()
 ```
 
-We can see that there are **very few entries for `"liana"`**. 
+We can see that there are **very few entries for `"liana"`**.
 
-There are **also a whole bunch of `NA`s in `growth_form`.** Indeed for our analysis, we'll need values for all three columns, what we call **complete cases**. 
+There are **also a whole bunch of `NA`s in `growth_form`.** Indeed for our analysis, we'll need values for all three columns, what we call **complete cases**.
 
-So let's filter our data to:
-- **remove any rows where growth form is `"liana"`**.
-- **retain only complete cases, i.e. rows where no `NA`s exist in any columns.
+So let's filter our data to: - **remove any rows where growth form is `"liana"`**. - \*\*retain only complete cases, i.e. rows where no `NA`s exist in any columns.
 
-To do this, we'll use `dplyr::filter()` and introduce a new function, `complete.cases()` which takes a data.frame, (which is why we pass the entire data object with `.`) and returns a logical vector with `TRUE` for rows with complete cases and `FALSE` for rows with incomplete cases. 
+To do this, we'll use `dplyr::filter()` and introduce a new function, `complete.cases()` which takes a data.frame, (which is why we pass the entire data object with `.`) and returns a logical vector with `TRUE` for rows with complete cases and `FALSE` for rows with incomplete cases.
 
 Let's **assign this new data to a new `analysis_df`** and work with that from now on.
 
@@ -218,13 +215,11 @@ That's better.
 
 ##### **:floppy_disk: Let's keep this plot and move it to our `analysis.R` script as fig 1**.
 
-
 ## Plotting multiple densities according to the values of a second variable
 
 When **plotting the density distributions we ended up having one plot per variable** with **little understanding of how values where distributed across the various growth forms.**
 
 However, **`ggplot` and the grammar of graphics allows us to build more informative plots, by combining the information in categorical variables to present cross variable distributions.**
-
 
 Let's explore what this means by **focusing on the distribution of `stem_diameter` across the `growth_form` categories** in our `development.R`.
 
@@ -307,9 +302,9 @@ analysis_df %>%
   geom_boxplot(alpha = 0.7, show.legend = FALSE)
 ```
 
-- The **central line** in each box corresponds to the **median.** 
-- The **lower** and **upper hinges** correspond to the **first and third quartiles** (the 25th and 75th percentiles) and define the **Interquartile range (IQR).**  
-- The whiskers are calculated from the IQR and identify points considered statistical outliers.
+-   The **central line** in each box corresponds to the **median.**
+-   The **lower** and **upper hinges** correspond to the **first and third quartiles** (the 25th and 75th percentiles) and define the **Interquartile range (IQR).**\
+-   The whiskers are calculated from the IQR and identify points considered statistical outliers.
 
 Again, we see the same information but this time we have a much more informative and compact plot.
 
@@ -344,7 +339,6 @@ With data in this format, we can **use variable `var` to create a facet for each
 
 Let's add the pivot as a step in our plotting pipeline and **include faceting with `facet_grid`**.
 
-
 ```{r}
 analysis_df %>%
   tidyr::pivot_longer(
@@ -360,7 +354,6 @@ analysis_df %>%
 ```
 
 Hurray! **Now we have a super informative plot, containing visual encodings of distributions and statistical summaries for both our continuous variables in one compact plot!**
-
 
 ##### **:floppy_disk: Let's keep this plot and move it to our `analysis.R` script as fig 1**.
 
@@ -428,7 +421,6 @@ analysis_df %>%
   theme_linedraw()
 ```
 
-
 ## Including an interaction with `growth_form`
 
 Inspecting the plot we can **clearly see sub groups in our data**. We already know that both our variables have very different distributions across `growth_form`. So **let's see if our model improves if we include `growth_form` in our model specification**.
@@ -476,18 +468,17 @@ analysis_df %>%
   theme_linedraw()
 ```
 
-Let's also use the `labs()` function this time to provide custom axes titles as well as  **add a custom title to our colour legend**.
+Let's also use the `labs()` function this time to provide custom axes titles as well as **add a custom title to our colour legend**.
 
 Excellent! We now have specified both models and visualised them! Our analysis is complete.
 
 *NOTE: the geom_smooth method of plotting model lines is not ideal and you will likely take more formal approaches to calculating and plotting confidence intervals. But for the purposes of of this workshop, we'll stick with this.*
 
-****
+------------------------------------------------------------------------
 
 ## Final `analysis.R`
 
 ##### **:floppy_disk: Lets add all our models and plots to our `analysis.R` script.**.
-
 
 **Your `analysis.R` script should now look like this.**
 
