@@ -159,3 +159,5 @@ Small sections in the **Data Munging** section where inspired by text in the onl
 <br>
 
 **Materials** for the **Research Compendium** section were sourced from ***Carl Boettiger. (2018, April 17).*** **cboettig/noise-phenomena: Supplement to: "From noise to knowledge: how randomness generates novel phenomena and reveals information"** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219780.svg)](https://doi.org/10.5281/zenodo.1219780), accompanying the publication: Carl Boettiger [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-1642-628X). *From noise to knowledge: how randomness generates novel phenomena and reveals information*. Published in *Ecology Letters*, 22 May 2018 <https://doi.org/10.1111/ele.13085>.
+
+<a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-accent.svg" alt="Deploys by Netlify" /> </a>

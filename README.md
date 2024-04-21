@@ -1,4 +1,4 @@
-[![bookdown](https://github.com/annakrystalli/rrresearchACCE20/workflows/bookdown/badge.svg)](https://github.com/annakrystalli/rrresearchACCE20/actions/workflows/bookdown.yaml)
+<a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-accent.svg" alt="Deploys by Netlify" /> </a>
 
 <!-- badges: end -->
 
