@@ -81,7 +81,7 @@ There are a **wide variety of options available for customizing output from exec
 Standard block options include:
 
 | Option    | Description                                                                                                                                                                                       |
-|------------------------|------------------------------------------------|
+|------------------------|-----------------------------------------------|
 | `eval`    | Evaluate the code chunk (if `false`, just echos the code into the output).                                                                                                                        |
 | `echo`    | Include the source code in output                                                                                                                                                                 |
 | `output`  | Include the results of executing the code in the output (`true`, `false`, or `asis` to indicate that the output is raw markdown and should not have any of Quarto’s standard enclosing markdown). |
@@ -188,7 +188,7 @@ analysis_df <- analysis_df %>%
 Let's also add some descriptive text to describe the data that will calculate and report dataset characteristics using inline code.
 
 ```         
-The final data set contains a total of **`{r} nrow(analysis_df)`**
+The final data set contains a total of **`{{r}} nrow(analysis_df)`**
 ```
 
 ### Print the dataset
@@ -245,7 +245,7 @@ The data preparation steps are contained in the `data-raw/individuals.R` script.
 
 ## Summary statistics
 
-Prepared data were also subset to columns of interest `stem_diameter`, `height` and `growth_form` and records where `growth_form` values were not `"liana"` or missing.
+Prepared data were also subset to columns of interest `stem_diameter`, `height` and `growth_form` and subset to complete case. Liana growth forms were removed.
 
 ```{{r}}
 #| label: setup
@@ -298,7 +298,7 @@ Let's now go ahead and add the initial exploratory plots we've generated in `ana
 A really useful feature for Scientific Writing of Quarto is the **ability to cross-reference code blocks and their outputs** through the use of special labels and referencing notation. See more about [cross-referencing](https://quarto.org/docs/authoring/cross-references.html).
 :::
 
-### Add a plot of order counts
+### Add the plot of growth form counts
 
 We'll start by adding a plot of the distribution of sample occurrence counts across growth forms in the dataset.
 
@@ -356,7 +356,6 @@ which renders to the following text:
 
 ### Add plot of height and stem_diameter distribution
 
-
 Let's also add the faceted exploratory plots we generated in `analysis.R` to the report. These are the violin plots of the log distribution of height and stem_diameter across growth forms.
 
 Let's add the code for both plots to a new code block with the following code block options:
@@ -366,8 +365,6 @@ Let's add the code for both plots to a new code block with the following code bl
 \- **`label: fig-violin-plots`** to label the code block with the name `fig-violin-plots`.
 
 \- **`fig-cap: "Distribution of log stem_diameter and log height across growth forms"`** to add a caption to the plot.
-
-
 
 ```{{r}}
 #| echo: false
@@ -537,7 +534,6 @@ analysis_df %>%
 ```
 
 @fig-violin-plots shows the log distribution of stem diameter and log height across growth forms.
-
 ````
 
 ## Adding tables
@@ -682,12 +678,12 @@ See @fig-overall-lm, @tbl-overall-glance and @tbl-overall-tidy for results.
 
 ### Add Growth form level analysis
 
-Using the same approaches we learned above, add a new section called **Growth form level analysis** and add the code and outputs associated with the growth form  level analysis.
+Using the same approaches we learned above, add a new section called **Growth form level analysis** and add the code and outputs associated with the growth form level analysis.
 
 Here's what my section looks like:
 
 ````         
-### Growth form level analysis
+## Growth form level analysis
 
 We also fit a model with an interaction term with growth form included.
 
@@ -799,7 +795,6 @@ Quarto will use Pandoc to automatically generate citations and add a bibliograph
 -   Re-render your report to insert the citations and create a bibliography section.
 
 See more details about [citations and references](https://quarto.org/docs/authoring/footnotes-and-citations.html).
-
 
 ## Final Report
 
