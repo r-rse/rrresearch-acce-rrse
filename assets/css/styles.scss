@@ -1,0 +1,92 @@
+/*---Fonts---*/
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Cutive&family=Work+Sans:wght@100..900&display=swap');
+/*
+@import url('https://fonts.googleapis.com/css2?family=Aleo:wght@100..900&family=Ubuntu:wght@300;400;500;700&display=swap');
+*/
+
+/*-- scss:defaults --*/
+$primary: #388274ff;
+$font-family-monospace: 'Courier Prime', monospace;
+$font-family-sans-serif: "Work Sans",
+  Helvetica, sans-serif !default;
+$monospace-font-weight:  500 !default;
+$link-color: #388274ff;
+$sidebar-hl: #388274ff;
+$code-color: #00628f;
+$code-block-bg: #def2ed;
+
+/*-- scss:rules --*/
+/* Sidebar ------------------------------------------------------ */
+.sidebar-title {
+  color: #51898fff;
+}
+
+div.sidebar-item-container .active {
+  font-weight: bold;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active{
+  font-weight: bold;
+}
+
+/* Code blocks ------------------------------------------------------ */
+.cell-output {
+    background-color: #d2eaf0;
+    padding: 0.3rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+/* Headings ------------------------------------------------------ */
+h1, h2 {
+    font-family: 'Cutive', serif !important;
+    font-weight: 700;
+}
+
+
+h3, h4, h5, h6 {
+  font-family: 'Cutive', serif !important;
+  font-weight:500;
+}
+
+h1 {
+    padding-top: 1.3rem;
+}
+
+h2 {
+    padding-top: 1rem;
+}
+
+h3 {
+    padding-top: 0.8rem;
+}
+
+h4, h5 {
+    padding-top: 0.6rem;
+}
+
+
+.email-sched-card {
+  padding: 15px !important;
+  margin: 10px 2px !important;
+  border: 1px solid #D3D3D3;
+  border-radius: 20px;
+  font-size: 1em;
+
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  h4 {
+    font-size: 1.2 rem;
+  }
+
+  h5 {
+    font-size: 1 rem;
+  }
+}
+
+
+/* Iframes ------------------------------------------------------ */
+iframe {
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
