@@ -34,7 +34,7 @@ The data preparation steps are contained in the `data-raw/individuals.R` script.
 
 ## Summary statistics
 
-Prepared data were also subset to columns of interest `stem_diameter`, `height` and `growth_form` and records where `growth_form` values were not `"liana"` or missing.
+Prepared data were also subset to columns of interest `stem_diameter`, `height` and `growth_form` and rows filtered to complete cases. Liana growth forms were removed.
 
 ```{r}
 #| label: setup
@@ -165,7 +165,7 @@ analysis_df %>%
 
 See @fig-overall-lm, @tbl-overall-glance and @tbl-overall-tidy for results.
 
-### Growth form level analysis
+## Growth form level analysis
 
 We also fit a model with an interaction term with growth form included.
 
