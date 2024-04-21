@@ -5,7 +5,6 @@ subtitle: "Creating a Scientific Report"
 
 In this part of the course, we will use `Quarto` to create a reproducible presentation document for our analysis, combining our code and it's output with text in the form of markdown!
 
-
 ## Create your first `.qmd`!
 
 ### Create new `.qmd` file
@@ -15,7 +14,6 @@ Let's start by creating a new `.qmd` file in RStudio.
 ::: {.callout-info appearance="minimal"}
 **File \> New File \> Quarto Document... \> Document**
 :::
-
 
 ![](assets/img/qmd_new.png)
 
@@ -520,7 +518,7 @@ To do so, let's first remove all the default content in the document **EXCEPT FO
 
 -   **Write a short description of the data set and analysis**: Write a short description of the NEON Vegetation structure dataset and the objective of the analysis.
 
-    **Have a look at the project README in `data-raw/wood-survey-data-master`** which contains some useful information you might be able to copy. \_Note: You'll likely need to switch to the Source editor to paste raw markdown_
+    **Have a look at the project README in `data-raw/wood-survey-data-master`** which contains some useful information you might be able to copy. \_Note: You'll likely need to switch to the Source editor to paste raw markdown\_
 
 -   **Make use of markdown annotation to**:
 
@@ -529,7 +527,7 @@ To do so, let's first remove all the default content in the document **EXCEPT FO
 
 -   **Add an image related to the data**.
 
-    -   perhaps a logo or a relevant image to the organisms in question (see `data-raw/wood-survey-data-master` for a NEON logo). 
+    -   perhaps a logo or a relevant image to the organisms in question (see `data-raw/wood-survey-data-master` for a NEON logo).
     -   have a look online, especially on sites like [unsplash](https://unsplash.com/) that offer free to use images. *Note: To upload images to your project, use the **Upload files to server button** in the File pane on the bottom right of Posit Cloud interface.*
     -   include the source underneath for attribution.
     -   see if you can resize it.
@@ -542,8 +540,7 @@ To do so, let's first remove all the default content in the document **EXCEPT FO
 ::: {.callout-note appearance="minimal" collapse="true" title="Here's what my document now looks like:"}
 ::: grid
 ::: g-col-6
-
-```   
+```         
 ---
 title: "Analysis of NEON Woody plant vegetation structure data"
 subtitle: "ACCE DTP course"
@@ -554,9 +551,7 @@ format:
     toc: true
     theme: minty
     highlight-style: dracula
-    df-print: paged
 editor: visual
-bibliography: references.bib
 ---
 
 ## Background
@@ -585,5 +580,3 @@ The data preparation steps are contained in the `data-raw/individuals.R` script.
 :::
 :::
 :::
-
-
