@@ -499,8 +499,8 @@ This inserts a template for the documentation of the function. We can now fill i
 Let's just delete the `@examples` and `@return` section and complete the rest of the fields:
 
 -  **Title**: A brief description of what the function does.
--  **@param**: A description of each argument the function accepts.
--  **@return**: A description of what the function returns.
+-  **\@param**: A description of each argument the function accepts.
+-  **\@return**: A description of what the function returns.
 
 ```{r}
 #| eval: false

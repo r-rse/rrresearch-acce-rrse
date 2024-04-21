@@ -25,7 +25,7 @@ lightbox: true
 -   **Research Software Engineer**, [*`R-RSE`*](https://www.r-rse.eu/)
 
     -   mastodon annakrystalli\@fosstodon.org
-    -   github @annakrystalli
+    -   github \@annakrystalli
     -   email **r.rse.eu\[at\]gmail.com**
 
 -   Background in **Marine Macroecology**
