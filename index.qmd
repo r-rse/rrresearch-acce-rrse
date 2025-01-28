@@ -30,9 +30,9 @@ By the end of the workshop, participants will be able to:
 
 ## Course Outline
 
-::: grid
+:::: grid
 ::: {.g-col-8 .g-col-md-4 .email-sched-card}
-#### {{< fa calendar >}} Day 1: 12th April
+#### {{< fa calendar >}} Day 1
 
 ##### {{< fa clock >}} 10:00 - 16:30
 
@@ -48,11 +48,11 @@ By the end of the workshop, participants will be able to:
 -   Indexing and Subsetting
 -   The tidyverse way
 :::
-:::
+::::
 
-::: grid
+:::::: grid
 ::: {.g-col-8 .g-col-md-4 .email-sched-card}
-#### {{< fa calendar >}} Day 2: 15th April
+#### {{< fa calendar >}} Day 2
 
 ##### {{< fa clock >}} 09:00 - 17:00
 
@@ -71,7 +71,7 @@ By the end of the workshop, participants will be able to:
 :::
 
 ::: {.g-col-8 .g-col-md-4 .email-sched-card}
-#### {{< fa calendar >}} Day 3: 17th April
+#### {{< fa calendar >}} Day 3
 
 ##### {{< fa clock >}} 09:00 - 17:00
 
@@ -83,18 +83,33 @@ By the end of the workshop, participants will be able to:
 **Analysing & Presenting data**
 
 -   Plotting with `ggplot2`
--   Scientific Reporting with Quarto
 :::
 
 ::: {.g-col-8 .g-col-md-4 .email-sched-card}
-#### {{< fa calendar >}} Day 4: 19th April
+#### {{< fa calendar >}} Day 4
 
 ##### {{< fa clock >}} 09:00 - 17:00
+
+**Analysing & Presenting data**
+-   Scientific Reporting with Quarto
 
 **Version Control**
 
 -   Version control with Git
 -   Collaboration through GitHub
+
+**Packaging Code**
+
+- Managing Dependencies
+
+:::
+
+::: {.g-col-8 .g-col-md-4 .email-sched-card}
+#### {{< fa calendar >}} Day 5
+
+##### {{< fa clock >}} 09:00 - 15:30
+
+##### OPTIONAL
 
 **Packaging Code**
 
@@ -106,7 +121,7 @@ By the end of the workshop, participants will be able to:
 
 -   Creating a research compendium
 :::
-:::
+::::::
 
 ------------------------------------------------------------------------
 
@@ -152,12 +167,10 @@ Small sections in the **Data Munging** section where inspired by text in the onl
 -   [**LICENSE**](https://www.neonscience.org/data/about-data/data-policies)
 -   **Disclaimer**
 
-       
 > THE NEON DATA PRODUCTS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE NEON DATA PRODUCTS BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE NEON DATA PRODUCTS.
-
 
 <br>
 
 **Materials** for the **Research Compendium** section were sourced from ***Carl Boettiger. (2018, April 17).*** **cboettig/noise-phenomena: Supplement to: "From noise to knowledge: how randomness generates novel phenomena and reveals information"** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219780.svg)](https://doi.org/10.5281/zenodo.1219780), accompanying the publication: Carl Boettiger [![](https://orcid.org/sites/default/files/images/orcid_16x16.png)](https://orcid.org/0000-0002-1642-628X). *From noise to knowledge: how randomness generates novel phenomena and reveals information*. Published in *Ecology Letters*, 22 May 2018 <https://doi.org/10.1111/ele.13085>.
 
-<a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-accent.svg" alt="Deploys by Netlify" /> </a>
+<a href="https://www.netlify.com"> <img src="https://www.netlify.com/v3/img/components/netlify-color-accent.svg" alt="Deploys by Netlify"/> </a>
