@@ -35,7 +35,6 @@ Yet we lag in conventions and technical infrastructure for such openness.
 
 3.  **Specify the computational environment** that was used for the original analysis.
 
-
 # R community response
 
 > R packages can be used as a research compendium for organising and sharing files!
@@ -49,7 +48,6 @@ Yet we lag in conventions and technical infrastructure for such openness.
 See Ben Marwick, Carl Boettiger & Lincoln Mullen (2018) [*Packaging Data Analytical Work Reproducibly Using R (and Friends)*](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986?journalCode=utas20), The American Statistician, 72:1, 80-88, DOI: \<10.1080/00031305.2017.1375986\>
 
 ![images: [*Kartik Ram: rstudio::conf 2019 talk*](https://github.com/karthik/rstudio2019)](assets/reproducible-data-analysis-10.png){fig-align="center" width="400"}
-
 
 # R Developer Tools
 
@@ -101,7 +99,6 @@ See Ben Marwick, Carl Boettiger & Lincoln Mullen (2018) [*Packaging Data Analyti
 
 ![images: [*Kartik Ram: rstudio::conf 2019 talk*](https://github.com/karthik/rstudio2019)](assets/reproducible-data-analysis-13.png){fig-align="center" width="400"}
 
-
 # `rrtools`: Research Compendia in R
 
 > The goal of rrtools is to provide **instructions, templates, and functions** for making a **basic compendium** suitable for writing **reproducible research with R**.
@@ -126,8 +123,7 @@ See Ben Marwick, Carl Boettiger & Lincoln Mullen (2018) [*Packaging Data Analyti
 
 ------------------------------------------------------------------------
 
-
-# Practical: Create a Research Compendium 
+# Practical: Create a Research Compendium
 
 ## Practical Aims and Objectives
 
@@ -140,8 +136,6 @@ By the end of the workshop, you should be able to:
 -   **Produce a reproducible manuscript from a single rmarkdown document**.
 
 -   Appreciate the power of convention!
-
-
 
 # Create your first reproducible research compendium
 
@@ -162,27 +156,23 @@ If you are working locally, you would need to **install the following packages s
 
 ```
 
-
 You might also need to install `tinytex` (if you get errors when rendering your qmd paper).
-
 :::
 
 # Create compendium
 
 Now that we've got a project to work in, let's start by **creating a blank research compendium** for us to work in.
 
-
 We use function **`rrtools::create_compendium`**.
 
-Because we are already in the project we want to create the compendium in, we can just call the function without any arguments. 
+Because we are already in the project we want to create the compendium in, we can just call the function without any arguments.
 
 ```{r}
 #| eval: false
 rrtools::create_compendium()
 ```
 
-_But see below for information on how to create a compendium locally in a new directory._
-
+*But see below for information on how to create a compendium locally in a new directory.*
 
 ::: {.callout-note collapse="true"}
 ## Creating a Research Compendium in a new directory locally
@@ -194,7 +184,6 @@ To **create `rrcompendium` on my desktop I might use:**
 ```{r, eval=FALSE}
 rrtools::create_compendium("~/Desktop/rrcompendium")
 ```
-
 :::
 
 If the call was successfull you should see the following console output:
@@ -250,8 +239,6 @@ You can start working now or apply some more basic configuration.
 Check out https://github.com/benmarwick/rrtools for an explanation of all the project configuration functions of rrtools.
 ```
 
-
-
 ## Initiate `git`
 
 Let's initialise our compendium with `.git`. We'll need to configure git again as this is a new Rstudio cloud project.
@@ -264,7 +251,7 @@ usethis::use_git_config(user.name = "Jane",
 usethis::use_git()
 ```
 
-```
+```         
 ✔ Initialising Git repo
 ✔ Adding '.Rhistory', '.Rdata', '.httr-oauth', '.DS_Store', '.quarto' to '.gitignore'
 There are 12 uncommitted files:
@@ -286,8 +273,8 @@ Is it ok to commit them?
 3: Definitely
 
 Selection:  3
-
 ```
+
 Let's agree to commit the files and also to restart Rstudio.
 
 Let's also change the default branch to the more modern convention of `main` instead of `master`. We can use `usethis::git_default_branch_rename()`.
@@ -297,7 +284,7 @@ Let's also change the default branch to the more modern convention of `main` ins
 usethis::git_default_branch_rename()
 ```
 
-```
+```         
 ℹ Local branch 'master' appears to play the role of the default branch.
 ✔ Moving local 'master' branch to 'main'.
 • Be sure to update files that refer to the default branch by name.
@@ -306,12 +293,11 @@ usethis::git_default_branch_rename()
 
 ![](assets/master-to-main.png)
 
-
 # Inspect templates
 
 `rrtools::create_compendium()` creates the **bare backbone of infrastructure required for a research compendium**. At this point it provides facilities to store general metadata about our compendium (eg bibliographic details to create a citation) and manage dependencies in the `DESCRIPTION` file and store and document functions in the `R/` folder. Together these allow us to **manage, install and share functionality associated with our project**.
 
-```
+```         
 .
 ├── CONDUCT.md  <- .............................code of conduct
 ├── CONTRIBUTING.md <- .........................instructions for           
@@ -341,8 +327,6 @@ usethis::git_default_branch_rename()
 │       └── template.docx
 └── project.Rproj
 ```
-
-
 
 # Get session materials
 
@@ -382,7 +366,7 @@ You can **download the materials using `usethis::use_course()`** and supplying a
 usethis::use_course(url = "bit.ly/rrtools_wks", destdir = "attic")
 ```
 
-```
+```         
 ✔ Downloading from 'https://bit.ly/rrtools_wks'
 Downloaded: 0.43 MB  
 ✔ Download stored in 'attic/rrtools-wkshp-materials-master.zip'
@@ -401,7 +385,6 @@ Selection: 1
 
 This will **download** everything we need from a GitHub repository as a `.zip` file, **unzip** it and launch it in a **new Rstudio session** for us to explore.
 
-
 ## Inspect materials
 
 The follwing files should now be contained in your `attic/rrtools-wkshp-materials-master` folder
@@ -415,14 +398,13 @@ The follwing files should now be contained in your `attic/rrtools-wkshp-material
 └── refs.bib <- ........................bibtex bibliographic file
 ```
 
-
 In this workshop we'll attempt **a partial reproduction of the original paper** using the materials we've just downloaded.
 
 We'll **use this as an opportunity to create a new research compendium using `rrtools` and friends!** :confetti:
 
 ------------------------------------------------------------------------
 
-#  Update `DESCRIPTION` file
+# Update `DESCRIPTION` file
 
 Let's **update some basic details in the `DESCRIPTION` file**:
 
@@ -448,11 +430,12 @@ Suggests: devtools,
 
 ## Package name
 
-To get correct the limitation of working in Posit Cloud, were all projects are called `project`, let's correct the `Package:` field and **rename our package to `rrcompendium`**. 
+To get correct the limitation of working in Posit Cloud, were all projects are called `project`, let's correct the `Package:` field and **rename our package to `rrcompendium`**.
 
-```
+```         
 Package: rrcompendium
 ```
+
 ## Title
 
 Let's also **give our compendium a descriptive title**:
@@ -462,11 +445,9 @@ Title: Partial Reproduction of Boettiger Ecology Letters 2018;21:1255–1267
     with rrtools
 ```
 
-
 ## Version
 
 We don't need to change the version now but using [semantic versioning](https://semver.org/) for our compendium can be a really useful way to track versions. In general, **versions below `0.0.1` are in development**, hence the `DESCRIPTION` file defaults to `0.0.0.9000`.
-
 
 ## Authors
 
@@ -496,13 +477,13 @@ Description: This repository contains the research compendium of the
 
 Add a `Date` field to the `DESCRIPTION` file to indicate when the compendium was created.
 
-```
+```         
 Date: 2024-04-19
 ```
 
 ## License
 
-Finally, let's **update the license for the material we create with copyright holder details**. We'll continue using the [**MIT license**](https://opensource.org/licenses/MIT) already created (_Note however that **his only covers the code**_). We can do this with:
+Finally, let's **update the license for the material we create with copyright holder details**. We'll continue using the [**MIT license**](https://opensource.org/licenses/MIT) already created (*Note however that **his only covers the code***). We can do this with:
 
 ```{r, eval=FALSE}
 usethis::use_mit_license("Anna Krystalli")
@@ -528,7 +509,6 @@ Selection: 1
 ```
 
 This overwrites the current files `LICENSE` and `LICENSE.md` and updates the `DESCRIPTION` file, embedding our name in the details of the license.
-
 
 ## Recap
 
@@ -586,10 +566,9 @@ Let's commit our work and move on to preparing our compendium for sharing on Git
 
 When we first created our compendium, a `paper.qmd` file was created in the `analysis/paper` directory. This file is a template for a reproducible manuscript that we can use to write up our analysis and also serve to demonstrate how a reproducible paper should e set up.
 
-However, the template is quite generic and we want to take advantage of the fact that Quarto offers templates for specific journals. 
+However, the template is quite generic and we want to take advantage of the fact that Quarto offers templates for specific journals.
 
 Given the original paper was published in Ecology Letters, an Elsevier journal, we'll use the [`elsevier` quarto template](https://github.com/quarto-journals/elsevier).
-
 
 ## Delete current `paper/` directory
 
@@ -604,8 +583,7 @@ fs::dir_delete("analysis/paper")
 
 Next let's move over to the Terminal and use the `quarto` CLI to create a new `paper.qmd` file from the `elsevier` template.
 
-
-```{bash} 
+```{bash}
 #| eval: false
 #| filename: Terminal
 quarto use template quarto-journals/elsevier
@@ -617,11 +595,12 @@ trust the authors of the template, we recommend that you do not install or
 use the template.
  ? Do you trust the authors of this template (Y/n) › Yes
 ```
+
 When asked whether you trust the authors of the template, select `Yes`.
 
 Next, **you'll be asked to provide a name for the new directory** the new `paper.qmd` will be created in. **Specify: `analysis/paper`.**
 
-```{bash}    
+```{bash}
 #| eval: false
 #| filename: Terminal
  ? Directory name: › analysis/paper
@@ -643,7 +622,7 @@ Files created:
 
 This creates the following files and directories in the `analysis/paper` directory:
 
-```
+```         
 analysis/paper
 ├── _extensions/
 ├── bibliography.bib
@@ -656,8 +635,8 @@ analysis/paper
 
 Let's also copy some files we'll be using in our project from the materials we downloaded into our `attic/`. In particular, we need to copy:
 
--  `gillespie.csv` (the paper data) into `analysis/data`
--  `refs.bib` (the paper references) into `analysis/paper`
+-   `gillespie.csv` (the paper data) into `analysis/data`
+-   `refs.bib` (the paper references) into `analysis/paper`
 
 We can do this programmatically using the `fs` package.
 
@@ -675,7 +654,6 @@ fs::file_copy(
 
 Commit changes to the project.
 
-
 ## Inspect `paper.qmd`
 
 The `paper.qmd` file is a template for a reproducible manuscript that we can use to write up our analysis. It contains a lot of information about the features of the `elsevier` template and how to use it.
@@ -687,7 +665,6 @@ Let's open the new `paper.qmd` file, take a look at the contents and render it.
 knitr::include_graphics("assets/pdfs/elsevier-tmpl.pdf")
 ```
 
-
 # Complete paper Front Matter
 
 Let's start by **completing the front matter of the `paper.qmd` file**.
@@ -698,7 +675,7 @@ Let's start with the `title` and `author` fields.
 
 First delete the following lines:
 
-```yaml
+``` yaml
 title: Short Paper
 subtitle: A Short Subtitle
 author:
@@ -737,9 +714,10 @@ author:
     affilations:
         - ref: some-tech
 ```
+
 and replace them with information we can find in the downloaded materials, and in particular the `paper.txt` file. We'll complete the information with the orginal author details.
 
-```yaml
+``` yaml
 title: "From noise to knowledge: how randomness generates novel phenomena and reveals information"
 author:
   - name: "Carl Boettiger"
@@ -755,7 +733,7 @@ author:
 
 Next, let's replace the `abstract` and `keywords` fields with the following. Again, we can find this information in the `paper.txt` file.
 
-```yaml
+``` yaml
 abstract: |
   Noise, as the term itself suggests, is most often seen a nuisance to ecological insight, a inconvenient reality that must be acknowledged, a haystack that must be stripped away to reveal the processes of interest underneath. Yet despite this well-earned reputation, noise is often interesting in its own right: noise can induce novel phenomena that could not be understood from some underlying determinstic model alone.  Nor is all noise the same, and close examination of differences in frequency, color or magnitude can reveal insights that would otherwise be inaccessible.  Yet with each aspect of stochasticity leading to some new or unexpected behavior, the time is right to move beyond the familiar refrain of "everything is important" (Bjørnstad & Grenfell 2001).  Stochastic phenomena can suggest new ways of inferring process from pattern, and thus spark more dialog between theory and empirical perspectives that best advances the field as a whole. I highlight a few compelling examples, while observing that the study of stochastic phenomena are only beginning to make this translation into empirical inference.  There are rich opportunities at this interface in the years ahead.
 keywords: 
@@ -771,7 +749,7 @@ keywords:
 
 Finally, in `journal`, let's **change the reference style** to match the original paper by changinging `cite-style` to `authoryear` and set the `name` of the journal to `Ecology Letters`.
 
-```yaml
+``` yaml
 format:
   elsevier-pdf:
     keep-tex: true
@@ -781,6 +759,7 @@ format:
       model: 3p
       cite-style: authoryear
 ```
+
 ------------------------------------------------------------------------
 
 # Complete paper body
@@ -791,14 +770,13 @@ Next, let's **clear the template body contents** (everything outside the YAML Fr
 
 Copy everything between and including the `# Introduction: ...` and `## References` sections in `paper.txt` and paste it into the `paper.qmd` file, below the YAML Front matter header.
 
-
 ## Add Mathematical Notation
 
 Through the `## Demographic stochasticity` section of the paper, there is discussion simulation parameters that in the orginal paper are formatted using mathematical notations used for equations. To format such in-line text using such notation, surround it with `$` dollar signs.
 
 Here's an example of what that looks like in `paper.qmd`:
 
-```markdown
+``` markdown
  We summarize the myriad lower-level processes that
 mechanistically lead to the event of a 'birth' in the population
 as a probability: In a population of $N$ identical individuals at
@@ -810,16 +788,9 @@ $d_t(N_t)$, decreasing the population size by one individual, to $N-1$.
 
 And what it looks like when rendered:
 
->  We summarize the myriad lower-level processes that
-mechanistically lead to the event of a 'birth' in the population
-as a probability: In a population of $N$ identical individuals at
-time t, a birth occurs with probability $b_t(N_t)$ (_i.e._ a rate
-that can depend on the population size, $N$), which increases the
-population size to $N+1$. Similarly, death events occur with probability
-$d_t(N_t)$, decreasing the population size by one individual, to $N-1$. 
+> We summarize the myriad lower-level processes that mechanistically lead to the event of a 'birth' in the population as a probability: In a population of $N$ identical individuals at time t, a birth occurs with probability $b_t(N_t)$ (*i.e.* a rate that can depend on the population size, $N$), which increases the population size to $N+1$. Similarly, death events occur with probability $d_t(N_t)$, decreasing the population size by one individual, to $N-1$.
 
 Read through that section and format any mathematical notation accordingly.
-
 
 ## Update references
 
@@ -829,7 +800,7 @@ Next we'll replace the flat citations in the text with real linked citation whic
 
 To do this, first we'll need to switch our bibliography to the `refs.bib` file. So in the YAML Front Matter, replace the `bibliography` field with the following:
 
-```yaml
+``` yaml
 bibliography: refs.bib
 ```
 
@@ -837,8 +808,7 @@ bibliography: refs.bib
 
 Firstly, to use the interactive citation features in Quarto, we need to move over to the **Visual** editor.
 
-
-```markdown
+``` markdown
 To many, stochasticity, or more simply, noise, is just that -- something which obscures patterns we are trying to infer [@Knape2011]; and an ever richer batteries of statistical methods are developed largely in an attempt to strip away this undesirable randomness to reveal the patterns beneath [@Coulson2001]. Over the past several decades, literature in stochasticity has transitioned from thinking of stochasticity in such terms; where noise is a nuisance that obscures the deterministic skeleton of the underlying mechanisms, to the recognition that stochasticity can itself be a mechanism for driving many interesting phenomena [@Coulson2004]. 
 ```
 
@@ -853,7 +823,6 @@ Now that we've set up the text for our paper, the next step is to add the execut
 ## Inspect analysis.R file
 
 Let's also **open `analysis.R`** in the course materials and run the code. The script has some **initial setup**, then **loads the data**, **recodes one of the columns** for plotting and then **plots the results** of the simulation, which **generates figure 1 in [`paper.pdf`](https://github.com/annakrystalli/rrtools-wkshp-materials/blob/master/paper.pdf)**.
-
 
 ```{r}
 #| eval: false
@@ -885,8 +854,6 @@ data %>%
   facet_wrap(~system_size, scales = "free_y")
 
 ```
-
-
 
 ```{r}
 #| eval: true
@@ -922,25 +889,21 @@ data %>%
 
 ```
 
-
 Let's move back to our `paper.qmd` file and start adding the code to generate the plot.
 
 ## Add document level code block configuration
 
 Before we begin, let's add some **document level code block configuration** which will apply to all code blocks in our document. We can do this by adding a `knitr` block to bottom of the YAML Front Matter of the `paper.qmd` file.
 
-```yaml
+``` yaml
 knitr:
   opts_block: 
     echo: false
     warning: false
     message: false
 ```
-This sets the following options for all code blocks in the document:
-- `echo: false` suppresses the code output
-- `warning: false` suppresses warnings
-- `message: false` suppresses messages
 
+This sets the following options for all code blocks in the document: - `echo: false` suppresses the code output - `warning: false` suppresses warnings - `message: false` suppresses messages
 
 ## Add block to load libraries
 
@@ -966,16 +929,13 @@ Copy the **code to set the plot theme** and pasted into the block:
 theme_set(theme_grey())
 ```
 
-
-
 ## Add `figure 1` block
 
-Now **scroll down** towards the bottom of the document and **create a new block just above the Conclusions** section. 
+Now **scroll down** towards the bottom of the document and **create a new block just above the Conclusions** section.
 
 ### Add code
 
-````
-```{{r}}
+```{{{r}}}
 # create colour palette
 colours <- ptol_pal()(2)
 
@@ -995,7 +955,6 @@ data %>%
   geom_line(aes(y = n), col=colours[1]) +
   facet_wrap(~system_size, scales = "free_y") 
 ```
-````
 
 Edit path to data file to reflect the correct path to the data file in the project.
 
@@ -1006,16 +965,13 @@ data <- read_csv(here::here("analysis", "data", "gillespie.csv"),
                  col_types = "cdiddd")  
 ```
 
-
 ## Add plot cross-reference
 
-Next, to be able to cross-reference the plot in the text, we need to add a **`label`** to the block. 
+Next, to be able to cross-reference the plot in the text, we need to add a **`label`** to the block.
 
 Let's also add the figure caption found at the bottom of `paper.txt` to the plot through option **`fig-cap`**.
 
-
-````
-```{{r}}
+```{{{r}}}
 #| label: fig-site-simulation
 #| fig-cap: "Population dynamics from a Gillespie simulation of the Levins model with large (N=1000, panel A) and small (N=100, panel B) number of sites (blue) show relatively weaker effects of demographic noise in the bigger system. Models are otherwise identical, with e = 0.2 and c = 1 (code in appendix A). Theoretical predictions for mean and plus/minus one standard deviation shown in horizontal re dashed lines."
 # create colour palette
@@ -1038,18 +994,18 @@ data %>%
   geom_line(aes(y = n), col=colours[1]) +
   facet_wrap(~system_size, scales = "free_y") 
 ```
-````
 
-Now we can reference this plot in the text using `@fig-site-simulation`. 
+Now we can reference this plot in the text using `@fig-site-simulation`.
 
 So let's go ahead and replace:
 
-```markdown
+``` markdown
 Figure 1 shows the results of two exact SSA simulations of the classic patch model
 ```
-with 
 
-```markdown
+with
+
+``` markdown
 @fig-site-simulation shows the results of two exact SSA simulations of the classic patch model
 ```
 
@@ -1069,7 +1025,7 @@ rrtools::add_dependencies_to_description()
 
 This will add the following to the `DESCRIPTION` file:
 
-```
+```         
 Imports: here,
     dplyr (>= 1.1.4),
     fs (>= 1.6.3),
@@ -1079,6 +1035,7 @@ Imports: here,
     readr (>= 2.1.5),
     rmarkdown (>= 2.26)
 ```
+
 and is a good start because it records any packages needed as well as a minimum version required. To ensure these packages are installed, another user of our project could just run `install.packages("remotes")` and then `remotes::install_deps()` to install all the dependencies listed in the `DESCRIPTION` file.
 
 However, this does not guarantee and exact version of packages so breaking changes in new versions of packages could cause issues. To ensure exact versions are recorded, we can use `renv` again to create a snapshot of the project library. In fact we can combine the information contained in the `DESCRIPTION` file with the snapshot with `renv` to create an explicit lockfile that tracks the imports listed in `DESCRIPTION`.
@@ -1092,18 +1049,17 @@ renv::init()
 
 Because it detects a `DESCRIPTION` file, `renv` will ask us how to proceed. Select **`1: Use only the DESCRIPTION file. (explicit mode).`**
 
-
-```
+```         
 This project contains a DESCRIPTION file.
 Which files should renv use for dependency discovery in this project? 
 
 1: Use only the DESCRIPTION file. (explicit mode)
 2: Use all files in this project. (implicit mode)
 ```
+
 Once selected, `renv` will proceed to create a lockfile that captures the exact versions of the packages listed in `DESCRIPTION` in the project library.
 
-
-```
+```         
 - Using 'explicit' snapshot type. Please see `?renv::snapshot` for more details.
 
 - Linking packages into the project library ... [113/113] Done!
@@ -1220,13 +1176,11 @@ The version of R recorded in the lockfile will be updated:
 
 # Sharing a compendium on GitHub
 
-
 # Update README
 
 Every GitHub repository needs a `README` landing page.
 
 When we intialised our research compendium, **an `rrtools README` template** was created.
-
 
 It contains:
 
@@ -1243,13 +1197,11 @@ The call also created two other community facing markdown files:
 -   `CONTRIBUTING.md`: basic **instructions for people who want to contribute** to our compendium
 
 ::: callout-tip
-
 You can always re-create an `rrtools` style README with:
 
 ```{r, eval=FALSE}
 rrtools::use_readme_rmd()
 ```
-
 :::
 
 # update `README`
@@ -1269,7 +1221,6 @@ Title <- "Partial Reproduction of Boettiger Ecology Letters 2018;21:1255–1267 
 Where details of authors are requested, add your own name and year.
 
 We don't have a link to the DOI or details of where our partial reproduction is published so just leave as is.
-
 
 ## Adjust installation instructions
 
@@ -1307,7 +1258,6 @@ Next, we'll **create a GitHub repository to share our compendium**. We'll make u
 credentials::set_github_pat()
 ```
 
-
 When working locally, away from the Posit Cloud limitation of all projects being called `project`, you can use `usethis::use_github()` to create a new repository on GitHub like we did for our `wood-survey` project.
 
 ```{r, eval=FALSE}
@@ -1325,14 +1275,11 @@ Navigate to your GitHub account, click on **Repositories** and the click the but
 
 Next add the name for your repository, `rrcompendium` and make sure to set an owner if necessary. Don't change anything else, just scroll to the bottom and click **Create repository**.
 
-![](assets/repo-create-man-2.png)
-This will create a completely empty new repository on GitHub called `rrcompendium`.
+![](assets/repo-create-man-2.png) This will create a completely empty new repository on GitHub called `rrcompendium`.
 
 ## Copy the repository URL
 
-
-
-Next, copy the URL of the repository from the Quick Setup box by clicking on the  **{{< fa copy>}} copy** button next to the URL.
+Next, copy the URL of the repository from the Quick Setup box by clicking on the {{< fa copy>}} **copy** button next to the URL.
 
 ![](assets/repo-create-man-3.png)
 
@@ -1341,7 +1288,6 @@ Next, copy the URL of the repository from the Quick Setup box by clicking on the
 To add the repository we just created on GitHub as the `origin` remote in our project, we can use `usethis::use_git_remote()`.
 
 Supply the URL you copied from the GitHub repository you just created as argument `url`, e.g.:
-
 
 ```{r}
 #| eval: false
@@ -1357,7 +1303,6 @@ This will add the remote repository as the `origin` remote in our project.
 Finally, let's **create a remote `main` branch** in our project to track our local `main` branch and **push our project to GitHub**.
 
 To do this, we'll need to use the Terminal again and run the following commands:
-
 
 ```{bash}
 #| eval: false
@@ -1379,4 +1324,3 @@ usethis::use_github_links()
 # Final Compendium
 
 You can browse a demo of the final compendium [here](https://github.com/annakrystalli/rrcompendium-demo)
-
