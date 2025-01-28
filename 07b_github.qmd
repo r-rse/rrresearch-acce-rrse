@@ -69,7 +69,7 @@ Project management
 
 -   We'll use **github** to **collate all species files** and **plot** them all up together at the end! We'll also **discover the skull and beak shapes** associated with each simulated species size.
 
-### [**Enter Practical**](evolottery.qmd)
+### [**Enter Practical**](07c_evolottery.qmd)
 
 ### See [**Collaborative Report**](https://r-rse.github.io/evolottery/plot_trait_evolution.html)
 
